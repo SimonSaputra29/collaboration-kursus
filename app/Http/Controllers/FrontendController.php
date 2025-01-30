@@ -17,4 +17,12 @@ class FrontendController extends Controller
     public function program(){
         return view('frontend.pages.program');
     }
+
+    public function home(){
+        return view('frontend.pages.home');
+    }
+
+    public function learning(){
+        return view('frontend.pages.learning-path');
+    }
 }
