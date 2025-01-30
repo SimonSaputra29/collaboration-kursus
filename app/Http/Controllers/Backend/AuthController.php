@@ -8,24 +8,28 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    public function Login(Request $request)
+    public function login(Request $request)
     {
         $request->validate([
             'email' => 'required|email',
             'password' => 'required|min:6',
         ]);
-
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            if (Auth::user()->role == 'SuperAdmin') {
-                return redirect()->intended('/admin/dashboard');
-            }elseif(Auth::user()->role == 'Admin'){
-                return redirect()->intended('/admin/dashboard');
+    
+        if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])) {
+            if (Auth::guard('admin')->user()->role == 'SuperAdmin' || Auth::guard('admin')->user()->role == 'Admin') {
+                return redirect()->route('admin.index');
             } else {
-                Auth::logout();
+                Auth::guard('admin')->logout();
                 return redirect('/login')->with('not', 'You are not authorized to access this page');
             }
         }
+    
+        return back()->with('error', 'Email or Password is incorrect');
+    }
+    
 
-        return back()->with('error', 'Email Atau Password salah');
+    public function logout()
+    {
+
     }
 }
