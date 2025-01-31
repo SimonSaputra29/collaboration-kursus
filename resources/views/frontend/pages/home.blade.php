@@ -30,9 +30,16 @@
             style="max-width: 40%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
     </div>
 
-    <div>
-        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+    <div class="text-center py-5"
+        style="background-color: #f8f9fa; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+        <h2 class="" style="font-size: 2rem; letter-spacing: 1px; transition: color 0.3s ease;">
+            Beberapa Keunggulan Kursus Yasmin
+        </h2>
+        <p>Saatnya bijak memilih sumber belajar. Tak hanya materi yang terjamin,
+            Dicoding Academy juga memiliki reviewer profesional yang akan mengulas kode Anda.
+        </p>
     </div>
+
     <script>
         const learnButton = document.getElementById('learnButton');
         learnButton.addEventListener('mouseover', function() {
