@@ -6,23 +6,27 @@ use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
-    public function index(){
-        return view('frontend.layout.index');
+    public function home(){
+        return view('frontend.pages.home', [
+            'title' => 'Kursus Yasmin',
+        ]);
     }
 
     public function langganan(){
-        return view('frontend.pages.langganan');
+        return view('frontend.pages.langganan', [
+            'title'=> 'Langganan',
+        ]);
     }
 
     public function program(){
-        return view('frontend.pages.program');
-    }
-
-    public function home(){
-        return view('frontend.pages.home');
+        return view('frontend.pages.program', [
+            'title'=> 'Program',
+        ]);
     }
 
     public function learning(){
-        return view('frontend.pages.learning-path');
+        return view('frontend.pages.learning-path', [
+            'title'=> 'Learning Path',
+        ]);
     }
 }
