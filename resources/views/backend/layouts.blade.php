@@ -11,7 +11,9 @@
     <script src="{{ asset('backend/assets/js/plugin/webfont/webfont.min.js') }}"></script>
     <script>
         WebFont.load({
-            google: { families: ["Public Sans:300,400,500,600,700"] },
+            google: {
+                families: ["Public Sans:300,400,500,600,700"]
+            },
             custom: {
                 families: [
                     "Font Awesome 5 Solid",
@@ -21,7 +23,7 @@
                 ],
                 urls: ["{{ asset('backend/assets/css/fonts.min.css') }}"],
             },
-            active: function () {
+            active: function() {
                 sessionStorage.fonts = true;
             },
         });
@@ -312,8 +314,28 @@
             </div>
         </div>
         <!-- End Sidebar -->
-
-       @yield('content')
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        @if (session('login'))
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Login Berhasil Sebagai Admin!',
+                    text: '{{ session('login') }}',
+                    confirmButtonText: 'Oke'
+                });
+            </script>
+        @endif
+        @if (session('success'))
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Berhasil!',
+                    text: '{{ session('success') }}',
+                    confirmButtonText: 'Oke'
+                });
+            </script>
+        @endif
+        @yield('content')
     </div>
     <!--   Core JS Files   -->
     <script src="{{ asset('backend/assets/js/core/jquery-3.7.1.min.js') }}"></script>

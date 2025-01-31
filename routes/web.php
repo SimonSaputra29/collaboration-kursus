@@ -22,7 +22,7 @@ Route::get('/langganan', [FrontendController::class, 'langganan']) ->name('langg
 Route::get('/program', [FrontendController::class, 'program']) ->name('program');
 Route::get('/home', [FrontendController::class, 'home']) ->name('home');
 
-Route::middleware(['auth:admin', 'role:SuperAdmin|Admin'])->group(function () {
+Route::middleware(['auth:admin'])->group(function () {
     Route::get('/dashboard-admin', [App\Http\Controllers\Backend\AdminController::class, 'index'])->name('admin.index');
     // Add other routes here for admin
 });

@@ -23,7 +23,7 @@
 
         .image-container {
             flex: 1;
-            background-image: url('wan.jpg');
+            background-image: url('images/admin.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -122,7 +122,7 @@
                 </div>
                 <button type="submit">Log In</button>
             </form>
-            <p class="footer-text">© 2024 by Wanteknologi</p>
+            <p class="footer-text">© 2025 by Kursus Yasmin</p>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
