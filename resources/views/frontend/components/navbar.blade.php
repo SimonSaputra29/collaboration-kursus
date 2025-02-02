@@ -67,8 +67,6 @@
     </div>
 </nav>
 
-<!-- Your other content goes here -->
-
 <!-- Scroll Detection Script -->
 <script>
     document.addEventListener("DOMContentLoaded", function() {
