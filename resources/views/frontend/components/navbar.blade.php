@@ -1,8 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top p-3" style="background-color: #212529;">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top p-3" style="background-color: #fff;">
     <div class="container me-6 ms-6 d-flex justify-content-between">
         <div class="d-flex align-items-center">
-            <a class="navbar-brand" href="/"
-                style="font-size: 1.8rem; font-weight: bold; letter-spacing: 1px;">Kursus Yasmin</a>
+            <a class="navbar-brand" href="/" style="font-size: 1.8rem; font-weight: bold; letter-spacing: 1px;">
+                <img src="{{ asset('images/logoyasmin.jpg') }}" alt="Kursus Yasmin" class="logo-img">
+            </a>
             <ul class="navbar-nav ms-4 mb-2 mb-lg-0 d-flex flex-row">
                 <li class="nav-item p-1">
                     <a class="nav-link {{ Request::path() == 'learning-path' ? 'active' : '' }}" href="/learning-path"
@@ -23,7 +24,6 @@
             </ul>
         </div>
         <div class="collapse navbar-collapse justify-content-end gap-4" id="navbarSupportedContent">
-
             @auth
                 <div class="dropdown" style="position: relative;">
                     <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
@@ -49,7 +49,7 @@
                         style="font-weight: bold; transition: all 0.3s ease; padding: 10px 20px; font-size: 1rem; border-radius: 5px;">
                         Login
                     </button>
-                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
                         data-bs-target="#exampleModal"
                         style="font-weight: bold; transition: all 0.3s ease; padding: 10px 20px; font-size: 1rem; border-radius: 5px;">
                         Register
@@ -60,47 +60,4 @@
     </div>
 </nav>
 
-<style>
-    .navbar-nav .nav-link {
-        font-weight: bold;
-        font-size: 1rem;
-        transition: color 0.3s, transform 0.3s;
-    }
 
-    .navbar-nav .nav-link:hover {
-        color: #fff;
-        transform: scale(1.1);
-    }
-
-    .navbar-nav .nav-link.active {
-        color: #fff !important;
-        border-bottom: 2px solid #5c5c5c;
-    }
-
-    .dropdown-menu .dropdown-item:hover {
-        background-color: #f39c12;
-        color: white;
-    }
-
-    .dropdown-menu {
-        border-radius: 8px;
-    }
-
-    .btn {
-        transition: all 0.3s ease;
-    }
-
-    .btn:hover {
-        transform: translateY(-3px);
-    }
-
-    .btn-outline-light:hover {
-        background-color: #5c5c5c;
-        border-color: white;
-        color: white;
-    }
-
-    body {
-        padding-top: 100px;
-    }
-</style>
