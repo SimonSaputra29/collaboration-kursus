@@ -1,14 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-dark p-3" style="background-color: #212529;">
-    <div class="container me-6 ms-6">
-        <a class="navbar-brand" href="/" style="font-size: 1.8rem; font-weight: bold; letter-spacing: 1px;">Kursus
-            Yasmin</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-end gap-4" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-2 mb-lg-0">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top p-3" style="background-color: #212529;">
+    <div class="container me-6 ms-6 d-flex justify-content-between">
+        <div class="d-flex align-items-center">
+            <a class="navbar-brand" href="/"
+                style="font-size: 1.8rem; font-weight: bold; letter-spacing: 1px;">Kursus Yasmin</a>
+            <ul class="navbar-nav ms-4 mb-2 mb-lg-0 d-flex flex-row">
                 <li class="nav-item p-1">
                     <a class="nav-link {{ Request::path() == 'learning-path' ? 'active' : '' }}" href="/learning-path"
                         style="transition: all 0.3s ease;">Learning Path</a>
@@ -26,6 +21,9 @@
                         style="transition: all 0.3s ease;">Lainnya</a>
                 </li>
             </ul>
+        </div>
+        <div class="collapse navbar-collapse justify-content-end gap-4" id="navbarSupportedContent">
+
             @auth
                 <div class="dropdown" style="position: relative;">
                     <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
@@ -70,13 +68,13 @@
     }
 
     .navbar-nav .nav-link:hover {
-        color: #f39c12;
+        color: #fff;
         transform: scale(1.1);
     }
 
     .navbar-nav .nav-link.active {
-        color: #f39c12 !important;
-        border-bottom: 2px solid #f39c12;
+        color: #fff !important;
+        border-bottom: 2px solid #5c5c5c;
     }
 
     .dropdown-menu .dropdown-item:hover {
@@ -97,8 +95,12 @@
     }
 
     .btn-outline-light:hover {
-        background-color: #f39c12;
-        border-color: #f39c12;
+        background-color: #5c5c5c;
+        border-color: white;
         color: white;
+    }
+
+    body {
+        padding-top: 100px;
     }
 </style>
