@@ -6,22 +6,23 @@
 }
 
 .navbar-nav .nav-link:hover {
-    color: #343a40;
+    color: #000;
     transform: scale(1.1);
 }
 
 .navbar-nav .nav-link.active {
-    color: #343a40 !important;
+    color: #000 !important;
     border-bottom: 2px solid #5c5c5c;
+}
+
+.dropdown-menu {
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
 .dropdown-menu .dropdown-item:hover {
     background-color: #f39c12;
     color: white;
-}
-
-.dropdown-menu {
-    border-radius: 8px;
 }
 
 .btn {
@@ -32,10 +33,10 @@
     transform: translateY(-3px);
 }
 
-.btn-outline-light:hover {
+.btn-outline-dark:hover {
     background-color: #5c5c5c;
-    border-color: white;
-    color: white;
+    border-color: black;
+    color: black;
 }
 
 body {
@@ -44,8 +45,7 @@ body {
 
 /* New styles for the logo */
 .logo-img {
-    height: 2.5rem;
-    /* Adjust the height as needed */
+    height: 3rem; /* Adjust the height as needed */
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -54,4 +54,14 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/*  */
+/* Navbar transition */
+#navbar {
+    transition: top 0.5s ease;
+}
+
+/* Additional styles */
+.btn-outline-dark:hover {
+    background-color: #343a40;
+    border-color: #343a40;
+    color: #fff;
+}

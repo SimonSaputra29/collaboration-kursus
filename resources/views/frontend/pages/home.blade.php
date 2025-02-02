@@ -15,13 +15,20 @@
             data-aos="fade-up">
     </div>
 
-    <div class="text-center py-5" data-aos="fade-up">
-        <h2 class="" style="font-size: 2rem; letter-spacing: 1px; transition: color 0.3s ease;">
-            Beberapa Keunggulan Kursus Yasmin
-        </h2>
-        <p>Saatnya bijak memilih sumber belajar. Tak hanya materi yang terjamin,
-            Dicoding Academy juga memiliki reviewer profesional yang akan mengulas kode Anda, memberikan
-            umpan balik yang berharga, dan membantu Anda mencapai kesempurnaan dalam setiap proyek.</p>
+    <div class="container py-5" data-aos="fade-up">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center">
+                <img src="{{ asset('images/w') }}" alt="Image Description" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <h2 class="" style="font-size: 2rem; letter-spacing: 1px; transition: color 0.3s ease;">
+                    Beberapa Keunggulan Kursus Yasmin
+                </h2>
+                <p>Saatnya bijak memilih sumber belajar. Tak hanya materi yang terjamin,
+                    Dicoding Academy juga memiliki reviewer profesional yang akan mengulas kode Anda, memberikan
+                    umpan balik yang berharga, dan membantu Anda mencapai kesempurnaan dalam setiap proyek.</p>
+            </div>
+        </div>
     </div>
 
     <!-- Testimonials Section -->
