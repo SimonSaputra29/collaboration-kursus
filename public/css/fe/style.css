@@ -1,0 +1,67 @@
+/* Ini Buat Navbar */
+.navbar-nav .nav-link {
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #000;
+    transform: scale(1.1);
+}
+
+.navbar-nav .nav-link.active {
+    color: #000 !important;
+    border-bottom: 2px solid #5c5c5c;
+}
+
+.dropdown-menu {
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #f39c12;
+    color: white;
+}
+
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-outline-dark:hover {
+    background-color: #5c5c5c;
+    border-color: black;
+    color: black;
+}
+
+body {
+    padding-top: 100px;
+}
+
+/* New styles for the logo */
+.logo-img {
+    height: 3rem; /* Adjust the height as needed */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.logo-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar transition */
+#navbar {
+    transition: top 0.5s ease;
+}
+
+/* Additional styles */
+.btn-outline-dark:hover {
+    background-color: #343a40;
+    border-color: #343a40;
+    color: #fff;
+}
