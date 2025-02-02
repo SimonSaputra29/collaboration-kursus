@@ -24,6 +24,7 @@ Route::get('/program', [FrontendController::class, 'program']) ->name('program')
 Route::get('/learning-path', [FrontendController::class, 'learning']) ->name('learning-path');
 Route::get('/home', [FrontendController::class, 'home']) ->name('home');
 
+
 Route::middleware(['auth:admin'])->group(function () {
     Route::get('/dashboard-admin', [App\Http\Controllers\Backend\AdminController::class, 'index'])->name('admin.index');
     // Add other routes here for admin

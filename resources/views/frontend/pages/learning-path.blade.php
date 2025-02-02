@@ -1,5 +1,30 @@
 @extends('frontend.layout.index')
 
 @section('content')
-<h1>Learning Path</h1>
+    <h1>Ini Learning Path</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 @endsection
