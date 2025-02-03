@@ -13,16 +13,18 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Route::get('/welcome', [App\Http\Controllers\Backend\AdminController::class, 'LoginPage'])->name('LoginPage');
 Route::post('/welcome', [App\Http\Controllers\Backend\AuthController::class, 'login'])->name('login');
 Route::post('/logout', [App\Http\Controllers\Backend\AuthController::class, 'logout'])->name('logout');
 
 // Route::get('/', [FrontendController::class, 'index']) ->name('index');
-Route::get('/', [FrontendController::class, 'home']) ->name('home');
-Route::get('/langganan', [FrontendController::class, 'langganan']) ->name('langganan');
-Route::get('/program', [FrontendController::class, 'program']) ->name('program');
-Route::get('/learning-path', [FrontendController::class, 'learning']) ->name('learning-path');
-Route::get('/home', [FrontendController::class, 'home']) ->name('home');
+Route::get('/', [FrontendController::class, 'home'])->name('home');
+Route::get('/langganan', [FrontendController::class, 'langganan'])->name('langganan');
+Route::get('/program', [FrontendController::class, 'program'])->name('program');
+Route::get('/learning-path', [FrontendController::class, 'learning'])->name('learning-path');
+Route::get('/home', [FrontendController::class, 'home'])->name('home');
+Route::get('/tentang', [FrontendController::class, 'tentang'])->name('tentang');
 
 
 Route::middleware(['auth:admin'])->group(function () {

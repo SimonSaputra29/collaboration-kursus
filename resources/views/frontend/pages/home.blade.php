@@ -65,7 +65,7 @@
     </div>
 
     <div class="testimonials text-center py-5" data-aos="fade-up">
-        <h2 class="fw-bold text-primary mb-4">Testimoni <span class="text-success">Pelanggan</span></h2>
+        <h2 class="fw-bold text-muted mb-4">Testimoni <span class="text-dark">Pelanggan</span></h2>
         <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -83,7 +83,7 @@
                             "Saya berhasil mendapatkan pekerjaan impian saya sebagai developer berkat kursus ini. Materinya
                             sangat lengkap dan mudah dipahami."
                         </p>
-                        <h5 class="fw-bold text-dark">- Amir</h5>
+                        <h5 class="fw-bold text-dark">- Amay</h5>
                     </div>
                 </div>
             </div>

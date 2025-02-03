@@ -19,12 +19,12 @@
 
 /* Dropdown */
 .dropdown-menu {
-    border-radius: 8px;
+    border-radius: 10px;
     transition: all 0.3s ease;
 }
 
 .dropdown-menu .dropdown-item:hover {
-    background-color: #f39c12;
+    background-color: black;
     color: white;
 }
 

@@ -3,7 +3,7 @@
         <div class="row">
             <!-- Logo & Deskripsi -->
             <div class="col-lg-4 col-md-6 mb-4">
-                <h4 class="fw-bold text-uppercase mb-3 text-primary">Kurmin Academy</h4>
+                <h4 class="fw-bold text-uppercase mb-3 text-">Kurmin Academy</h4>
                 <p class="text-light">
                     Belajar pemrograman dan bangun karir developer Anda bersama mentor berpengalaman. Kami siap membantu
                     Anda meraih impian di dunia teknologi.
@@ -13,17 +13,17 @@
                         <i class="fas fa-map-marker-alt me-2"></i> Perumahan Taman Yasmin
                     </p>
                     <p class="text-light">
-                        <i class="fas fa-envelope me-2"></i> kursus@kurminacademy.com
+                        <i class="fas fa-envelope me-2"></i>Kursus@kurminacademy.com
                     </p>
                     <p class="text-light">
-                        <i class="fas fa-phone me-2"></i> +62 812-3456-7890
+                        <i class="fas fa-phone me-2"></i>+62 812-3456-7890
                     </p>
                 </div>
             </div>
 
             <!-- Navigasi -->
             <div class="col-lg-2 col-md-3 mb-4">
-                <h5 class="fw-bold text-uppercase mb-3 text-primary">Navigasi</h5>
+                <h5 class="fw-bold text-uppercase mb-3 text-light">Navigasi</h5>
                 <ul class="list-unstyled">
                     <li><a href="#" class="text-light text-decoration-none footer-link">Home</a></li>
                     <li><a href="#" class="text-light text-decoration-none footer-link">Kursus</a></li>
@@ -34,11 +34,12 @@
 
             <!-- Sosial Media -->
             <div class="col-lg-3 col-md-3 mb-4">
-                <h5 class="fw-bold text-uppercase mb-3 text-primary">Ikuti Kami</h5>
+                <h5 class="fw-bold text-uppercase mb-3 text-light">Ikuti Kami</h5>
                 <div class="d-flex">
                     <a href="#" class="text-light me-3 social-icon"><i class="fab fa-youtube fa-2x"></i></a>
                     <a href="#" class="text-light me-3 social-icon"><i class="fab fa-whatsapp fa-2x"></i></a>
-                    <a href="#" class="text-light me-3 social-icon"><i class="fab fa-instagram fa-2x"></i></a>
+                    <a href="https://www.instagram.com/s_for_saii/" class="text-light me-3 social-icon"><i
+                            class="fab fa-instagram fa-2x"></i></a>
                     <a href="#" class="text-light social-icon"><i class="fab fa-linkedin fa-2x"></i></a>
                 </div>
             </div>
