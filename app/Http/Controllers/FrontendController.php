@@ -29,4 +29,10 @@ class FrontendController extends Controller
             'title'=> 'Learning Path',
         ]);
     }
+
+    public function tentang(){
+        return view('frontend.pages.tentang', [
+            'title'=> 'Tentang',
+        ]);
+    }
 }
