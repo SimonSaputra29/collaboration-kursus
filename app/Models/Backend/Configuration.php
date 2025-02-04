@@ -23,5 +23,7 @@ class Configuration extends Model
         'address',
         'map',
         'footer',
+        'meta_keywords',
+        'meta_descriptions',
     ];
 }
