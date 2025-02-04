@@ -1,6 +1,89 @@
 @extends('frontend.layout.index')
 
 @section('content')
+    <style>
+        /* ===================== */
+        /* HOME PAGE STYLES */
+        /* ===================== */
+        .underline-animation {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #198754, #0d6efd);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: transform 0.3s ease-in-out;
+            transform: scaleX(0);
+        }
+
+        h2:hover .underline-animation {
+            transform: scaleX(1);
+        }
+
+        /* Efek hover pada tombol */
+        .btn-hover-effect {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .btn-hover-effect::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+        }
+
+        .btn-hover-effect:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .testimonial-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .testimonial-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Responsif untuk Hero Image */
+        @media (max-width: 768px) {
+            #heroImage {
+                max-width: 100%;
+                margin-top: 30px;
+            }
+
+            .d-flex {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Carousel untuk ukuran kecil */
+        @media (max-width: 768px) {
+            .carousel-inner {
+                max-height: 400px;
+            }
+
+            .carousel-item img {
+                height: 250px;
+                object-fit: cover;
+            }
+        }
+    </style>
+
     <div class="d-flex align-items-center justify-content-center ms-5 pt-5 position-relative" style="min-height: 80vh;">
         <div class="me-4 text-start animate__animated animate__fadeInLeft" data-aos="fade-up">
             <h2 class="fw-bold display-4 text-dark">Bangun Karirmu Sebagai <br> Developer Profesional</h2>

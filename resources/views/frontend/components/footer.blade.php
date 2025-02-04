@@ -36,7 +36,7 @@
             <div class="col-lg-3 col-md-3 mb-4">
                 <h5 class="fw-bold text-uppercase mb-3 text-light">Ikuti Kami</h5>
                 <div class="d-flex">
-                    <a href="#" class="text-light me-3 social-icon"><i class="fab fa-youtube fa-2x"></i></a>
+                    <a href="https://www.youtube.com" class="text-light me-3 social-icon"><i class="fab fa-youtube fa-2x"></i></a>
                     <a href="#" class="text-light me-3 social-icon"><i class="fab fa-whatsapp fa-2x"></i></a>
                     <a href="https://www.instagram.com/s_for_saii/" class="text-light me-3 social-icon"><i
                             class="fab fa-instagram fa-2x"></i></a>

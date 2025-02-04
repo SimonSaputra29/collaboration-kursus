@@ -7,118 +7,67 @@
             <p class="mt-3 text-light animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-delay="200">
                 Pilih jalur belajar yang sesuai dengan minatmu dan tingkatkan keterampilanmu dengan materi yang terstruktur!
             </p>
-            <a href="#paths" class="btn btn-outline-light mt-3 animate__animated animate__fadeInUp" data-aos="fade-up"
-                data-aos-delay="400">
-                Mulai Belajar
-            </a>
         </div>
     </section>
 
     <div class="container mt-5 mb-4">
         <div class="row justify-content-center" id="paths">
-            <!-- Web Development -->
-            <div class="col-md-4 animate__animated animate__fadeInLeft" data-aos="fade-right">
+            <div class="col-md-4" onclick="showVideo('web-development')">
                 <div class="card shadow-sm p-4 bg-dark text-white border-0 custom-card">
                     <i class="bi bi-code-slash display-4 text-light"></i>
                     <h4 class="mt-3">Web Development</h4>
-                    <p>Pelajari dasar hingga mahir dalam pengembangan website menggunakan teknologi modern.</p>
+                    <p class="text-light">Belajar membuat website dengan HTML, CSS, dan JavaScript</p>
                 </div>
             </div>
-
-            <!-- UI/UX Design -->
-            <div class="col-md-4 animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-md-4" onclick="showVideo('ui-ux')">
                 <div class="card shadow-sm p-4 bg-dark text-white border-0 custom-card">
                     <i class="bi bi-brush display-4 text-light"></i>
                     <h4 class="mt-3">UI/UX Design</h4>
-                    <p>Pahami prinsip desain dan pengalaman pengguna untuk menciptakan tampilan yang menarik.</p>
+                    <p class="text-light">Pelajari dasar-dasar desain UI/UX untuk membangun tampilan website yang menarik.
+                    </p>
                 </div>
             </div>
-
-            <!-- Machine Learning -->
-            <div class="col-md-4 animate__animated animate__fadeInRight" data-aos="fade-left" data-aos-delay="400">
+            <div class="col-md-4" onclick="showVideo('machine-learning')">
                 <div class="card shadow-sm p-4 bg-dark text-white border-0 custom-card">
                     <i class="bi bi-robot display-4 text-light"></i>
                     <h4 class="mt-3">Machine Learning</h4>
-                    <p>Jelajahi dunia kecerdasan buatan dan buat model prediksi yang cerdas.</p>
-                </div>
-            </div>
-
-            <!-- Data Science -->
-            <div class="col-md-4 mt-4 animate__animated animate__fadeInLeft" data-aos="fade-right" data-aos-delay="500">
-                <div class="card shadow-sm p-4 bg-dark text-white border-0 custom-card">
-                    <i class="bi bi-database display-4 text-light"></i>
-                    <h4 class="mt-3">Data Science</h4>
-                    <p>Kuasi analisis data dan eksplorasi wawasan bisnis dari data yang kompleks.</p>
-                </div>
-            </div>
-
-            <!-- Cyber Security -->
-            <div class="col-md-4 mt-4 animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-delay="600">
-                <div class="card shadow-sm p-4 bg-dark text-white border-0 custom-card">
-                    <i class="bi bi-shield-lock display-4 text-light"></i>
-                    <h4 class="mt-3">Cyber Security</h4>
-                    <p>Pahami keamanan digital dan lindungi sistem dari ancaman siber.</p>
-                </div>
-            </div>
-
-            <!-- DevOps -->
-            <div class="col-md-4 mt-4 animate__animated animate__fadeInRight" data-aos="fade-left" data-aos-delay="700">
-                <div class="card shadow-sm p-4 bg-dark text-white border-0 custom-card">
-                    <i class="bi bi-gear display-4 text-light"></i>
-                    <h4 class="mt-3">DevOps</h4>
-                    <p>Optimalkan pengembangan dan operasional aplikasi dengan teknologi otomatisasi.</p>
+                    <p class="text-light">Pelajari algoritma machine learning untuk membuat aplikasi AI yang handal.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <style>
-        .learning-path {
-            background-color: #121212;
-            /* Warna latar gelap */
-        }
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title text-white">Playlist Tutorial</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe id="videoFrame" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        .custom-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-radius: 15px;
-            padding: 20px;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
+    <script>
+        function showVideo(category) {
+            let videoLinks = {
+                'web-development': 'https://www.youtube.com/embed/71a2zeC71gk',
+                'ui-ux': 'https://www.youtube.com/embed/playlist_id_2', // Ganti dengan playlist yang sesuai
+                'machine-learning': 'https://www.youtube.com/embed/playlist_id_3' // Ganti dengan playlist yang sesuai
+            };
 
-        .custom-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            // Periksa apakah category ada dalam videoLinks
+            if (videoLinks[category]) {
+                document.getElementById('videoFrame').src = videoLinks[category];
+                var modal = new bootstrap.Modal(document.getElementById('videoModal'));
+                modal.show();
+            } else {
+                alert('Video untuk kategori ini belum tersedia.');
+            }
         }
-
-        .card-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #ffffff;
-        }
-
-        .card-text {
-            color: #b0b0b0;
-            font-size: 0.95rem;
-        }
-
-        /* Button Glow Effect */
-        .btn-outline-light {
-            border: 2px solid #ffffff;
-            color: #ffffff;
-            font-weight: bold;
-            text-transform: uppercase;
-            padding: 10px 20px;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-outline-light:hover {
-            background-color: #ffffff;
-            color: #121212;
-            transform: scale(1.05);
-        }
-    </style>
+    </script>
 @endsection
