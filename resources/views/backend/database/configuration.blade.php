@@ -6,46 +6,36 @@
             <div class="col-md-11">
                 <div class="card">
                     <div class="card-header bg-primary text-white">Configuration Settings</div>
-
                     <div class="card-body">
                         <form action="{{ route('configuration.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-
-                            <!-- Path Gambar -->
                             <div class="row">
-                                <!-- Path Gambar -->
                                 <div class="col-md mb-3">
-                                    <label for="path" class="form-label">Website Image</label>
-                                    <input type="file" name="path" id="path"
-                                        class="form-control @error('path') is-invalid @enderror"
-                                        onchange="previewImage('path', 'pathPreview')">
-                                    @error('path')
+                                    <label for="logo" class="form-label">Logo Web</label>
+                                    <input type="file" name="logo" id="logo"
+                                        class="form-control @error('logo') is-invalid @enderror"
+                                        onchange="previewImage('logo', 'logoPreview')">
+                                    @error('logo')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
-
-                                    <!-- Cek jika gambar ada di database, tampilkan -->
-                                    @if (isset($configuration->path))
-                                        <img id="pathPreview" src="{{ asset($configuration->path) }}" alt="Gambar Lama"
+                                    @if (isset($configuration->logo))
+                                        <img id="logoPreview" src="{{ asset($configuration->logo) }}" alt="Gambar Lama"
                                             class="mt-2" style="max-width: 200px;">
                                     @else
-                                        <img id="pathPreview" src="" alt="Preview Gambar" class="mt-2"
+                                        <img id="logoPreview" src="" alt="Preview Gambar" class="mt-2"
                                             style="max-width: 200px; display: none;">
                                     @endif
                                 </div>
-
-                                <!-- Path Logo -->
                                 <div class="col-md mb-3">
-                                    <label for="path_logo" class="form-label">Title Image</label>
-                                    <input type="file" name="path_logo" id="path_logo"
-                                        class="form-control @error('path_logo') is-invalid @enderror"
-                                        onchange="previewImage('path_logo', 'pathLogoPreview')">
-                                    @error('path_logo')
+                                    <label for="title_logo" class="form-label">Judul Logo</label>
+                                    <input type="file" name="title_logo" id="title_logo"
+                                        class="form-control @error('title_logo') is-invalid @enderror"
+                                        onchange="previewImage('title_logo', 'pathLogoPreview')">
+                                    @error('title_logo')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
-
-                                    <!-- Cek jika logo ada di database, tampilkan -->
-                                    @if (isset($configuration->path_logo))
-                                        <img id="pathLogoPreview" src="{{ asset($configuration->path_logo) }}"
+                                    @if (isset($configuration->title_logo))
+                                        <img id="pathLogoPreview" src="{{ asset($configuration->title_logo) }}"
                                             alt="Logo Lama" class="mt-2" style="max-width: 200px;">
                                     @else
                                         <img id="pathLogoPreview" src="" alt="Preview Logo" class="mt-2"
@@ -53,11 +43,9 @@
                                     @endif
                                 </div>
                             </div>
-
-                            <!-- Website Name -->
                             <div class="row">
                                 <div class="col-md mb-3">
-                                    <label for="website_name" class="form-label">Website Name</label>
+                                    <label for="website_name" class="form-label">Nama Web</label>
                                     <input type="text" name="website_name"
                                         class="form-control @error('website_name') is-invalid @enderror"
                                         value="{{ old('website_name', $configuration->website_name ?? '') }}">
@@ -65,9 +53,8 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
-
                                 <div class="col-md mb-3">
-                                    <label for="title" class="form-label">Title</label>
+                                    <label for="title" class="form-label">Judul</label>
                                     <input type="text" name="title"
                                         class="form-control @error('title') is-invalid @enderror"
                                         value="{{ old('title', $configuration->title ?? '') }}">
@@ -76,7 +63,6 @@
                                     @enderror
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col-md mb-3">
                                     <label for="meta_keywords" class="form-label">Meta Keywords</label>
@@ -85,7 +71,6 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
-
                                 <div class="col-md mb-3">
                                     <label for="meta_descriptions" class="form-label">Meta Descriptions</label>
                                     <textarea name="meta_descriptions" class="form-control @error('meta_descriptions') is-invalid @enderror">{{ old('meta_descriptions', $configuration->meta_descriptions ?? '') }}</textarea>
@@ -94,8 +79,6 @@
                                     @enderror
                                 </div>
                             </div>
-
-
                             <div class="row">
                                 <div class="col-md mb-3">
                                     <label for="footer" class="form-label">Footer</label>
@@ -107,50 +90,65 @@
                                     @enderror
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md mb-3">
+                                    <label for="address" class="form-label">Alamat</label>
+                                    <input type="text" name="address"
+                                        class="form-control @error('address') is-invalid @enderror"
+                                        value="{{ old('address', $configuration->address ?? '') }}">
+                                    @error('address')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="col-md mb-3">
+                                    <label for="phone_number" class="form-label">Nomor Hp</label>
+                                    <input type="integer" name="phone_number"
+                                        class="form-control @error('phone_number') is-invalid @enderror"
+                                        value="{{ old('phone_number', $configuration->phone_number ?? '') }}">
+                                    @error('phone_number')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="col-md mb-3">
+                                    <label for="email_address" class="form-label">Alamat Email</label>
+                                    <input type="email" name="email_address"
+                                        class="form-control @error('email_address') is-invalid @enderror"
+                                        value="{{ old('email_address', $configuration->email_address ?? '') }}">
+                                    @error('email_address')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
 
                             <div class="row">
                                 <div class="col-md mb-3">
-                                    <label for="path_alert" class="form-label">Title Image</label>
-                                    <input type="file" name="path_alert" id="path_alert"
-                                        class="form-control @error('path_alert') is-invalid @enderror"
-                                        onchange="previewImage('path_alert', 'pathLogoPreview')">
-                                    @error('path_alert')
+                                    <label for="instagram" class="form-label">Instagram</label>
+                                    <input type="text" name="instagram"
+                                        class="form-control @error('instagram') is-invalid @enderror"
+                                        value="{{ old('instagram', $configuration->instagram ?? '') }}">
+                                    @error('instagram')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
-
-                                    <!-- Cek jika logo ada di database, tampilkan -->
-                                    @if (isset($configuration->path_alert))
-                                        <img id="pathLogoPreview" src="{{ asset($configuration->path_alert) }}"
-                                            alt="Logo Lama" class="mt-2" style="max-width: 200px;">
-                                    @else
-                                        <img id="pathLogoPreview" src="" alt="Preview Logo" class="mt-2"
-                                            style="max-width: 200px; display: none;">
-                                    @endif
-
-                                    <div class="col-md">
-                                        <div class="form-group form-group-default">
-                                            <label for="pdf">Upload PDF</label>
-                                            <input type="file" name="pdf" id="pdf"
-                                                class="form-control @error('pdf') is-invalid @enderror"
-                                                onchange="previewFileName('pdf', 'pdfPreview')">
-                                            @error('pdf')
-                                                <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-                                        <div id="pdfPreview" class="text-muted mt-2">
-                                            @if ($configuration->pdf)
-                                                Current PDF: <a href="{{ asset($configuration->pdf) }}"
-                                                    target="_blank">{{ basename($configuration->pdf) }}</a>
-                                            @else
-                                                <span>No PDF uploaded yet.</span>
-                                            @endif
-                                        </div>
-                                    </div>
                                 </div>
-
-                                <!-- Tambahkan input lainnya sesuai kebutuhan -->
-
-                                <!-- Tombol Submit -->
+                                <div class="col-md mb-3">
+                                    <label for="youtube" class="form-label">Youtube</label>
+                                    <input type="text" name="youtube"
+                                        class="form-control @error('youtube') is-invalid @enderror"
+                                        value="{{ old('youtube', $configuration->youtube ?? '') }}">
+                                    @error('youtube')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="col-md mb-3">
+                                    <label for="map" class="form-label">Map</label>
+                                    <input type="text" name="map"
+                                        class="form-control @error('map') is-invalid @enderror"
+                                        value="{{ old('map', $configuration->map ?? '') }}">
+                                    @error('map')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
                                 <button type="submit" class="btn btn-primary w-100">Save</button>
                         </form>
                     </div>
