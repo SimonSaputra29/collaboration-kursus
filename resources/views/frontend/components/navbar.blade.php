@@ -2,7 +2,7 @@
     <div class="container-fluid d-flex justify-content-between">
         <div class="d-flex align-items-center">
             <a class="navbar-brand" href="/" style="font-size: 1.8rem; font-weight: bold; letter-spacing: 1px;">
-                <img src="{{ asset('images/logoyasmin.jpg') }}" alt="Kursus Yasmin" class="logo-img"
+                <img src="{{ asset($configuration->logo ?? '') }}" alt="Kursus Yasmin" class="logo-img"
                     style="height: 3rem;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

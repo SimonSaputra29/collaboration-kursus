@@ -10,13 +10,13 @@
                 </p>
                 <div>
                     <p class="text-light">
-                        <i class="fas fa-map-marker-alt me-2"></i> Perumahan Taman Yasmin
+                        <i class="fas fa-map-marker-alt me-2"></i> {{ $configuration->address ?? '' }}
                     </p>
                     <p class="text-light">
-                        <i class="fas fa-envelope me-2"></i>Kursus@kurminacademy.com
+                        <i class="fas fa-envelope me-2"></i>{{ $configuration->email_address ?? '' }}
                     </p>
                     <p class="text-light">
-                        <i class="fas fa-phone me-2"></i>+62 812-3456-7890
+                        <i class="fas fa-phone me-2"></i>{{ $configuration->phone_number ?? '' }}
                     </p>
                 </div>
             </div>
@@ -37,12 +37,23 @@
             <div class="col-lg-3 col-md-3 mb-4">
                 <h5 class="fw-bold text-uppercase mb-3 text-light">Ikuti Kami</h5>
                 <div class="d-flex">
-                    <a href="https://www.youtube.com" class="text-light me-3 social-icon"><i
-                            class="fab fa-youtube fa-2x"></i></a>
-                    <a href="#" class="text-light me-3 social-icon"><i class="fab fa-whatsapp fa-2x"></i></a>
-                    <a href="https://www.instagram.com/s_for_saii/" class="text-light me-3 social-icon"><i
-                            class="fab fa-instagram fa-2x"></i></a>
-                    <a href="#" class="text-light social-icon"><i class="fab fa-linkedin fa-2x"></i></a>
+                    @if($configuration->youtube)
+                    <a href="{{ $configuration->youtube }}" class="text-light me-3 social-icon">
+                        <i class="fab fa-youtube fa-2x"></i>
+                    </a>
+                @endif
+
+                @if($configuration->phone_number)
+                    <a href="https://wa.me/{{ $configuration->phone_number }}" class="text-light me-3 social-icon">
+                        <i class="fab fa-whatsapp fa-2x"></i>
+                    </a>
+                @endif
+
+                @if($configuration->instagram)
+                    <a href="{{ $configuration->instagram }}" class="text-light me-3 social-icon">
+                        <i class="fab fa-instagram fa-2x"></i>
+                    </a>
+                @endif
                 </div>
             </div>
         </div>
@@ -50,7 +61,7 @@
         <hr class="border-secondary">
 
         <div class="text-center">
-            <p class="mb-0 text-light">© 2025 Kurmin Academy. All Rights Reserved.</p>
+            <p class="mb-0 text-light">{{ $configuration->title ?? '' }}</p>
         </div>
     </div>
 </footer>

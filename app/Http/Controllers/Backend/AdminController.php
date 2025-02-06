@@ -3,18 +3,21 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Backend\Configuration;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
     public function LoginPage()
     {
-        return view('welcome');
+        $configuration = Configuration::first();
+        return view('welcome', compact('configuration'));
     }
 
     public function index()
     {
-        return view('backend.index');
+        $configuration = Configuration::first();
+        return view('backend.index', compact('configuration'));
     }
 
     public function avatars()

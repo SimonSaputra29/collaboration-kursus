@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Backend\Configuration;
+use App\Models\Backend\Hero;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
     public function home(){
+        $configuration = Configuration::first();
+        $hero = Hero::first();
         return view('frontend.pages.home', [
             'title' => 'Kursus Yasmin',
-        ]);
+        ], compact('configuration', 'hero'));
     }
 
     public function langganan(){

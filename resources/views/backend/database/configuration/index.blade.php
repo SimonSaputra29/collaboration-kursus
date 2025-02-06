@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-11">
                 <div class="card">
-                    <div class="card-header bg-primary text-white">Configuration Settings</div>
+                    <div class="card-header bg-primary text-white">Pengaturan Configuration</div>
                     <div class="card-body">
                         <form action="{{ route('configuration.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf

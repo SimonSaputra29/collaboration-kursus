@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="shortcut icon" href="{{ asset('assets/img/Wan Logo.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset($configuration->title_logo ?? '') }}" type="image/x-icon">
     <style>
         body,
         html {
