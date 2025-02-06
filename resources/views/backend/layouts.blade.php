@@ -298,27 +298,6 @@
             </div>
         </div>
         <!-- End Sidebar -->
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        @if (session('login'))
-            <script>
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Login Berhasil Sebagai Admin!',
-                    text: '{{ session('login') }}',
-                    confirmButtonText: 'Oke'
-                });
-            </script>
-        @endif
-        @if (session('success'))
-            <script>
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Berhasil!',
-                    text: '{{ session('success') }}',
-                    confirmButtonText: 'Oke'
-                });
-            </script>
-        @endif
         <div class="main-panel">
             <div class="main-header">
                 <div class="main-header-logo">
@@ -648,6 +627,47 @@
             </div>
             <div class="container">
                 @yield('content')
+
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                @if (session('login'))
+                    <script>
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Login Berhasil Sebagai Admin!',
+                            text: '{{ session('login') }}',
+                            confirmButtonText: 'Oke'
+                        });
+                    </script>
+                @endif
+                @if (session('success'))
+                    <script>
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Berhasil!',
+                            text: '{{ session('success') }}',
+                            confirmButtonText: 'Oke'
+                        });
+                    </script>
+                @endif
+                <script>
+                    function confirmDelete(imageId) {
+                        Swal.fire({
+                            title: "Apakah Anda yakin?",
+                            text: "Gambar ini akan dihapus secara permanen!",
+                            icon: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#d33",
+                            cancelButtonColor: "#3085d6",
+                            confirmButtonText: "Ya, hapus!",
+                            cancelButtonText: "Batal"
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                document.getElementById('delete-form-' + imageId).submit();
+                            }
+                        });
+                    }
+                </script>
+
             </div>
             <footer class="footer">
                 <div class="container-fluid d-flex justify-content-between">

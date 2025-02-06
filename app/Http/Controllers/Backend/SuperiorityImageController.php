@@ -22,9 +22,7 @@ class SuperiorityImageController extends Controller
 
         $imageName = time() . '.' . $request->image->extension();
         $imagePath = 'uploads/superiority/' . $imageName;
-
         $request->image->move(('uploads/superiority'), $imageName);
-
         SuperiorityImage::create(['image' => $imagePath]);
 
         return redirect()->route('superiorityImage.index')
@@ -34,24 +32,22 @@ class SuperiorityImageController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $superiorityImage = SuperiorityImage::findOrFail($id);
 
         if ($request->hasFile('image')) {
-            $imagePath = ('uploads/superiority/' . $superiorityImage->name);
-            if (file_exists($imagePath) && is_file($imagePath)) {
-                unlink($imagePath);
+            $oldImagePath = public_path($superiorityImage->image);
+            if (file_exists($oldImagePath) && is_file($oldImagePath)) {
+                unlink($oldImagePath);
             }
-
             $imageName = time() . '.' . $request->image->extension();
-            $request->image->move(('uploads/superiority'), $imageName);
-
-            $superiorityImage->name = $imageName;
-            $superiorityImage->save();
+            $imageDirectory = 'uploads/superiority/';
+            $request->image->move(public_path($imageDirectory), $imageName);
+            $superiorityImage->image = $imageDirectory . $imageName;
         }
-
+        $superiorityImage->save();
         return redirect()->route('superiorityImage.index')
             ->with('success', 'Image updated successfully.');
     }
@@ -59,12 +55,10 @@ class SuperiorityImageController extends Controller
     public function destroy($id)
     {
         $superiorityImage = SuperiorityImage::findOrFail($id);
-
-        $imagePath = ('uploads/superiority/' . $superiorityImage->name);
+        $imagePath = public_path($superiorityImage->image);
         if (file_exists($imagePath) && is_file($imagePath)) {
             unlink($imagePath);
         }
-
         $superiorityImage->delete();
 
         return redirect()->route('superiorityImage.index')
