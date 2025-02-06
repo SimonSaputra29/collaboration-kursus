@@ -59,7 +59,12 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::post('/dashboard-admin/superiority', 'createOrUpdate')->name('superiority.store');
     });
     //superiorityImage
-    Route::resource('/dashboard-admin/superiorityImage', \App\Http\Controllers\Backend\SuperiorityImageController::class);
+    Route::controller(\App\Http\Controllers\Backend\SuperiorityImageController::class)->group(function () {
+        Route::get('/dashboard-admin/superiorityImage', 'index')->name('superiorityImage.index');
+        Route::post('/dashboard-admin/superiorityImage', 'store')->name('superiorityImage.store');
+        Route::delete('/dashboard-admin/superiorityImage/destroy/{id}', 'destroy')->name('superiorityImage.destroy');
+        Route::put('/dashboard-admin/superiorityImage/{id}', 'update')->name('superiorityImage.update');
+    });
 
     Route::controller(App\Http\Controllers\Backend\AdminController::class)->group(function () {
         Route::get('/dashboard-admin/avatars', 'avatars')->name('admin.avatars');
