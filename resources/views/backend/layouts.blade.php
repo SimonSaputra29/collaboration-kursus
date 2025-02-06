@@ -3,9 +3,9 @@
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Kaiadmin - Bootstrap 5 Admin Dashboard</title>
+    <title>Admin Dashboard - {{ $configuration->title ?? '' }}</title>
     <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
-    <link rel="icon" href="{{ asset('backend/assets/img/kaiadmin/favicon.ico') }}" type="image/x-icon" />
+    <link rel="icon" href="{{ asset($configuration->title_logo ?? '') }}" type="image/x-icon" />
 
     <!-- Fonts and icons -->
     <script src="{{ asset('backend/assets/js/plugin/webfont/webfont.min.js') }}"></script>
@@ -44,10 +44,10 @@
         <div class="sidebar" data-background-color="dark">
             <div class="sidebar-logo">
                 <!-- Logo Header -->
-                <div class="logo-header" data-background-color="dark">
+                <div class="logo-header d-flex justify-content-center align-items-center" data-background-color="dark">
                     <a href="{{ route('admin.index') }}" class="logo">
-                        <img src="backend/assets/img/kaiadmin/logo_light.svg" alt="navbar brand" class="navbar-brand"
-                            height="20" />
+                        <img src="{{ asset($configuration->title_logo ?? '') }}" alt="navbar brand" class="navbar-brand"
+                            style="width: 50px; max-width: 50px;" />
                     </a>
                     <div class="nav-toggle">
                         <button class="btn btn-toggle toggle-sidebar">
@@ -96,6 +96,13 @@
                             <a href="{{ route('configuration.index') }}">
                                 <i class="fas fa-cog"></i>
                                 <p>Configuration</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item {{ Request::is('dashboard-admin/hero') ? 'active' : '' }}">
+                            <a href="{{ route('hero.index') }}">
+                                <i class="fas fa-info-circle"></i>
+                                <p>Hero</p>
                             </a>
                         </li>
 
@@ -554,12 +561,12 @@
                                 <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#"
                                     aria-expanded="false">
                                     <div class="avatar-sm">
-                                        <img src="backend/assets/img/profile.jpg" alt="..."
+                                        <img src="backend/assets/img/SuperAdmin.png" alt="..."
                                             class="avatar-img rounded-circle" />
                                     </div>
                                     <span class="profile-username">
                                         <span class="op-7">Hi,</span>
-                                        <span class="fw-bold">Hizrian</span>
+                                        <span class="fw-bold">Admin</span>
                                     </span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-user animated fadeIn">
@@ -567,12 +574,12 @@
                                         <li>
                                             <div class="user-box">
                                                 <div class="avatar-lg">
-                                                    <img src="backend/assets/img/profile.jpg" alt="image profile"
+                                                    <img src="backend/assets/img/SuperAdmin.png" alt="image profile"
                                                         class="avatar-img rounded" />
                                                 </div>
                                                 <div class="u-text">
-                                                    <h4>Hizrian</h4>
-                                                    <p class="text-muted">hello@example.com</p>
+                                                    <h4>Admin</h4>
+                                                    <p class="text-muted"></p>
                                                     <a href="profile.html"
                                                         class="btn btn-xs btn-secondary btn-sm">View
                                                         Profile</a>
@@ -587,7 +594,32 @@
                                             <div class="dropdown-divider"></div>
                                             <a class="dropdown-item" href="#">Account Setting</a>
                                             <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Logout</a>
+                                            <a class="dropdown-item" href="#" id="logout-btn">Logout</a>
+                                            <script>
+                                                document.getElementById('logout-btn').addEventListener('click', function(event) {
+                                                    event.preventDefault(); // Menghindari aksi default (redirect)
+
+                                                    // Menampilkan SweetAlert konfirmasi logout
+                                                    Swal.fire({
+                                                        title: 'Apakah kamu yakin?',
+                                                        text: "Kamu akan keluar dari akun!",
+                                                        icon: 'warning',
+                                                        showCancelButton: true,
+                                                        confirmButtonText: 'Logout',
+                                                        cancelButtonText: 'Batal',
+                                                        reverseButtons: true
+                                                    }).then((result) => {
+                                                        if (result.isConfirmed) {
+                                                            // Jika konfirmasi, logout dengan form POST
+                                                            document.getElementById('logout-form').submit();
+                                                        }
+                                                    });
+                                                });
+                                            </script>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                style="display: none;">
+                                                @csrf
+                                            </form>
                                         </li>
                                     </div>
                                 </ul>

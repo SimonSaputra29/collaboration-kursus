@@ -11,7 +11,7 @@ class ConfigurationController extends Controller
     public function index()
     {
         $configuration = Configuration::first();
-        return view('backend.database.configuration', compact('configuration'));
+        return view('backend.database.configuration.index', compact('configuration'));
     }
 
     public function createOrUpdate(Request $request)
@@ -52,7 +52,6 @@ class ConfigurationController extends Controller
             ['id' => 1],
             $data
         );
-
 
         return redirect()->back()->with('success', 'Konfigurasi berhasil diperbarui!');
     }
