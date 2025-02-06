@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Backend\Configuration;
 use App\Models\Backend\Hero;
+use App\Models\Backend\Superiority;
+use App\Models\Backend\SuperiorityImage;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -12,11 +14,16 @@ class FrontendController extends Controller
     {
         $configuration = Configuration::first();
         $hero = Hero::first(); 
+        $superiority = Superiority::first();
+        $superiorityImage = SuperiorityImage::all();
+        
 
         return view('frontend.pages.home', [
             'title' => 'Kursus Yasmin',
             'configuration' => $configuration,
             'hero' => $hero,
+            'superiorityImage' => $superiorityImage,
+            'superiority' => $superiority,
         ]);
     }
 
@@ -77,6 +84,15 @@ class FrontendController extends Controller
             'title' => 'Kontak',
             'configuration' => $configuration,
             'hero' => $hero,
+        ]);
+    }
+
+    public function login()
+    {
+        $configuration = Configuration::first();
+        return view('frontend.modal.login', [
+            'title' => 'Login',
+            'configuration' => $configuration,
         ]);
     }
 }
