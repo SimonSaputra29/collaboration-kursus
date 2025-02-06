@@ -128,14 +128,11 @@
             <div class="col-md-6">
                 <h2 class="fw-bold text-muted position-relative d-inline-block pb-2"
                     style="font-size: 2.2rem; letter-spacing: 1px; transition: color 0.3s ease;">
-                    Beberapa Keunggulan <span class="text-dark">Kami</span>
+                    {{ $superiority->title ?? '' }}
                     <span class="underline-animation"></span>
                 </h2>
                 <p class="text-muted" style="font-size: 1.1rem; line-height: 1.6;">
-                    Saatnya bijak memilih sumber belajar! Dengan materi berkualitas tinggi dan
-                    <strong class="text-dark">reviewer profesional</strong>, Kurmin Academy siap membantu Anda dengan
-                    umpan balik yang membangun, memastikan setiap kode yang Anda tulis mencapai
-                    <span class="text-dark fw-bold">kesempurnaan</span>.
+                    {{ $superiority->description ?? '' }}.
                 </p>
                 <a href="#" class="btn btn-dark mt-3 px-4 py-2 fw-bold shadow-lg btn-hover-effect"
                     data-aos="fade-right">
