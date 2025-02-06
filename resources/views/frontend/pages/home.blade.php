@@ -90,29 +90,24 @@
             <p class="text-muted fs-5">{{ $hero->description ?? '' }}</p>
             <button id="learnButton" class="btn btn-dark px-5 py-3 rounded-pill shadow-lg">Belajar Sekarang</button>
         </div>
-        <img id="heroImage" src="{{ asset($hero->image ?? '') }}"
-            alt="Belajar Coding" class="img-fluid animate__animated animate__fadeInRight"
+        <img id="heroImage" src="{{ asset($hero->image ?? '') }}" alt="Belajar Coding"
+            class="img-fluid animate__animated animate__fadeInRight"
             style="max-width: 40%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);"
             data-aos="fade-up">
     </div>
 
     <div class="container py-5" data-aos="fade-up">
         <div class="row align-items-center">
+            <!-- Carousel Keunggulan -->
             <div class="col-md-6 text-center">
                 <div id="carouselKeunggulan" class="carousel slide shadow-lg rounded" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="{{ asset('images/logoyasmin.jpg') }}" class="d-block w-100 rounded"
-                                alt="Keunggulan 1">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{{ asset('images/logoyasmin.jpg') }}" class="d-block w-100 rounded"
-                                alt="Keunggulan 2">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{{ asset('images/logoyasmin-removebg-preview.png') }}" class="d-block w-100 rounded"
-                                alt="Keunggulan 3">
-                        </div>
+                        @foreach ($superiorityImage as $index => $img)
+                            <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                                <img src="{{ asset($img->image) }}" class="d-block w-100 rounded"
+                                    alt="Keunggulan {{ $index + 1 }}">
+                            </div>
+                        @endforeach
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselKeunggulan"
                         data-bs-slide="prev">
@@ -125,14 +120,18 @@
                 </div>
             </div>
 
+            <!-- Deskripsi Keunggulan -->
             <div class="col-md-6">
                 <h2 class="fw-bold text-muted position-relative d-inline-block pb-2"
                     style="font-size: 2.2rem; letter-spacing: 1px; transition: color 0.3s ease;">
-                    {{ $superiority->title ?? '' }}
+                    Beberapa Keunggulan <span class="text-dark">Kami</span>
                     <span class="underline-animation"></span>
                 </h2>
                 <p class="text-muted" style="font-size: 1.1rem; line-height: 1.6;">
-                    {{ $superiority->description ?? '' }}.
+                    Saatnya bijak memilih sumber belajar! Dengan materi berkualitas tinggi dan
+                    <strong class="text-dark">reviewer profesional</strong>, Kurmin Academy siap membantu Anda dengan
+                    umpan balik yang membangun, memastikan setiap kode yang Anda tulis mencapai
+                    <span class="text-dark fw-bold">kesempurnaan</span>.
                 </p>
                 <a href="#" class="btn btn-dark mt-3 px-4 py-2 fw-bold shadow-lg btn-hover-effect"
                     data-aos="fade-right">
@@ -145,17 +144,50 @@
     <div class="whyus text-center py-5" data-aos="fade-right">
         <h2 class="fw-bold text-dark">Mengapa Kurmin Academy?</h2>
         <div id="whyUsCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner" class="carousel slide" data-bs-ride="carousel">
-                <p class="" style="font-weight:500; text-align: center;">Saatnya bijak memilih sumber belajar. Tak
-                    hanya materi yang terjamin,
-                    <br>
-                    Dicoding Academy juga memiliki reviewer profesional yang akan mengulas kode Anda.
+            <div class="carousel-inner">
+                <p class="fw-medium text-center">
+                    Saatnya bijak memilih sumber belajar. Tak hanya materi yang terjamin, <br>
+                    Kurmin Academy juga memiliki reviewer profesional yang akan mengulas kode Anda.
                 </p>
             </div>
         </div>
         <div class="row align-items-center">
             <div id="dicoding-features" class="dicoding-feature__header"></div>
         </div>
+    </div>
+
+    <!-- Fitur Unggulan -->
+    <div class="container py-5">
+        <div class="row text-center">
+            <div class="col-md-4" data-aos="zoom-in">
+                <div class="p-4 border rounded shadow-lg">
+                    <img src="assets/icons/certificate.svg" class="mb-3" width="60">
+                    <h4 class="fw-bold">Sertifikat Resmi</h4>
+                    <p class="text-muted">Dapatkan sertifikat resmi yang diakui industri setelah menyelesaikan kursus.</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="p-4 border rounded shadow-lg">
+                    <img src="assets/icons/mentor.svg" class="mb-3" width="60">
+                    <h4 class="fw-bold">Mentor Berpengalaman</h4>
+                    <p class="text-muted">Belajar langsung dari para mentor yang telah sukses di industri teknologi.</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+                <div class="p-4 border rounded shadow-lg">
+                    <img src="assets/icons/community.svg" class="mb-3" width="60">
+                    <h4 class="fw-bold">Komunitas Aktif</h4>
+                    <p class="text-muted">Terhubung dengan komunitas belajar yang mendukung perkembangan karier Anda.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call To Action -->
+    <div class="text-center py-5 bg-dark text-white" data-aos="fade-up">
+        <h2 class="fw-bold">Siap untuk Belajar?</h2>
+        <p class="lead">Gabung sekarang dan raih masa depan yang lebih cerah!</p>
+        <a href="daftar.html" class="btn btn-light fw-bold px-4 py-2 mt-3">Daftar Sekarang</a>
     </div>
 
     <div class="testimonials text-center py-5" data-aos="fade-up">
