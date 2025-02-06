@@ -124,7 +124,7 @@
 
         /* BUTTON */
         .btn-glow {
-            background: linear-gradient(135deg, #4169E1, #000080);
+            background: linear-gradient(135deg, #5c5e66, #373748);
             color: white;
             font-weight: bold;
             border-radius: 25px;
@@ -136,19 +136,19 @@
 
         .btn-glow:hover {
             transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(65, 105, 225, 0.8);
+            box-shadow: 0 0 15px rgba(81, 83, 92, 0.8);
         }
 
         /* ICONS */
         .program-card .icon {
             font-size: 3rem;
-            color: #4169E1;
+            color: #7b7d85;
             margin-bottom: 10px;
         }
 
         /* CTA SECTION */
         .cta-section {
-            background: #000080;
+            background: #41414a;
             color: white;
             padding: 30px;
             border-radius: 15px;
