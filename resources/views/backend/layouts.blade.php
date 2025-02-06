@@ -106,6 +106,23 @@
                             </a>
                         </li>
 
+                        <li
+                            class="nav-item {{ Request::is('dashboard-admin/superiority', 'dashboard-admin/superiorityImage', 'dashboard-admin/superiorityImage/create', 'dashboard-admin/superiorityImage/edit') ? 'active' : '' }}">
+                            <a data-bs-toggle="collapse" href="#superiority">
+                                <i class="fas fa-star"></i>
+                                <p>Superiority</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="superiority">
+                                <ul class="nav nav-collapse">
+                                    <li><a href="{{ route('superiority.index') }}"><span
+                                                class="sub-item">Superiority</span></a></li>
+                                    <li><a href="{{ route('superiorityImage.index') }}"><span class="sub-item">Gambar
+                                                Superiority</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+
                         <li class="nav-section">
                             <span class="sidebar-mini-icon">
                                 <i class="fa fa-ellipsis-h"></i>
@@ -629,9 +646,9 @@
                 </nav>
                 <!-- End Navbar -->
             </div>
-
-            @yield('content')
-
+            <div class="container">
+                @yield('content')
+            </div>
             <footer class="footer">
                 <div class="container-fluid d-flex justify-content-between">
                     <nav class="pull-left">
