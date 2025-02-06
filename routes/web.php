@@ -35,6 +35,7 @@ Route::get('/program', [FrontendController::class, 'program'])->name('program');
 Route::get('/learning-path', [FrontendController::class, 'learning'])->name('learning-path');
 Route::get('/home', [FrontendController::class, 'home'])->name('home');
 Route::get('/tentang', [FrontendController::class, 'tentang'])->name('tentang');
+Route::get('/kontak', [FrontendController::class, 'kontak'])->name('kontak');
 
 
 

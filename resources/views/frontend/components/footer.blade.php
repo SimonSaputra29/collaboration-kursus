@@ -37,23 +37,23 @@
             <div class="col-lg-3 col-md-3 mb-4">
                 <h5 class="fw-bold text-uppercase mb-3 text-light">Ikuti Kami</h5>
                 <div class="d-flex">
-                    @if(!is_null($configuration) && $configuration->youtube)
-                    <a href="{{ $configuration->youtube }}" class="text-light me-3 social-icon">
-                        <i class="fab fa-youtube fa-2x"></i>
-                    </a>
-                @endif
+                    @if (!is_null($configuration) && $configuration->youtube)
+                        <a href="{{ $configuration->youtube }}" class="text-light me-3 social-icon">
+                            <i class="fab fa-youtube fa-2x"></i>
+                        </a>
+                    @endif
 
-                @if(!is_null($configuration) && $configuration->phone_number)
-                    <a href="https://wa.me/{{ $configuration->phone_number }}" class="text-light me-3 social-icon">
-                        <i class="fab fa-whatsapp fa-2x"></i>
-                    </a>
-                @endif
+                    @if (!is_null($configuration) && $configuration->phone_number)
+                        <a href="https://wa.me/{{ $configuration->phone_number }}" class="text-light me-3 social-icon">
+                            <i class="fab fa-whatsapp fa-2x"></i>
+                        </a>
+                    @endif
 
-                @if(!is_null($configuration) && $configuration->instagram)
-                    <a href="{{ $configuration->instagram }}" class="text-light me-3 social-icon">
-                        <i class="fab fa-instagram fa-2x"></i>
-                    </a>
-                @endif
+                    @if (!is_null($configuration) && $configuration->instagram)
+                        <a href="{{ $configuration->instagram }}" class="text-light me-3 social-icon">
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </a>
+                    @endif
                 </div>
             </div>
         </div>
