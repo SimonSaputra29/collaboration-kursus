@@ -1,7 +1,7 @@
 @extends('frontend.layout.index')
 
 @section('content')
-    <section class="learning-path py-5" style="background-color: #121212; color: #fff;">
+    <section class="learning-path py-5" style="background: linear-gradient(135deg, #5c5e66, #373748); color: #fff;">
         <div class="container text-center">
             <h1 class="fw-bold animate__animated animate__fadeInDown" data-aos="fade-up">Jelajahi Learning Path</h1>
             <p class="mt-3 text-light animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-delay="200">
@@ -13,7 +13,7 @@
     <div class="container mt-5 mb-4">
         <div class="row justify-content-center" id="paths">
             <div class="col-md-4" onclick="showVideo('web-development')">
-                <div class="card shadow-sm p-4 bg-dark text-white border-0 custom-card">
+                <div class="card shadow-sm p-4 bg-dark text-white border-0 custom-card" style="background: linear-gradient(135deg, #5c5e66, #373748)">
                     <i class="bi bi-code-slash display-4 text-light"></i>
                     <h4 class="mt-3">Web Development</h4>
                     <p class="text-light">Belajar membuat website dengan HTML, CSS, dan JavaScript</p>

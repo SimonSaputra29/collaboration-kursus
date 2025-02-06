@@ -10,7 +10,7 @@
             display: block;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, #198754, #0d6efd);
+            background: linear-gradient(90deg, #e3e7e5, #000000);
             position: absolute;
             bottom: 0;
             left: 0;
@@ -144,6 +144,22 @@
                     🚀 Mulai Belajar Sekarang
                 </a>
             </div>
+        </div>
+    </div>
+
+    <div class="whyus text-center py-5" data-aos="fade-right">
+        <h2 class="fw-bold text-dark">Mengapa Kurmin Academy?</h2>
+        <div id="whyUsCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" class="carousel slide" data-bs-ride="carousel">
+                <p class="" style="font-weight:500; text-align: center;">Saatnya bijak memilih sumber belajar. Tak
+                    hanya materi yang terjamin,
+                    <br>
+                    Dicoding Academy juga memiliki reviewer profesional yang akan mengulas kode Anda.
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div id="dicoding-features" class="dicoding-feature__header"></div>
         </div>
     </div>
 

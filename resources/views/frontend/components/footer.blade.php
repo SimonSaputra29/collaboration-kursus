@@ -25,10 +25,11 @@
             <div class="col-lg-2 col-md-3 mb-4">
                 <h5 class="fw-bold text-uppercase mb-3 text-light">Navigasi</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="text-light text-decoration-none footer-link">Home</a></li>
-                    <li><a href="#" class="text-light text-decoration-none footer-link">Kursus</a></li>
-                    <li><a href="#" class="text-light text-decoration-none footer-link">Tentang Kami</a></li>
-                    <li><a href="#" class="text-light text-decoration-none footer-link">Kontak</a></li>
+                    <li><a href="/" class="text-light text-decoration-none footer-link">Home</a></li>
+                    <li><a href="/learning-path" class="text-light text-decoration-none footer-link">Learning Path</a>
+                    </li>
+                    <li><a href="/langganan" class="text-light text-decoration-none footer-link">Langganan</a></li>
+                    <li><a href="/program" class="text-light text-decoration-none footer-link">Program</a></li>
                 </ul>
             </div>
 
@@ -36,7 +37,8 @@
             <div class="col-lg-3 col-md-3 mb-4">
                 <h5 class="fw-bold text-uppercase mb-3 text-light">Ikuti Kami</h5>
                 <div class="d-flex">
-                    <a href="https://www.youtube.com" class="text-light me-3 social-icon"><i class="fab fa-youtube fa-2x"></i></a>
+                    <a href="https://www.youtube.com" class="text-light me-3 social-icon"><i
+                            class="fab fa-youtube fa-2x"></i></a>
                     <a href="#" class="text-light me-3 social-icon"><i class="fab fa-whatsapp fa-2x"></i></a>
                     <a href="https://www.instagram.com/s_for_saii/" class="text-light me-3 social-icon"><i
                             class="fab fa-instagram fa-2x"></i></a>
