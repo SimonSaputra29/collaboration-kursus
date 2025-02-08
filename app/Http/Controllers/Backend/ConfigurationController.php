@@ -35,17 +35,17 @@ class ConfigurationController extends Controller
         if ($request->hasFile('logo')) {
             $logo = $request->file('logo');
             $logoName = time() . '-' . $logo->getClientOriginalName();
-            $logoPath = ('uploads/logos');
+            $logoPath = ('uploads/configuration');
             $logo->move($logoPath, $logoName);
-            $data['logo'] = 'uploads/logos/' . $logoName;
+            $data['logo'] = 'uploads/configuration/' . $logoName;
         }
 
         if ($request->hasFile('title_logo')) {
             $titleLogo = $request->file('title_logo');
             $titleLogoName = time() . '-' . $titleLogo->getClientOriginalName();
-            $titleLogoPath = ('uploads/title_logos');
+            $titleLogoPath = ('uploads/configuration');
             $titleLogo->move($titleLogoPath, $titleLogoName);
-            $data['title_logo'] = 'uploads/title_logos/' . $titleLogoName;
+            $data['title_logo'] = 'uploads/configuration/' . $titleLogoName;
         }
 
         $configuration = Configuration::updateOrCreate(

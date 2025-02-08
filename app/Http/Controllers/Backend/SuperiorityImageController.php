@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Backend\Configuration;
 use App\Models\Backend\SuperiorityImage;
 use Illuminate\Http\Request;
 
@@ -11,7 +12,8 @@ class SuperiorityImageController extends Controller
     public function index()
     {
         $superiorityImage = SuperiorityImage::all();
-        return view('backend.database.superiority.superiorityImage.index', compact('superiorityImage'));
+        $configuration = Configuration::first();
+        return view('backend.database.superiority.superiorityImage.index', compact('superiorityImage', 'configuration'));
     }
 
     public function store(Request $request)

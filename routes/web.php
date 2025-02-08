@@ -68,6 +68,19 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::put('/dashboard-admin/superiorityImage/{id}', 'update')->name('superiorityImage.update');
     });
 
+    //why
+    Route::controller(\App\Http\Controllers\Backend\WhyController::class)->group(function () {
+        Route::get('/dashboard-admin/why', 'index')->name('why.index');
+        Route::post('/dashboard-admin/why', 'createOrUpdate')->name('why.store');
+    });
+    //whyUs
+    Route::controller(\App\Http\Controllers\Backend\WhyUsController::class)->group(function () {
+        Route::get('/dashboard-admin/whyUs', 'index')->name('whyUs.index');
+        Route::post('/dashboard-admin/whyUs', 'store')->name('whyUs.store');
+        Route::delete('/dashboard-admin/whyUs/destroy/{id}', 'destroy')->name('whyUs.destroy');
+        Route::put('/dashboard-admin/whyUs/{id}', 'update')->name('whyUs.update');
+    });
+
     Route::controller(App\Http\Controllers\Backend\AdminController::class)->group(function () {
         Route::get('/dashboard-admin/avatars', 'avatars')->name('admin.avatars');
         Route::get('/dashboard-admin/buttons', 'buttons')->name('admin.buttons');
