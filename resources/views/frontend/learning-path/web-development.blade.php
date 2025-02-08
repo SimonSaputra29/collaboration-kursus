@@ -3,7 +3,8 @@
 @section('content')
     <div class="container mt-5">
         <h1 class="fw-bold text-center text-dark animate__animated animate__fadeInDown">Web Development</h1>
-        <p class="text-center text-secondary animate__animated animate__fadeInUp">Belajar membuat website dengan HTML dan CSS dari dasar hingga mahir.</p>
+        <p class="text-center text-secondary animate__animated animate__fadeInUp">Belajar membuat website dengan HTML dan CSS
+            dari dasar hingga mahir.</p>
 
         <!-- HTML Section -->
         <div class="section mt-5" id="html-section">
@@ -14,12 +15,51 @@
                         kita dapat membuat dan mengatur konten untuk ditampilkan di web browser.</p>
                     <h3 class="mt-4 text-dark">Materi:</h3>
                     <ul class="list-group">
-                        <li class="list-group-item">Pengenalan HTML</li>
-                        <li class="list-group-item">Struktur Dasar HTML</li>
-                        <li class="list-group-item">Tag dan Elemen HTML</li>
-                        <li class="list-group-item">Atribut HTML</li>
-                        <li class="list-group-item">Membuat Tabel dan Form</li>
-                        <li class="list-group-item">Praktik Membuat Halaman Web Sederhana</li>
+                        <li class="list-group-item">Pengenalan HTML
+                            <ul>
+                                <li>Sejarah HTML</li>
+                                <li>Perbedaan HTML vs XHTML</li>
+                                <li>Peran HTML dalam Web Development</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">Struktur Dasar HTML
+                            <ul>
+                                <li>Tag HTML</li>
+                                <li>Elemen dan Atribut</li>
+                                <li>Struktur Dokumen HTML5</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">Tag dan Elemen HTML
+                            <ul>
+                                <li>Tag Heading</li>
+                                <li>Tag Paragraf</li>
+                                <li>Tag List (Ordered dan Unordered)</li>
+                                <li>Tag Link</li>
+                                <li>Tag Image</li>
+                                <li>Tag Multimedia (Audio dan Video)</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">Atribut HTML
+                            <ul>
+                                <li>Atribut Global</li>
+                                <li>Atribut Khusus Elemen</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">Membuat Tabel dan Form
+                            <ul>
+                                <li>Tag Tabel (table, th, tr, td)</li>
+                                <li>Atribut Tabel</li>
+                                <li>Tag Form (form, input, label, textarea, button)</li>
+                                <li>Atribut Form</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">Praktik Membuat Halaman Web Sederhana
+                            <ul>
+                                <li>Membuat Halaman Beranda</li>
+                                <li>Membuat Halaman Kontak</li>
+                                <li>Membuat Halaman Tentang Kami</li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-md-6 animate__animated animate__fadeInRight">
@@ -47,12 +87,51 @@
                     </p>
                     <h3 class="mt-4 text-dark">Materi:</h3>
                     <ul class="list-group">
-                        <li class="list-group-item">Pengenalan CSS</li>
-                        <li class="list-group-item">Selektor dan Properti CSS</li>
-                        <li class="list-group-item">Box Model</li>
-                        <li class="list-group-item">Layout dengan Flexbox dan Grid</li>
-                        <li class="list-group-item">Responsive Design</li>
-                        <li class="list-group-item">Praktik Mendesain Halaman Web</li>
+                        <li class="list-group-item">Pengenalan CSS
+                            <ul>
+                                <li>Sejarah CSS</li>
+                                <li>Fungsi CSS dalam Web Development</li>
+                                <li>Perbedaan Inline, Internal, dan External CSS</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">Selektor dan Properti CSS
+                            <ul>
+                                <li>Jenis-jenis Selektor</li>
+                                <li>Properti Warna</li>
+                                <li>Properti Teks</li>
+                                <li>Properti Latar Belakang</li>
+                                <li>Properti Perbatasan</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">Box Model
+                            <ul>
+                                <li>Penjelasan Box Model</li>
+                                <li>Margin, Border, Padding, dan Content</li>
+                                <li>Penggunaan Box Model dalam Desain</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">Layout dengan Flexbox dan Grid
+                            <ul>
+                                <li>Pengenalan Flexbox</li>
+                                <li>Properti Flexbox</li>
+                                <li>Pengenalan Grid</li>
+                                <li>Properti Grid</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">Responsive Design
+                            <ul>
+                                <li>Media Queries</li>
+                                <li>Desain Mobile-First</li>
+                                <li>Framework CSS (Bootstrap, Tailwind)</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">Praktik Mendesain Halaman Web
+                            <ul>
+                                <li>Mendesain Halaman Beranda</li>
+                                <li>Mendesain Halaman Kontak</li>
+                                <li>Mendesain Halaman Tentang Kami</li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-md-6 order-md-1 animate__animated animate__fadeInLeft">

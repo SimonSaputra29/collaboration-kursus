@@ -48,11 +48,10 @@
                         <img src="{{ asset('storage/user/' . Auth::user()->foto) }}" class="rounded-circle"
                             style="width: 40px; height: 40px; border: 2px solid #000;">
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton"
-                        style="background-color: #343a40; border-radius: 8px;">
-                        <li><a class="dropdown-item text-white" href="profile" style="font-weight: bold;">Profile</a></li>
-                        <li><a class="dropdown-item text-white" href="logout_pelanggan"
-                                style="font-weight: bold;">Keluar</a></li>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item text-dark" href="profile" style="font-weight: bold;">Profile</a></li>
+                        <li><a class="dropdown-item text-dark" href="logout_pelanggan" style="font-weight: bold;">Keluar</a>
+                        </li>
                     </ul>
                 </div>
             @else
@@ -90,5 +89,121 @@
             }
             lastScrollTop = scrollTop;
         });
+
+        document.addEventListener("scroll", function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
     });
 </script>
+
+<style>
+    /* ===================== */
+    /* NAVBAR STYLES */
+    /* ===================== */
+    .navbar-nav .nav-link {
+        font-weight: bold;
+        font-size: 1rem;
+        transition: color 0.3s, transform 0.3s;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #000;
+        transform: scale(1.1);
+    }
+
+    .navbar-nav .nav-link.active {
+        color: #000 !important;
+        border-bottom: 2px solid #5c5c5c;
+    }
+
+    /* Dropdown */
+    .dropdown-menu {
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+
+    .dropdown-menu .dropdown-item:hover {
+        background-color: black;
+        color: white;
+    }
+
+    /* Navbar transition */
+    #navbar {
+        transition: top 0.5s ease;
+    }
+
+    /* ===================== */
+    /* RESPONSIVE STYLES */
+    /* ===================== */
+
+    /* Responsif untuk Navbar */
+    @media (max-width: 767px) {
+        .navbar-nav .nav-link {
+            font-size: 0.9rem;
+        }
+
+        .navbar-nav {
+            margin-top: 10px;
+        }
+
+        .navbar-toggler {
+            border: none;
+        }
+
+        .dropdown-menu {
+            background-color: #343a40;
+        }
+    }
+
+    /* Logo Styles */
+    .logo-img {
+        height: 3rem;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .logo-img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Button Styles */
+    .btn {
+        transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+        transform: translateY(-3px);
+    }
+
+    .btn-outline-dark:hover {
+        background-color: #343a40;
+        border-color: #343a40;
+        color: #fff;
+    }
+
+    /* Dropdown Menu */
+    .dropdown-menu {
+        background-color: #343a40;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+
+    .dropdown-menu .dropdown-item:hover {
+        background-color: #495057;
+        color: #fff;
+    }
+
+    /* Smooth Scroll */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Navbar Shadow on Scroll */
+    .navbar.scrolled {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+</style>
