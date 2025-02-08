@@ -1,73 +1,106 @@
 @extends('frontend.layout.index')
 
 @section('content')
-    <!-- Hero Section -->
-    <section class="relative bg-cover bg-center h-[500px] flex items-center justify-center text-white"
-        style="background-image: url('{{ asset('images/hero-bg.jpg') }}');">
-        <div class="text-center">
-            <h1 class="text-4xl md:text-6xl font-bold drop-shadow-lg">Selamat Datang di Kursus Yasmin</h1>
-            <p class="text-lg md:text-2xl mt-4 drop-shadow-lg">Belajar dari yang terbaik, untuk masa depan yang lebih cerah
-            </p>
-            <a href="{{ route('langganan') }}"
-                class="mt-6 inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300">
-                Mulai Belajar
-            </a>
-        </div>
-    </section>
+    <div class="container mt-5 mb-4">
+        <h1 class="fw-bold text-center text-dark animate__animated animate__fadeInDown">Kontak Kami</h1>
+        <p class="text-center text-muted fade-in">Hubungi kami untuk pertanyaan lebih lanjut atau informasi lainnya.</p>
 
-    <!-- Fitur Utama -->
-    <section class="py-16 bg-gray-100">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold">Kenapa Memilih Kami?</h2>
-            <p class="text-gray-600 mt-2">Kami menyediakan program terbaik untuk membantu Anda berkembang</p>
-
-            <div class="grid md:grid-cols-3 gap-8 mt-8">
-                <div class="p-6 bg-white rounded-lg shadow-lg">
-                    <img src="{{ asset('icons/certificate.svg') }}" class="w-16 mx-auto">
-                    <h3 class="text-xl font-semibold mt-4">Sertifikasi Resmi</h3>
-                    <p class="text-gray-600 mt-2">Dapatkan sertifikat resmi setelah menyelesaikan kursus.</p>
-                </div>
-                <div class="p-6 bg-white rounded-lg shadow-lg">
-                    <img src="{{ asset('icons/expert.svg') }}" class="w-16 mx-auto">
-                    <h3 class="text-xl font-semibold mt-4">Instruktur Berpengalaman</h3>
-                    <p class="text-gray-600 mt-2">Belajar langsung dari para ahli yang telah berpengalaman di industri.</p>
-                </div>
-                <div class="p-6 bg-white rounded-lg shadow-lg">
-                    <img src="{{ asset('icons/community.svg') }}" class="w-16 mx-auto">
-                    <h3 class="text-xl font-semibold mt-4">Komunitas Belajar</h3>
-                    <p class="text-gray-600 mt-2">Bergabung dengan komunitas aktif untuk berdiskusi dan bertukar ilmu.</p>
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-8">
+                <div class="contact-form shadow-lg p-4 rounded">
+                    <form action="" method="POST">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nama</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Pesan</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-gradient w-100">Kirim Pesan</button>
+                    </form>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Testimonial -->
-    <section class="py-16">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold">Apa Kata Mereka?</h2>
-            <p class="text-gray-600 mt-2">Testimoni dari mereka yang telah sukses bersama kami</p>
+    <style>
+        body {
+            background: linear-gradient(135deg, #c7c7c7, #bdbdbd);
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+        }
 
-            <div class="mt-8 flex flex-wrap justify-center gap-6">
-                <div class="w-full md:w-1/3 bg-white p-6 rounded-lg shadow-lg">
-                    <p class="text-gray-700 italic">"Belajar di Kursus Yasmin sangat menyenangkan! Materinya mudah
-                        dipahami."</p>
-                    <h4 class="font-semibold mt-4">- Rina, Mahasiswa</h4>
-                </div>
-                <div class="w-full md:w-1/3 bg-white p-6 rounded-lg shadow-lg">
-                    <p class="text-gray-700 italic">"Saya berhasil mendapatkan pekerjaan impian berkat kursus ini!"</p>
-                    <h4 class="font-semibold mt-4">- Budi, Software Engineer</h4>
-                </div>
-            </div>
-        </div>
-    </section>
+        .text-gradient {
+            background: linear-gradient(45deg, #4a4a4a, #bdbdbd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    <!-- CTA -->
-    <section class="py-16 bg-blue-600 text-white text-center">
-        <h2 class="text-3xl font-bold">Siap untuk Belajar?</h2>
-        <p class="mt-2 text-lg">Gabung sekarang dan raih masa depan yang lebih baik</p>
-        <a href="{{ route('langganan') }}"
-            class="mt-6 inline-block bg-white text-blue-600 font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-gray-200 transition duration-300">
-            Daftar Sekarang
-        </a>
-    </section>
+        .btn-gradient {
+            background: linear-gradient(135deg, #4a4a4a, #bdbdbd);
+            border: none;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .btn-gradient:hover {
+            background: linear-gradient(135deg, #ffffff, #747474);
+            transform: scale(1.05);
+            box-shadow: 0px 5px 15px rgba(129, 125, 124, 0.5);
+        }
+
+        .contact-form {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .contact-form:hover {
+            transform: translateY(-5px);
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-text {
+            animation: pulseText 2s infinite alternate;
+        }
+
+        @keyframes pulseText {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+
+    <script src="{{ asset('js/contact.js') }}"></script>
 @endsection
