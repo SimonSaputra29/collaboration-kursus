@@ -88,12 +88,14 @@
         <div class="me-4 text-start animate__animated animate__fadeInLeft" data-aos="fade-up">
             <h2 class="fw-bold display-4 text-dark">{{ $hero->title ?? '' }}</h2>
             <p class="text-muted fs-5">{{ $hero->description ?? '' }}</p>
-            <button id="learnButton" class="btn btn-dark px-5 py-3 rounded-pill shadow-lg">Belajar Sekarang</button>
+            <a href="{{ route('learning-path') }}" class="btn btn-dark px-5 py-3 rounded-pill shadow-lg">Belajar Sekarang</a>
         </div>
-        <img id="heroImage" src="{{ asset($hero->image ?? '') }}" alt="Belajar Coding"
-            class="img-fluid animate__animated animate__fadeInRight"
-            style="max-width: 40%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);"
-            data-aos="fade-up">
+        @if (!empty($hero->image))
+            <img id="heroImage" src="{{ asset($hero->image) }}" alt="Belajar Coding"
+                class="img-fluid animate__animated animate__fadeInRight"
+                style="max-width: 40%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);"
+                data-aos="fade-up">
+        @endif
     </div>
 
     <div class="container py-5" data-aos="fade-up">
