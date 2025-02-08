@@ -108,7 +108,8 @@ class FrontendController extends Controller
         ]);
     }
 
-    public function soalhtml(){
+    public function soalhtml()
+    {
         $configuration = Configuration::first();
         return view('frontend.soal.soal-html', [
             'title' => 'Soal HTML',
@@ -116,12 +117,12 @@ class FrontendController extends Controller
         ]);
     }
 
-    public function soalcss(){
+    public function soalcss()
+    {
         $configuration = Configuration::first();
-        return view('frontend.soal.soal-html', [
+        return view('frontend.soal.soal-css', [
             'title' => 'Soal CSS',
             'configuration' => $configuration,
         ]);
     }
-
 }
