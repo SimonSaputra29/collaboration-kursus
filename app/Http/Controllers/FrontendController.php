@@ -13,10 +13,10 @@ class FrontendController extends Controller
     public function home()
     {
         $configuration = Configuration::first();
-        $hero = Hero::first(); 
+        $hero = Hero::first();
         $superiority = Superiority::first();
         $superiorityImage = SuperiorityImage::all();
-        
+
 
         return view('frontend.pages.home', [
             'title' => 'Kursus Yasmin',
@@ -95,4 +95,33 @@ class FrontendController extends Controller
             'configuration' => $configuration,
         ]);
     }
+
+    public function webdevelopment()
+    {
+        $configuration = Configuration::first();
+        $hero = Hero::first();
+
+        return view('frontend.learning-path.web-development', [
+            'title' => 'Learning',
+            'configuration' => $configuration,
+            'hero' => $hero,
+        ]);
+    }
+
+    public function soalhtml(){
+        $configuration = Configuration::first();
+        return view('frontend.soal.soal-html', [
+            'title' => 'Soal HTML',
+            'configuration' => $configuration,
+        ]);
+    }
+
+    public function soalcss(){
+        $configuration = Configuration::first();
+        return view('frontend.soal.soal-html', [
+            'title' => 'Soal CSS',
+            'configuration' => $configuration,
+        ]);
+    }
+
 }

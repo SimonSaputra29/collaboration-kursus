@@ -36,7 +36,9 @@ Route::get('/learning-path', [FrontendController::class, 'learning'])->name('lea
 Route::get('/home', [FrontendController::class, 'home'])->name('home');
 Route::get('/tentang', [FrontendController::class, 'tentang'])->name('tentang');
 Route::get('/kontak', [FrontendController::class, 'kontak'])->name('kontak');
-Route::get('/login', [FrontendController::class, 'login'])->name('login');
+Route::get('/webdevelopment', [FrontendController::class, 'webdevelopment'])->name('webdevelopment');
+Route::get('/soalhtml', [FrontendController::class, 'soalhtml'])->name('soalhtml');
+Route::get('/soalcss', [FrontendController::class, 'soalcss'])->name('soalcss');
 
 
 
