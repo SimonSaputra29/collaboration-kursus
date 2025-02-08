@@ -4,16 +4,16 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Backend\Configuration;
-use App\Models\Backend\Superiority;
+use App\Models\Backend\Why;
 use Illuminate\Http\Request;
 
-class SuperiorityController extends Controller
+class WhyController extends Controller
 {
     public function index()
     {
-        $superiority = Superiority::first();
+        $why = Why::first();
         $configuration = Configuration::first();
-        return view('backend.database.superiority.index', compact('superiority', 'configuration'));
+        return view('backend.database.why.index', compact('why', 'configuration'));
     }
 
     public function createOrUpdate(Request $request)
@@ -23,11 +23,11 @@ class SuperiorityController extends Controller
             'description' => 'nullable|string',
         ]);
 
-        $superiority = Superiority::updateOrCreate(
+        $why = Why::updateOrCreate(
             ['id' => 1],
             $data
         );
 
-        return redirect()->back()->with('success', 'Keunggulan berhasil diperbarui!');
+        return redirect()->back()->with('success', 'Hero berhasil diperbarui!');
     }
 }
