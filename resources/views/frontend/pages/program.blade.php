@@ -8,31 +8,17 @@
 
         <!-- ROW 1: Kartu Program -->
         <div class="row mt-5">
+            @foreach ($ourPrograms as $item)
             <div class="col-md-4 fade-in">
                 <div class="program-card">
-                    <img src="{{ asset('images/coding.avif') }}" alt="Belajar Coding">
-                    <h4>Belajar Coding</h4>
-                    <p>Pelajari dasar-dasar coding dengan berbagai bahasa pemrograman seperti Python, JavaScript, dan PHP.
+                    <img src="{{ asset($item->image) }}" alt="Belajar Coding">
+                    <h4>{{ $item->title }}</h4>
+                    <p>{{ $item->overview }}
                     </p>
-                    <a href="#" class="btn btn-glow">Mulai Belajar</a>
+                    <a href="{{ $item->link }}" class="btn btn-glow">Mulai Belajar</a>
                 </div>
             </div>
-            <div class="col-md-4 fade-in">
-                <div class="program-card">
-                    <img src="{{ asset('images/premium_photo-1663050633633-2856e875dcc7.avif') }}" alt="Web Development">
-                    <h4>Web Development</h4>
-                    <p>Kuasai teknologi frontend dan backend untuk membangun website yang profesional.</p>
-                    <a href="#" class="btn btn-glow">Mulai Belajar</a>
-                </div>
-            </div>
-            <div class="col-md-4 fade-in">
-                <div class="program-card">
-                    <img src="{{ asset('images/photo-1605379399642-870262d3d051.avif') }}" alt="Mobile Development">
-                    <h4>Mobile Development</h4>
-                    <p>Pelajari cara membuat aplikasi Android dan iOS dengan Flutter dan React Native.</p>
-                    <a href="#" class="btn btn-glow">Mulai Belajar</a>
-                </div>
-            </div>
+            @endforeach
         </div>
 
         <!-- ROW 2: Testimoni -->

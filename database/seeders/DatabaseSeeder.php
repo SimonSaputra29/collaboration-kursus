@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         DatabaseSuperiorityImageSeeder::class,
         DatabaseWhySeeder::class,
         DatabaseWhyUsSeeder::class,
+        DatabaseOurProgramSeeder::class,
         ]);
     }
 }

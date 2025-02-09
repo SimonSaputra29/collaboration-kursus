@@ -139,7 +139,7 @@
                         </li>
 
                         <li
-                            class="nav-item {{ Request::is('dashboard-admin/categoryService', 'dashboard-admin/service', 'dashboard-admin/service/create', 'dashboard-admin/service/edit') ? 'active' : '' }}">
+                            class="nav-item {{ Request::is('dashboard-admin/categoryService', 'dashboard-admin/categoryService/create', 'dashboard-admin/categoryService/*', 'dashboard-admin/service', 'dashboard-admin/service/create', 'dashboard-admin/service/edit') ? 'active' : '' }}">
                             <a data-bs-toggle="collapse" href="#service">
                                 <i class="fas fa-headset"></i>
                                 <p>Service</p>
@@ -153,6 +153,13 @@
                                     </li>
                                 </ul>
                             </div>
+                        </li>
+
+                        <li class="nav-item {{ Request::is('dashboard-admin/ourProgram', 'dashboard-admin/ourProgram', 'dashboard-admin/ourProgram/*') ? 'active' : '' }}">
+                            <a href="{{ route('ourProgram.index') }}">
+                                <i class="fas fa-tasks"></i>
+                                <p>Our Program</p>
+                            </a>
                         </li>
 
                         <li class="nav-section">

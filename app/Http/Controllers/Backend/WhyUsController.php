@@ -56,7 +56,7 @@ class WhyUsController extends Controller
         $request->validate([
             'title' => 'required|string',
             'description' => 'required|string',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
         $whyUs = WhyUs::findOrFail($id);
