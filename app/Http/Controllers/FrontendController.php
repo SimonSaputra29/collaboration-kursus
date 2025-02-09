@@ -87,12 +87,22 @@ class FrontendController extends Controller
         ]);
     }
 
-    public function login()
+
+    public function loginUser()
     {
         $configuration = Configuration::first();
         return view('frontend.modal.login', [
+            'configuration' => Configuration::first(),
             'title' => 'Login',
-            'configuration' => $configuration,
+        ]);
+    }
+
+    public function registerUser()
+    {
+        $configuration = Configuration::first();
+        return view('frontend.modal.register', [
+            'configuration' => Configuration::first(),
+            'title' => 'Register',
         ]);
     }
 
