@@ -58,8 +58,8 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::controller(App\Http\Controllers\Backend\SuperiorityImageController::class)->group(function () {
         Route::get('/dashboard-admin/superiorityImage', 'index')->name('superiorityImage.index');
         Route::post('/dashboard-admin/superiorityImage', 'store')->name('superiorityImage.store');
-        Route::delete('/dashboard-admin/superiorityImage/destroy/{id}', 'destroy')->name('superiorityImage.destroy');
         Route::put('/dashboard-admin/superiorityImage/{id}', 'update')->name('superiorityImage.update');
+        Route::delete('/dashboard-admin/superiorityImage/destroy/{id}', 'destroy')->name('superiorityImage.destroy');
     });
 
     // Why routes
@@ -72,9 +72,20 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::controller(App\Http\Controllers\Backend\WhyUsController::class)->group(function () {
         Route::get('/dashboard-admin/whyUs', 'index')->name('whyUs.index');
         Route::post('/dashboard-admin/whyUs', 'store')->name('whyUs.store');
-        Route::delete('/dashboard-admin/whyUs/destroy/{id}', 'destroy')->name('whyUs.destroy');
         Route::put('/dashboard-admin/whyUs/{id}', 'update')->name('whyUs.update');
+        Route::delete('/dashboard-admin/whyUs/destroy/{id}', 'destroy')->name('whyUs.destroy');
     });
+
+    // CategoryService routes
+    Route::controller(App\Http\Controllers\Backend\CategoryServiceController::class)->group(function () {
+        Route::get('/dashboard-admin/categoryService', 'index')->name('categoryService.index');
+        Route::post('/dashboard-admin/categoryService', 'store')->name('categoryService.store');
+        Route::put('/dashboard-admin/categoryService/{id}', 'update')->name('categoryService.update');
+        Route::delete('/dashboard-admin/categoryService/destroy/{id}', 'destroy')->name('categoryService.destroy');
+    });
+
+    // Service routes
+    Route::resource('/dashboard-admin/service', App\Http\Controllers\Backend\ServiceController::class);
 
     // Admin dashboard routes
     Route::controller(App\Http\Controllers\Backend\AdminController::class)->group(function () {
