@@ -48,7 +48,7 @@
     <!-- WhatsApp Icon -->
     @if (!is_null($configuration) && $configuration->phone_number)
         <a href="https://wa.me/{{ $configuration->phone_number }}" target="_blank" class="whatsapp-icon">
-            <img src="{{ asset('images/whatsapp_icon.png') }}" alt="WhatsApp" />
+            <img src="{{ asset('images/download.jpg') }}" alt="WhatsApp" />
         </a>
     @endif
 

@@ -158,17 +158,16 @@
     <div class="container py-5">
         <div class="row text-center">
             @foreach ($whyUs as $item)
-            <div class="col-md-4" data-aos="zoom-in">
-                <div class="p-4 border rounded shadow-lg">
-                    <img src="{{ asset($item->image) }}" alt="{{ $item->title }}" class="mb-3" width="60">
-                    <h4 class="fw-bold">{{ $item->title }}</h4>
-                    <p class="text-muted">{{ $item->description }}</p>
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="p-4 border rounded shadow-lg">
+                        <img src="{{ asset($item->image) }}" alt="{{ $item->title }}" class="mb-3" width="60">
+                        <h4 class="fw-bold">{{ $item->title }}</h4>
+                        <p class="text-muted">{{ $item->description }}</p>
+                    </div>
                 </div>
-            </div>
             @endforeach
         </div>
     </div>
-
     <!-- Modul Pembelajaran -->
     <div class="container py-5">
         <div class="row">
@@ -176,15 +175,17 @@
                 <div id="modulCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
 
-                            <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-                                <img     src="  " class="d-block w-100 rounded" alt="">
-                            </div>
+                        <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                            <img src="  " class="d-block w-100 rounded" alt="">
+                        </div>
 
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#modulCarousel" data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#modulCarousel"
+                        data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#modulCarousel" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#modulCarousel"
+                        data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     </button>
                 </div>
@@ -197,10 +198,11 @@
                 </h2>
                 <div id="moduleDescription">
 
-                        <div class="module-description {{ $index == 0 ? '' : 'd-none' }}">
-                            <h4 class="fw-bold">yaaaaa</h4>
-                            <p class="text-muted" style="font-size: 1.1rem; line-height: 1.6;">ajshjksjiydsfhkufhsdjufhksdjufsh</p>
-                        </div>
+                    <div class="module-description {{ $index == 0 ? '' : 'd-none' }}">
+                        <h4 class="fw-bold">yaaaaa</h4>
+                        <p class="text-muted" style="font-size: 1.1rem; line-height: 1.6;">ajshjksjiydsfhkufhsdjufhksdjufsh
+                        </p>
+                    </div>
 
                 </div>
                 <a href="#" class="btn btn-dark mt-3 px-4 py-2 fw-bold shadow-lg btn-hover-effect"
@@ -243,7 +245,6 @@
             </div>
         </div>
     </div>
-
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const moduleCarousel = document.getElementById('modulCarousel');
