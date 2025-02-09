@@ -175,11 +175,11 @@
             <div class="col-md-6">
                 <div id="modulCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                        @foreach ($modules as $index => $module)
+
                             <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-                                <img src="{{ asset($module->image) }}" class="d-block w-100 rounded" alt="{{ $module->title }}">
+                                <img     src="  " class="d-block w-100 rounded" alt="">
                             </div>
-                        @endforeach
+
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#modulCarousel" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -196,12 +196,12 @@
                     <span class="underline-animation"></span>
                 </h2>
                 <div id="moduleDescription">
-                    @foreach ($modules as $index => $module)
+
                         <div class="module-description {{ $index == 0 ? '' : 'd-none' }}">
-                            <h4 class="fw-bold">{{ $module->title }}</h4>
-                            <p class="text-muted" style="font-size: 1.1rem; line-height: 1.6;">{{ $module->description }}</p>
+                            <h4 class="fw-bold">yaaaaa</h4>
+                            <p class="text-muted" style="font-size: 1.1rem; line-height: 1.6;">ajshjksjiydsfhkufhsdjufhksdjufsh</p>
                         </div>
-                    @endforeach
+
                 </div>
                 <a href="#" class="btn btn-dark mt-3 px-4 py-2 fw-bold shadow-lg btn-hover-effect"
                     data-aos="fade-right">
