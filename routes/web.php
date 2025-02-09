@@ -83,6 +83,9 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::put('/dashboard-admin/whyUs/{id}', 'update')->name('whyUs.update');
     });
 
+    //categoryServices
+    // Route::controller(\App\Http\Controllers\Backend\)
+
     Route::controller(App\Http\Controllers\Backend\AdminController::class)->group(function () {
         Route::get('/dashboard-admin/avatars', 'avatars')->name('admin.avatars');
         Route::get('/dashboard-admin/buttons', 'buttons')->name('admin.buttons');

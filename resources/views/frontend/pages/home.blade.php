@@ -126,14 +126,11 @@
             <div class="col-md-6">
                 <h2 class="fw-bold text-muted position-relative d-inline-block pb-2"
                     style="font-size: 2.2rem; letter-spacing: 1px; transition: color 0.3s ease;">
-                    Beberapa Keunggulan <span class="text-dark">Kami</span>
+                    {{ $superiority->title ?? '' }}
                     <span class="underline-animation"></span>
                 </h2>
                 <p class="text-muted" style="font-size: 1.1rem; line-height: 1.6;">
-                    Saatnya bijak memilih sumber belajar! Dengan materi berkualitas tinggi dan
-                    <strong class="text-dark">reviewer profesional</strong>, Kurmin Academy siap membantu Anda dengan
-                    umpan balik yang membangun, memastikan setiap kode yang Anda tulis mencapai
-                    <span class="text-dark fw-bold">kesempurnaan</span>.
+                    {{ $superiority->description ?? '' }}
                 </p>
                 <a href="#" class="btn btn-dark mt-3 px-4 py-2 fw-bold shadow-lg btn-hover-effect"
                     data-aos="fade-right">
@@ -144,12 +141,11 @@
     </div>
 
     <div class="whyus text-center py-5" data-aos="fade-right">
-        <h2 class="fw-bold text-dark">Mengapa Kurmin Academy?</h2>
+        <h2 class="fw-bold text-dark">{{ $why->title ?? 'Kosong' }}</h2>
         <div id="whyUsCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <p class="fw-medium text-center">
-                    Saatnya bijak memilih sumber belajar. Tak hanya materi yang terjamin, <br>
-                    Kurmin Academy juga memiliki reviewer profesional yang akan mengulas kode Anda.
+                    {{ $why->description ?? 'Kosong' }}
                 </p>
             </div>
         </div>
@@ -161,27 +157,15 @@
     <!-- Fitur Unggulan -->
     <div class="container py-5">
         <div class="row text-center">
+            @foreach ($whyUs as $item)
             <div class="col-md-4" data-aos="zoom-in">
                 <div class="p-4 border rounded shadow-lg">
-                    <img src="assets/icons/certificate.svg" class="mb-3" width="60">
-                    <h4 class="fw-bold">Sertifikat Resmi</h4>
-                    <p class="text-muted">Dapatkan sertifikat resmi yang diakui industri setelah menyelesaikan kursus.</p>
+                    <img src="{{ asset($item->image) }}" alt="{{ $item->title }}" class="mb-3" width="60">
+                    <h4 class="fw-bold">{{ $item->title }}</h4>
+                    <p class="text-muted">{{ $item->description }}</p>
                 </div>
             </div>
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-                <div class="p-4 border rounded shadow-lg">
-                    <img src="assets/icons/mentor.svg" class="mb-3" width="60">
-                    <h4 class="fw-bold">Mentor Berpengalaman</h4>
-                    <p class="text-muted">Belajar langsung dari para mentor yang telah sukses di industri teknologi.</p>
-                </div>
-            </div>
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
-                <div class="p-4 border rounded shadow-lg">
-                    <img src="assets/icons/community.svg" class="mb-3" width="60">
-                    <h4 class="fw-bold">Komunitas Aktif</h4>
-                    <p class="text-muted">Terhubung dengan komunitas belajar yang mendukung perkembangan karier Anda.</p>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 
