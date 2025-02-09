@@ -9,8 +9,7 @@
         <!-- ROW 1: Kartu Program -->
         <div class="row mt-5">
             <div class="col-md-4 fade-in">
-                <div class="program-card">
-                    <i class="fas fa-code icon animate__animated animate__fadeInUp"></i>
+                <div class="program-card"><img src="{{ asset('images/coding.avif') }}" alt="">
                     <h4>Belajar Coding</h4>
                     <p>Pelajari dasar-dasar coding dengan berbagai bahasa pemrograman seperti Python, JavaScript, dan PHP.
                     </p>
@@ -18,18 +17,21 @@
                 </div>
             </div>
             <div class="col-md-4 fade-in">
-                <div class="program-card">
-                    <i class="fas fa-laptop-code icon animate__animated animate__fadeInUp"></i>
+                <div class="program-card"><img src="{{ asset('images/premium_photo-1663050633633-2856e875dcc7.avif') }}"
+                        alt="">
                     <h4>Web Development</h4>
-                    <p>Kuasai teknologi frontend dan backend untuk membangun website yang profesional.</p>
+                    <p>Kuasai teknologi frontend dan backend untuk membangun website yang profesional.
+                    </p>
+
+                    <br>
                     <a href="#" class="btn btn-glow">Mulai Belajar</a>
                 </div>
             </div>
             <div class="col-md-4 fade-in">
-                <div class="program-card">
-                    <i class="fas fa-mobile-alt icon animate__animated animate__fadeInUp"></i>
+                <div class="program-card"><img src="{{asset('images/photo-1605379399642-870262d3d051.avif')}}" alt="">
                     <h4>Mobile Development</h4>
                     <p>Pelajari cara membuat aplikasi Android dan iOS dengan Flutter dan React Native.</p>
+                    <br>
                     <a href="#" class="btn btn-glow">Mulai Belajar</a>
                 </div>
             </div>
@@ -114,6 +116,13 @@
         .program-card:hover {
             transform: scale(1.05);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .program-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
         }
 
         .program-card .icon {
