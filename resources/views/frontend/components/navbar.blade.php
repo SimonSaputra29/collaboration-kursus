@@ -56,10 +56,12 @@
                 </div>
             @else
                 <li class="nav-item d-flex gap-3">
-                    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                        style="font-weight: bold; transition: all 0.3s ease; padding: 10px 20px; font-size: 1rem; border-radius: 5px;">
-                        Login
-                    </button>
+                    <a href="{{ route('loginUser') }}">
+                        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                            style="font-weight: bold; transition: all 0.3s ease; padding: 10px 20px; font-size: 1rem; border-radius: 5px;">
+                            Login
+                        </button>
+                    </a>
                     <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
                         data-bs-target="#exampleModal"
                         style="font-weight: bold; transition: all 0.3s ease; padding: 10px 20px; font-size: 1rem; border-radius: 5px;">
