@@ -63,7 +63,7 @@
                         <h5 class="fw-bold text-uppercase mb-3 text-light">Lokasi Kami</h5>
                         <div class="map-container">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.920785413097!2d-122.0842496846929!3d37.42206597982448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb24e5edb1d85%3A0x4e5d5c9e2d6d2b8!2sGoogleplex!5e0!3m2!1sen!2sus!4v1610663648332!5m2!1sen!2sus"
+                                src="{{ $configuration->map ?? '' }}"
                                 width="100%" height="200" style="border:0;" allowfullscreen=""
                                 loading="lazy"></iframe>
                         </div>
@@ -75,7 +75,7 @@
         <hr class="border-secondary">
 
         <div class="text-center">
-            <p class="mb-0 text-light">{{ $configuration->title ?? '' }}</p>
+            <p class="mb-0 text-light">{{ $configuration->footer ?? '' }}</p>
         </div>
     </div>
 </footer>

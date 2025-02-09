@@ -64,8 +64,6 @@
                     </div>
                 </div>
 
-
-
                 <!-- Tabel Daftar Gambar -->
                 <div class="table-responsive">
                     <table id="add-row" class="display table table-striped table-hover">
