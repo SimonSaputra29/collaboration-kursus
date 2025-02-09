@@ -16,6 +16,12 @@ class SuperiorityImageController extends Controller
         return view('backend.database.superiority.superiorityImage.index', compact('superiorityImage', 'configuration'));
     }
 
+    public function create()
+    {
+        $configuration = Configuration::first();
+        return view('backend.database.superiority.superiorityImage.create', compact('configuration'));
+    }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -31,6 +37,13 @@ class SuperiorityImageController extends Controller
             ->with('success', 'Image uploaded successfully.');
     }
 
+    public function edit($id)
+    {
+        $configuration = Configuration::first();
+        $superiorityImage = SuperiorityImage::findOrFail($id);
+        return view('backend.database.superiority.superiorityImage.edit', compact('configuration', 'superiorityImage'));
+    }
+
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -40,13 +53,13 @@ class SuperiorityImageController extends Controller
         $superiorityImage = SuperiorityImage::findOrFail($id);
 
         if ($request->hasFile('image')) {
-            $oldImagePath = public_path($superiorityImage->image);
+            $oldImagePath = ($superiorityImage->image);
             if (file_exists($oldImagePath) && is_file($oldImagePath)) {
                 unlink($oldImagePath);
             }
             $imageName = time() . '.' . $request->image->extension();
             $imageDirectory = 'uploads/superiority/';
-            $request->image->move(public_path($imageDirectory), $imageName);
+            $request->image->move(($imageDirectory), $imageName);
             $superiorityImage->image = $imageDirectory . $imageName;
         }
         $superiorityImage->save();
@@ -57,7 +70,7 @@ class SuperiorityImageController extends Controller
     public function destroy($id)
     {
         $superiorityImage = SuperiorityImage::findOrFail($id);
-        $imagePath = public_path($superiorityImage->image);
+        $imagePath = ($superiorityImage->image);
         if (file_exists($imagePath) && is_file($imagePath)) {
             unlink($imagePath);
         }

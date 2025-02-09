@@ -107,24 +107,23 @@
                         </li>
 
                         <li
-                            class="nav-item {{ Request::is('dashboard-admin/superiority', 'dashboard-admin/superiorityImage', 'dashboard-admin/superiorityImage/create', 'dashboard-admin/superiorityImage/edit') ? 'active' : '' }}">
+                            class="nav-item {{ Request::is('dashboard-admin/superiority', 'dashboard-admin/superiorityImage', 'dashboard-admin/superiorityImage/create', 'dashboard-admin/superiorityImage/*') ? 'active' : '' }}">
                             <a data-bs-toggle="collapse" href="#superiority">
                                 <i class="fas fa-star"></i>
-                                <p>Keunggulan</p>
+                                <p>Superiority</p>
                                 <span class="caret"></span>
                             </a>
                             <div class="collapse" id="superiority">
                                 <ul class="nav nav-collapse">
                                     <li><a href="{{ route('superiority.index') }}"><span
-                                                class="sub-item">Keunggulan</span></a></li>
-                                    <li><a href="{{ route('superiorityImage.index') }}"><span class="sub-item">Gambar
-                                                Keunggulan</span></a></li>
+                                                class="sub-item">Superiority</span></a></li>
+                                    <li><a href="{{ route('superiorityImage.index') }}"><span class="sub-item">Superiority Image</span></a></li>
                                 </ul>
                             </div>
                         </li>
 
                         <li
-                            class="nav-item {{ Request::is('dashboard-admin/why', 'dashboard-admin/whyUs', 'dashboard-admin/whyUs/create', 'dashboard-admin/whyUs/edit') ? 'active' : '' }}">
+                            class="nav-item {{ Request::is('dashboard-admin/why', 'dashboard-admin/whyUs', 'dashboard-admin/whyUs/create', 'dashboard-admin/whyUs/*') ? 'active' : '' }}">
                             <a data-bs-toggle="collapse" href="#why">
                                 <i class="fas fa-rocket"></i>
                                 <p>Why</p>
@@ -132,10 +131,9 @@
                             </a>
                             <div class="collapse" id="why">
                                 <ul class="nav nav-collapse">
-                                    <li><a href="{{ route('why.index') }}"><span class="sub-item">Kenapa</span></a>
+                                    <li><a href="{{ route('why.index') }}"><span class="sub-item">Why</span></a>
                                     </li>
-                                    <li><a href="{{ route('whyUs.index') }}"><span class="sub-item">Kenapa
-                                                Kita</span></a></li>
+                                    <li><a href="{{ route('whyUs.index') }}"><span class="sub-item">Why Us</span></a></li>
                                 </ul>
                             </div>
                         </li>
@@ -143,15 +141,15 @@
                         <li
                             class="nav-item {{ Request::is('dashboard-admin/categoryService', 'dashboard-admin/service', 'dashboard-admin/service/create', 'dashboard-admin/service/edit') ? 'active' : '' }}">
                             <a data-bs-toggle="collapse" href="#service">
-                                <i class="fas fa-rocket"></i>
+                                <i class="fas fa-headset"></i>
                                 <p>Service</p>
                                 <span class="caret"></span>
                             </a>
                             <div class="collapse" id="service">
                                 <ul class="nav nav-collapse">
-                                    <li><a href="{{ route('categoryService.index') }}"><span class="sub-item">Kategori Layanan</span></a>
+                                    <li><a href="{{ route('categoryService.index') }}"><span class="sub-item">Category Services</span></a>
                                     </li>
-                                    <li><a href="{{ route('service.index') }}"><span class="sub-item">Layanan</span></a>
+                                    <li><a href="{{ route('service.index') }}"><span class="sub-item">Services</span></a>
                                     </li>
                                 </ul>
                             </div>
@@ -687,7 +685,7 @@
                     function confirmDelete(imageId) {
                         Swal.fire({
                             title: "Apakah Anda yakin?",
-                            text: "Gambar ini akan dihapus secara permanen!",
+                            text: "Data ini akan dihapus secara permanen!",
                             icon: "warning",
                             showCancelButton: true,
                             confirmButtonColor: "#d33",

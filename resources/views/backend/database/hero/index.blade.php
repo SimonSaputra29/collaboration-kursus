@@ -5,13 +5,13 @@
         <div class="row justify-content-center">
             <div class="col-md-11">
                 <div class="card">
-                    <div class="card-header bg-primary text-white">Pengaturan Hero</div>
+                    <div class="card-header bg-primary text-white">Hero Setting</div>
                     <div class="card-body">
                         <form action="{{ route('hero.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-md mb-3">
-                                    <label for="image" class="form-label">image Web</label>
+                                    <label for="image" class="form-label">Image</label>
                                     <input type="file" name="image" id="image"
                                         class="form-control @error('image') is-invalid @enderror"
                                         onchange="previewImage('image', 'imagePreview')">
@@ -29,7 +29,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md mb-3">
-                                    <label for="title" class="form-label">Judul</label>
+                                    <label for="title" class="form-label">Title</label>
                                     <input type="text" name="title"
                                         class="form-control @error('title') is-invalid @enderror"
                                         value="{{ old('title', $hero->title ?? '') }}">
@@ -40,7 +40,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md mb-3">
-                                    <label for="description" class="form-label">Deskripsi</label>
+                                    <label for="description" class="form-label">Description</label>
                                     <textarea name="description" class="form-control @error('description') is-invalid @enderror">{{ old('description', $hero->description ?? '') }}</textarea>
                                     @error('description')
                                         <span class="text-danger">{{ $message }}</span>

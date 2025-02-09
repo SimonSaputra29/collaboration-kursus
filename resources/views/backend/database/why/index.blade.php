@@ -5,13 +5,13 @@
         <div class="row justify-content-center">
             <div class="col-md-11">
                 <div class="card">
-                    <div class="card-header bg-primary text-white">Pengaturan Why</div>
+                    <div class="card-header bg-primary text-white">Why Setting</div>
                     <div class="card-body">
                         <form action="{{ route('why.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-md mb-3">
-                                    <label for="title" class="form-label">Judul</label>
+                                    <label for="title" class="form-label">Title</label>
                                     <input type="text" name="title"
                                         class="form-control @error('title') is-invalid @enderror"
                                         value="{{ old('title', $why->title ?? '') }}">
@@ -22,7 +22,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md mb-3">
-                                    <label for="description" class="form-label">Deskkripsi</label>
+                                    <label for="description" class="form-label">Description</label>
                                     <textarea name="description" class="form-control @error('description') is-invalid @enderror"
                                         rows="4">{{ old('description', $why->description ?? '') }}</textarea>
                                     @error('description')

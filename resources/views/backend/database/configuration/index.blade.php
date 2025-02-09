@@ -5,13 +5,13 @@
         <div class="row justify-content-center">
             <div class="col-md-11">
                 <div class="card">
-                    <div class="card-header bg-primary text-white">Pengaturan Configuration</div>
+                    <div class="card-header bg-primary text-white">Configuration Setting</div>
                     <div class="card-body">
                         <form action="{{ route('configuration.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-md mb-3">
-                                    <label for="logo" class="form-label">Logo Web</label>
+                                    <label for="logo" class="form-label">Web Logo</label>
                                     <input type="file" name="logo" id="logo"
                                         class="form-control @error('logo') is-invalid @enderror"
                                         onchange="previewImage('logo', 'logoPreview')">
@@ -27,7 +27,7 @@
                                     @endif
                                 </div>
                                 <div class="col-md mb-3">
-                                    <label for="title_logo" class="form-label">Judul Logo</label>
+                                    <label for="title_logo" class="form-label">Logo Title</label>
                                     <input type="file" name="title_logo" id="title_logo"
                                         class="form-control @error('title_logo') is-invalid @enderror"
                                         onchange="previewImage('title_logo', 'pathLogoPreview')">
@@ -45,7 +45,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md mb-3">
-                                    <label for="website_name" class="form-label">Nama Web</label>
+                                    <label for="website_name" class="form-label">Web Name</label>
                                     <input type="text" name="website_name"
                                         class="form-control @error('website_name') is-invalid @enderror"
                                         value="{{ old('website_name', $configuration->website_name ?? '') }}">
@@ -54,7 +54,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-md mb-3">
-                                    <label for="title" class="form-label">Judul</label>
+                                    <label for="title" class="form-label">Title</label>
                                     <input type="text" name="title"
                                         class="form-control @error('title') is-invalid @enderror"
                                         value="{{ old('title', $configuration->title ?? '') }}">
@@ -92,7 +92,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md mb-3">
-                                    <label for="address" class="form-label">Alamat</label>
+                                    <label for="address" class="form-label">Address</label>
                                     <input type="text" name="address"
                                         class="form-control @error('address') is-invalid @enderror"
                                         value="{{ old('address', $configuration->address ?? '') }}">
@@ -101,7 +101,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-md mb-3">
-                                    <label for="phone_number" class="form-label">Nomor Hp</label>
+                                    <label for="phone_number" class="form-label">Phone Number</label>
                                     <input type="integer" name="phone_number"
                                         class="form-control @error('phone_number') is-invalid @enderror"
                                         value="{{ old('phone_number', $configuration->phone_number ?? '') }}">
@@ -110,7 +110,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-md mb-3">
-                                    <label for="email_address" class="form-label">Alamat Email</label>
+                                    <label for="email_address" class="form-label">Email Address</label>
                                     <input type="email" name="email_address"
                                         class="form-control @error('email_address') is-invalid @enderror"
                                         value="{{ old('email_address', $configuration->email_address ?? '') }}">
