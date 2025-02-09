@@ -135,4 +135,12 @@ class FrontendController extends Controller
             'configuration' => $configuration,
         ]);
     }
+
+    public function uiux() {
+        $configuration = Configuration::first();
+        return view('frontend.learning-path.uiux', [
+            'title' => 'Learning UI UX',
+            'configuration' => $configuration,
+        ]);
+    }
 }

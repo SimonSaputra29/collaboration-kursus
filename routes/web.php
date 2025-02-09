@@ -41,6 +41,7 @@ Route::get('/soalhtml', [FrontendController::class, 'soalhtml'])->name('soalhtml
 Route::get('/soalcss', [FrontendController::class, 'soalcss'])->name('soalcss');
 Route::get('/loginUser', [FrontendController::class, 'loginUser'])->name('loginUser');  
 Route::get('/registerUser', [FrontendController::class, 'registerUser'])->name('registerUser');  
+Route::get('/uiux', [FrontendController::class, 'uiux'])->name('uiux');  
 
 
 

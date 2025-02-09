@@ -22,7 +22,7 @@
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="{{ route('webdevelopment') }}" class="text-decoration-none">
+                <a href="{{ route('uiux') }}" class="text-decoration-none">
                     <div class="card shadow-sm p-4 text-white border-0 custom-card learning-card">
                         <i class="bi bi-brush display-4 text-light"></i>
                         <h4 class="mt-3">UI/UX Design</h4>
