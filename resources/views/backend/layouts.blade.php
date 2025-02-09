@@ -141,17 +141,18 @@
                         </li>
 
                         <li
-                            class="nav-item {{ Request::is('dashboard-admin/why', 'dashboard-admin/whyUs', 'dashboard-admin/whyUs/create', 'dashboard-admin/whyUs/edit') ? 'active' : '' }}">
-                            <a data-bs-toggle="collapse" href="#why">
+                            class="nav-item {{ Request::is('dashboard-admin/categoryService', 'dashboard-admin/service', 'dashboard-admin/service/create', 'dashboard-admin/service/edit') ? 'active' : '' }}">
+                            <a data-bs-toggle="collapse" href="#service">
                                 <i class="fas fa-rocket"></i>
-                                <p>Why</p>
+                                <p>Service</p>
                                 <span class="caret"></span>
                             </a>
-                            <div class="collapse" id="why">
+                            <div class="collapse" id="service">
                                 <ul class="nav nav-collapse">
-                                    <li><a href="{{ route('why.index') }}"><span class="sub-item">Kenapa</span></a>
+                                    <li><a href="{{ route('categoryService.index') }}"><span class="sub-item">Kategori Layanan</span></a>
                                     </li>
-                                    
+                                    <li><a href="{{ route('service.index') }}"><span class="sub-item">Layanan</span></a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
