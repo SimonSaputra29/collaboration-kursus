@@ -62,11 +62,11 @@
                             Login
                         </button>
                     </a>
-                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                        style="font-weight: bold; transition: all 0.3s ease; padding: 10px 20px; font-size: 1rem; border-radius: 5px;">
-                        Register
-                    </button>
+                    <a href="{{ route('registerUser') }}"> <button type="button" class="btn btn-outline-dark"
+                            data-bs-toggle="modal" data-bs-target="#exampleModal"
+                            style="font-weight: bold; transition: all 0.3s ease; padding: 10px 20px; font-size: 1rem; border-radius: 5px;">
+                            Register
+                        </button></a>
                 </li>
             @endauth
         </div>
