@@ -27,21 +27,21 @@ Route::get('/kontak', [FrontendController::class, 'kontak'])->name('kontak');
 Route::get('/webdevelopment', [FrontendController::class, 'webdevelopment'])->name('webdevelopment');
 Route::get('/soalhtml', [FrontendController::class, 'soalhtml'])->name('soalhtml');
 Route::get('/soalcss', [FrontendController::class, 'soalcss'])->name('soalcss');
-Route::get('/loginUser', [FrontendController::class, 'loginUser'])->name('loginUser');  
-Route::get('/registerUser', [FrontendController::class, 'registerUser'])->name('registerUser');  
-Route::get('/uiux', [FrontendController::class, 'uiux'])->name('uiux');  
-Route::get('/machinelearning', [FrontendController::class, 'machinelearning'])->name('machinelearning');  
-Route::get('/datascience', [FrontendController::class, 'datascience'])->name('datascience');  
+Route::get('/loginUser', [FrontendController::class, 'loginUser'])->name('loginUser');
+Route::get('/registerUser', [FrontendController::class, 'registerUser'])->name('registerUser');
+Route::get('/uiux', [FrontendController::class, 'uiux'])->name('uiux');
+Route::get('/machinelearning', [FrontendController::class, 'machinelearning'])->name('machinelearning');
+Route::get('/datascience', [FrontendController::class, 'datascience'])->name('datascience');
 
 Route::middleware(['auth:admin'])->group(function () {
     Route::get('/dashboard-admin', [App\Http\Controllers\Backend\AdminController::class, 'index'])->name('admin.index');
-    
+
     // Configuration routes
     Route::controller(App\Http\Controllers\Backend\ConfigurationController::class)->group(function () {
         Route::get('/dashboard-admin/configuration', 'index')->name('configuration.index');
         Route::post('/dashboard-admin/configuration', 'createOrUpdate')->name('configuration.store');
     });
-    
+
     // Hero routes
     Route::controller(App\Http\Controllers\Backend\HeroController::class)->group(function () {
         Route::get('/dashboard-admin/hero', 'index')->name('hero.index');
@@ -55,12 +55,7 @@ Route::middleware(['auth:admin'])->group(function () {
     });
 
     // SuperiorityImage routes
-    Route::controller(App\Http\Controllers\Backend\SuperiorityImageController::class)->group(function () {
-        Route::get('/dashboard-admin/superiorityImage', 'index')->name('superiorityImage.index');
-        Route::post('/dashboard-admin/superiorityImage', 'store')->name('superiorityImage.store');
-        Route::put('/dashboard-admin/superiorityImage/{id}', 'update')->name('superiorityImage.update');
-        Route::delete('/dashboard-admin/superiorityImage/destroy/{id}', 'destroy')->name('superiorityImage.destroy');
-    });
+    Route::resource('/dashboard-admin/superiorityImage', \App\Http\Controllers\Backend\SuperiorityImageController::class);
 
     // Why routes
     Route::controller(App\Http\Controllers\Backend\WhyController::class)->group(function () {
@@ -77,13 +72,7 @@ Route::middleware(['auth:admin'])->group(function () {
     });
 
     // CategoryService routes
-    Route::controller(App\Http\Controllers\Backend\CategoryServiceController::class)->group(function () {
-        Route::get('/dashboard-admin/categoryService', 'index')->name('categoryService.index');
-        Route::post('/dashboard-admin/categoryService', 'store')->name('categoryService.store');
-        Route::put('/dashboard-admin/categoryService/{id}', 'update')->name('categoryService.update');
-        Route::delete('/dashboard-admin/categoryService/destroy/{id}', 'destroy')->name('categoryService.destroy');
-    });
-
+    Route::resource('/dashboard-admin/categoryService', \App\Http\Controllers\Backend\CategoryServiceController::class);
     // Service routes
     Route::resource('/dashboard-admin/service', App\Http\Controllers\Backend\ServiceController::class);
 

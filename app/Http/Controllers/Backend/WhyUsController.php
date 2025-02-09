@@ -16,6 +16,12 @@ class WhyUsController extends Controller
         return view('backend.database.why.whyUs.index', compact('whyUs', 'configuration'));
     }
 
+    public function create()
+    {
+        $configuration = Configuration::first();
+        return view('backend.database.why.whyUs.create', compact('configuration'));
+    }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -26,7 +32,7 @@ class WhyUsController extends Controller
 
         $imageName = time() . '.' . $request->image->extension();
         $imagePath = 'uploads/why/' . $imageName;
-        $request->image->move(public_path('uploads/why'), $imageName);
+        $request->image->move(('uploads/why'), $imageName);
 
         WhyUs::create([
             'image' => $imagePath,
@@ -36,6 +42,13 @@ class WhyUsController extends Controller
 
         return redirect()->route('whyUs.index')
             ->with('success', 'Image uploaded successfully.');
+    }
+
+    public function edit($id)
+    {
+        $configuration = Configuration::first();
+        $whyUs = WhyUs::findOrFail($id);
+        return view('backend.database.why.whyUs.edit', compact('configuration', 'whyUs'));
     }
 
     public function update(Request $request, $id)
@@ -52,13 +65,13 @@ class WhyUsController extends Controller
         $whyUs->description = $request->description;
 
         if ($request->hasFile('image')) {
-            if (!empty($whyUs->image) && file_exists(public_path($whyUs->image))) {
-                unlink(public_path($whyUs->image));
+            if (!empty($whyUs->image) && file_exists(($whyUs->image))) {
+                unlink(($whyUs->image));
             }
 
             $imageName = time() . '.' . $request->image->extension();
             $imageDirectory = 'uploads/superiority/';
-            $request->image->move(public_path($imageDirectory), $imageName);
+            $request->image->move(($imageDirectory), $imageName);
             $whyUs->image = $imageDirectory . $imageName;
         }
 
@@ -72,8 +85,8 @@ class WhyUsController extends Controller
     {
         $whyUs = WhyUs::findOrFail($id);
 
-        if (!empty($whyUs->image) && file_exists(public_path($whyUs->image))) {
-            unlink(public_path($whyUs->image));
+        if (!empty($whyUs->image) && file_exists(($whyUs->image))) {
+            unlink(($whyUs->image));
         }
 
         $whyUs->delete();
