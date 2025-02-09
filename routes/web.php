@@ -39,8 +39,8 @@ Route::get('/kontak', [FrontendController::class, 'kontak'])->name('kontak');
 Route::get('/webdevelopment', [FrontendController::class, 'webdevelopment'])->name('webdevelopment');
 Route::get('/soalhtml', [FrontendController::class, 'soalhtml'])->name('soalhtml');
 Route::get('/soalcss', [FrontendController::class, 'soalcss'])->name('soalcss');
-Route::get('/loginUser', [FrontendController::class, 'loginUser'])->name('loginUser');  
-Route::get('/registerUser', [FrontendController::class, 'registerUser'])->name('registerUser');  
+Route::get('/loginUser', [FrontendController::class, 'loginUser'])->name('loginUser');
+Route::get('/registerUser', [FrontendController::class, 'registerUser'])->name('registerUser');
 
 
 
@@ -66,8 +66,8 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::controller(\App\Http\Controllers\Backend\SuperiorityImageController::class)->group(function () {
         Route::get('/dashboard-admin/superiorityImage', 'index')->name('superiorityImage.index');
         Route::post('/dashboard-admin/superiorityImage', 'store')->name('superiorityImage.store');
-        Route::delete('/dashboard-admin/superiorityImage/destroy/{id}', 'destroy')->name('superiorityImage.destroy');
         Route::put('/dashboard-admin/superiorityImage/{id}', 'update')->name('superiorityImage.update');
+        Route::delete('/dashboard-admin/superiorityImage/destroy/{id}', 'destroy')->name('superiorityImage.destroy');
     });
 
     //why
@@ -79,12 +79,19 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::controller(\App\Http\Controllers\Backend\WhyUsController::class)->group(function () {
         Route::get('/dashboard-admin/whyUs', 'index')->name('whyUs.index');
         Route::post('/dashboard-admin/whyUs', 'store')->name('whyUs.store');
-        Route::delete('/dashboard-admin/whyUs/destroy/{id}', 'destroy')->name('whyUs.destroy');
         Route::put('/dashboard-admin/whyUs/{id}', 'update')->name('whyUs.update');
+        Route::delete('/dashboard-admin/whyUs/destroy/{id}', 'destroy')->name('whyUs.destroy');
     });
 
     //categoryServices
-    // Route::controller(\App\Http\Controllers\Backend\)
+    Route::controller(\App\Http\Controllers\Backend\CategoryServiceController::class)->group(function () {
+        Route::get('/dashboard-admin/categoryService', 'index')->name('categoryService.index');
+        Route::post('/dashboard-admin/categoryService', 'store')->name('categoryService.store');
+        Route::put('/dashboard/categoryService/{id}', 'update')->name('categoryService.update');
+        Route::delete('/dashboard/categoryService/destroy/{id}', 'destroy')->name('categoryService.destroy');
+    });
+    //service
+    Route::resource('/dashboard-admin/service', \App\Http\Controllers\Backend\ServiceController::class);
 
     Route::controller(App\Http\Controllers\Backend\AdminController::class)->group(function () {
         Route::get('/dashboard-admin/avatars', 'avatars')->name('admin.avatars');
