@@ -18,7 +18,7 @@ class OurProgramController extends Controller
 
     public function create()
     {
-        $configuration = Configuration::frist();
+        $configuration = Configuration::first();
         return view('backend.database.ourProgram.create', compact('configuration'));
     }
 
@@ -27,7 +27,7 @@ class OurProgramController extends Controller
         $request->validate([
             'title' => 'required|string',
             'overview' => 'required|string',
-            'image' => 'required|image|mimes:jpeg.png.jpg.gif.svg',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'link' => 'required|string',
         ]);
 
@@ -58,7 +58,7 @@ class OurProgramController extends Controller
             'title' => 'required|string',
             'overview' => 'required|string',
             'link' => 'required|string',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
         $ourProgram = OurProgram::findOrFail($id);
