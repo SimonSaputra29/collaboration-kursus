@@ -18,81 +18,76 @@ Route::get('/welcome', [App\Http\Controllers\Backend\AdminController::class, 'Lo
 Route::post('/welcome', [App\Http\Controllers\Backend\AuthController::class, 'login'])->name('login');
 Route::post('/logout', [App\Http\Controllers\Backend\AuthController::class, 'logout'])->name('logout');
 
-// Route::get('/', [FrontendController::class, 'index']) ->name('index');
-
-Route::get('/', [FrontendController::class, 'home'])->name('home');
-Route::post('/logout', [App\Http\Controllers\Backend\AuthController::class, 'logout'])->name('logout');
-Route::get('/langganan', [FrontendController::class, 'langganan'])->name('langganan');
-Route::get('/program', [FrontendController::class, 'program'])->name('program');
-
-Route::get('/learning-path', [FrontendController::class, 'learning'])->name('learning-path');
-
-Route::get('/home', [FrontendController::class, 'home'])->name('home');
-
 Route::get('/', [FrontendController::class, 'home'])->name('home');
 Route::get('/langganan', [FrontendController::class, 'langganan'])->name('langganan');
 Route::get('/program', [FrontendController::class, 'program'])->name('program');
 Route::get('/learning-path', [FrontendController::class, 'learning'])->name('learning-path');
-Route::get('/home', [FrontendController::class, 'home'])->name('home');
 Route::get('/tentang', [FrontendController::class, 'tentang'])->name('tentang');
 Route::get('/kontak', [FrontendController::class, 'kontak'])->name('kontak');
 Route::get('/webdevelopment', [FrontendController::class, 'webdevelopment'])->name('webdevelopment');
 Route::get('/soalhtml', [FrontendController::class, 'soalhtml'])->name('soalhtml');
 Route::get('/soalcss', [FrontendController::class, 'soalcss'])->name('soalcss');
-Route::get('/loginUser', [FrontendController::class, 'loginUser'])->name('loginUser');
-Route::get('/registerUser', [FrontendController::class, 'registerUser'])->name('registerUser');
-
-
+Route::get('/loginUser', [FrontendController::class, 'loginUser'])->name('loginUser');  
+Route::get('/registerUser', [FrontendController::class, 'registerUser'])->name('registerUser');  
+Route::get('/uiux', [FrontendController::class, 'uiux'])->name('uiux');  
+Route::get('/machinelearning', [FrontendController::class, 'machinelearning'])->name('machinelearning');  
+Route::get('/datascience', [FrontendController::class, 'datascience'])->name('datascience');  
 
 Route::middleware(['auth:admin'])->group(function () {
     Route::get('/dashboard-admin', [App\Http\Controllers\Backend\AdminController::class, 'index'])->name('admin.index');
-    //configuration
+    
+    // Configuration routes
     Route::controller(App\Http\Controllers\Backend\ConfigurationController::class)->group(function () {
         Route::get('/dashboard-admin/configuration', 'index')->name('configuration.index');
         Route::post('/dashboard-admin/configuration', 'createOrUpdate')->name('configuration.store');
     });
-    //hero
+    
+    // Hero routes
     Route::controller(App\Http\Controllers\Backend\HeroController::class)->group(function () {
         Route::get('/dashboard-admin/hero', 'index')->name('hero.index');
         Route::post('/dashboard-admin/hero', 'createOrUpdate')->name('hero.store');
     });
 
-    //superiority
-    Route::controller(\App\Http\Controllers\Backend\SuperiorityController::class)->group(function () {
+    // Superiority routes
+    Route::controller(App\Http\Controllers\Backend\SuperiorityController::class)->group(function () {
         Route::get('/dashboard-admin/superiority', 'index')->name('superiority.index');
         Route::post('/dashboard-admin/superiority', 'createOrUpdate')->name('superiority.store');
     });
-    //superiorityImage
-    Route::controller(\App\Http\Controllers\Backend\SuperiorityImageController::class)->group(function () {
+
+    // SuperiorityImage routes
+    Route::controller(App\Http\Controllers\Backend\SuperiorityImageController::class)->group(function () {
         Route::get('/dashboard-admin/superiorityImage', 'index')->name('superiorityImage.index');
         Route::post('/dashboard-admin/superiorityImage', 'store')->name('superiorityImage.store');
         Route::put('/dashboard-admin/superiorityImage/{id}', 'update')->name('superiorityImage.update');
         Route::delete('/dashboard-admin/superiorityImage/destroy/{id}', 'destroy')->name('superiorityImage.destroy');
     });
 
-    //why
-    Route::controller(\App\Http\Controllers\Backend\WhyController::class)->group(function () {
+    // Why routes
+    Route::controller(App\Http\Controllers\Backend\WhyController::class)->group(function () {
         Route::get('/dashboard-admin/why', 'index')->name('why.index');
         Route::post('/dashboard-admin/why', 'createOrUpdate')->name('why.store');
     });
-    //whyUs
-    Route::controller(\App\Http\Controllers\Backend\WhyUsController::class)->group(function () {
+
+    // WhyUs routes
+    Route::controller(App\Http\Controllers\Backend\WhyUsController::class)->group(function () {
         Route::get('/dashboard-admin/whyUs', 'index')->name('whyUs.index');
         Route::post('/dashboard-admin/whyUs', 'store')->name('whyUs.store');
         Route::put('/dashboard-admin/whyUs/{id}', 'update')->name('whyUs.update');
         Route::delete('/dashboard-admin/whyUs/destroy/{id}', 'destroy')->name('whyUs.destroy');
     });
 
-    //categoryServices
-    Route::controller(\App\Http\Controllers\Backend\CategoryServiceController::class)->group(function () {
+    // CategoryService routes
+    Route::controller(App\Http\Controllers\Backend\CategoryServiceController::class)->group(function () {
         Route::get('/dashboard-admin/categoryService', 'index')->name('categoryService.index');
         Route::post('/dashboard-admin/categoryService', 'store')->name('categoryService.store');
-        Route::put('/dashboard/categoryService/{id}', 'update')->name('categoryService.update');
-        Route::delete('/dashboard/categoryService/destroy/{id}', 'destroy')->name('categoryService.destroy');
+        Route::put('/dashboard-admin/categoryService/{id}', 'update')->name('categoryService.update');
+        Route::delete('/dashboard-admin/categoryService/destroy/{id}', 'destroy')->name('categoryService.destroy');
     });
-    //service
-    Route::resource('/dashboard-admin/service', \App\Http\Controllers\Backend\ServiceController::class);
 
+    // Service routes
+    Route::resource('/dashboard-admin/service', App\Http\Controllers\Backend\ServiceController::class);
+
+    // Admin dashboard routes
     Route::controller(App\Http\Controllers\Backend\AdminController::class)->group(function () {
         Route::get('/dashboard-admin/avatars', 'avatars')->name('admin.avatars');
         Route::get('/dashboard-admin/buttons', 'buttons')->name('admin.buttons');

@@ -140,4 +140,28 @@ class FrontendController extends Controller
             'configuration' => $configuration,
         ]);
     }
+
+    public function uiux() {
+        $configuration = Configuration::first();
+        return view('frontend.learning-path.uiux', [
+            'title' => 'Learning UI UX',
+            'configuration' => $configuration,
+        ]);
+    }
+
+    public function machinelearning() {
+        $configuration = Configuration::first();
+        return view('frontend.learning-path.machinelearning', [
+            'title' => 'Learning Machine Learning',
+            'configuration' => $configuration,
+        ]);
+    }
+
+    public function datascience() {
+        $configuration = Configuration::first();
+        return view('frontend.learning-path.datascience', [
+            'title' => 'Learning Data Science',
+            'configuration' => $configuration,
+        ]);
+    }   
 }
