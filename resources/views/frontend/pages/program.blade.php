@@ -9,7 +9,8 @@
         <!-- ROW 1: Kartu Program -->
         <div class="row mt-5">
             <div class="col-md-4 fade-in">
-                <div class="program-card"><img src="{{ asset('images/coding.avif') }}" alt="">
+                <div class="program-card">
+                    <img src="{{ asset('images/coding.avif') }}" alt="Belajar Coding">
                     <h4>Belajar Coding</h4>
                     <p>Pelajari dasar-dasar coding dengan berbagai bahasa pemrograman seperti Python, JavaScript, dan PHP.
                     </p>
@@ -17,21 +18,18 @@
                 </div>
             </div>
             <div class="col-md-4 fade-in">
-                <div class="program-card"><img src="{{ asset('images/premium_photo-1663050633633-2856e875dcc7.avif') }}"
-                        alt="">
+                <div class="program-card">
+                    <img src="{{ asset('images/premium_photo-1663050633633-2856e875dcc7.avif') }}" alt="Web Development">
                     <h4>Web Development</h4>
-                    <p>Kuasai teknologi frontend dan backend untuk membangun website yang profesional.
-                    </p>
-
-                    <br>
+                    <p>Kuasai teknologi frontend dan backend untuk membangun website yang profesional.</p>
                     <a href="#" class="btn btn-glow">Mulai Belajar</a>
                 </div>
             </div>
             <div class="col-md-4 fade-in">
-                <div class="program-card"><img src="{{asset('images/photo-1605379399642-870262d3d051.avif')}}" alt="">
+                <div class="program-card">
+                    <img src="{{ asset('images/photo-1605379399642-870262d3d051.avif') }}" alt="Mobile Development">
                     <h4>Mobile Development</h4>
                     <p>Pelajari cara membuat aplikasi Android dan iOS dengan Flutter dan React Native.</p>
-                    <br>
                     <a href="#" class="btn btn-glow">Mulai Belajar</a>
                 </div>
             </div>
@@ -41,40 +39,24 @@
         <h3 class="text-center mt-5 fade-in">Apa Kata Mereka?</h3>
         <div class="row mt-4">
             <div class="col-md-4 fade-in">
-                <div class="testimonial-card flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <p>"Program ini sangat membantu saya memahami coding dari nol. Sekarang saya sudah bisa membuat
-                                website sendiri!"</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <strong>- Rizky, Junior Developer</strong>
-                        </div>
-                    </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Program ini sangat membantu saya memahami coding dari nol. Sekarang saya
+                        sudah bisa membuat website sendiri!"</p>
+                    <div class="testimonial-name">- Rizky, Junior Developer</div>
                 </div>
             </div>
             <div class="col-md-4 fade-in">
-                <div class="testimonial-card flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <p>"Materinya lengkap dan mudah dipahami. Saya sangat puas dengan kursus ini!"</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <strong>- Nisa, UI/UX Designer</strong>
-                        </div>
-                    </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Materinya lengkap dan mudah dipahami. Saya sangat puas dengan kursus ini!"
+                    </p>
+                    <div class="testimonial-name">- Nisa, UI/UX Designer</div>
                 </div>
             </div>
             <div class="col-md-4 fade-in">
-                <div class="testimonial-card flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <p>"Setelah mengikuti program ini, saya langsung diterima kerja sebagai frontend developer!"</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <strong>- Budi, Frontend Engineer</strong>
-                        </div>
-                    </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Setelah mengikuti program ini, saya langsung diterima kerja sebagai
+                        frontend developer!"</p>
+                    <div class="testimonial-name">- Budi, Frontend Engineer</div>
                 </div>
             </div>
         </div>
@@ -125,12 +107,6 @@
             margin-bottom: 15px;
         }
 
-        .program-card .icon {
-            font-size: 3rem;
-            color: #ff6600;
-            margin-bottom: 10px;
-        }
-
         /* BUTTON */
         .btn-glow {
             background: linear-gradient(135deg, #5c5e66, #373748);
@@ -146,13 +122,6 @@
         .btn-glow:hover {
             transform: scale(1.1);
             box-shadow: 0 0 15px rgba(81, 83, 92, 0.8);
-        }
-
-        /* ICONS */
-        .program-card .icon {
-            font-size: 3rem;
-            color: #7b7d85;
-            margin-bottom: 10px;
         }
 
         /* CTA SECTION */
@@ -175,37 +144,16 @@
             overflow: hidden;
         }
 
-        .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transform-style: preserve-3d;
-            transition: transform 0.6s;
+        .testimonial-text {
+            font-style: italic;
+            color: #666;
         }
 
-        .testimonial-card:hover .flip-card-inner {
-            transform: rotateY(180deg);
-        }
-
-        .flip-card-front,
-        .flip-card-back {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-        }
-
-        .flip-card-front {
-            background: #f8f9fa;
-        }
-
-        .flip-card-back {
-            background: #fff;
-            color: black;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transform: rotateY(180deg);
+        .testimonial-name {
+            font-weight: bold;
+            color: #333;
+            margin-top: 10px;
+            text-align: center;
         }
 
         /* ANIMASI FADE-IN */
@@ -215,22 +163,9 @@
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
 
-        /* ANIMASI SCROLL */
-        .animate__fadeInUp {
-            opacity: 0;
-            animation: fadeInUp 1s forwards;
-        }
-
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 
@@ -239,8 +174,7 @@
             const fadeElements = document.querySelectorAll(".fade-in");
             fadeElements.forEach((el, index) => {
                 setTimeout(() => {
-                    el.style.opacity = 1;
-                    el.style.transform = "translateY(0)";
+                    el.classList.add('appear');
                 }, index * 200);
             });
         });

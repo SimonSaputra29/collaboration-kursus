@@ -157,7 +157,7 @@
         }
 
         .dropdown-menu {
-            background-color: #343a40;
+            background-color: black;
         }
     }
 
@@ -189,7 +189,7 @@
 
     /* Dropdown Menu */
     .dropdown-menu {
-        background-color: #343a40;
+        background-color: #ffffff;
         border-radius: 10px;
         transition: all 0.3s ease;
     }
