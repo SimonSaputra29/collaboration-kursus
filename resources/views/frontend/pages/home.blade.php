@@ -158,14 +158,58 @@
     <div class="container py-5">
         <div class="row text-center">
             @foreach ($whyUs as $item)
-            <div class="col-md-4" data-aos="zoom-in">
-                <div class="p-4 border rounded shadow-lg">
-                    <img src="{{ asset($item->image) }}" alt="{{ $item->title }}" class="mb-3" width="60">
-                    <h4 class="fw-bold">{{ $item->title }}</h4>
-                    <p class="text-muted">{{ $item->description }}</p>
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="p-4 border rounded shadow-lg">
+                        <img src="{{ asset($item->image) }}" alt="{{ $item->title }}" class="mb-3" width="60">
+                        <h4 class="fw-bold">{{ $item->title }}</h4>
+                        <p class="text-muted">{{ $item->description }}</p>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+    <!-- Modul Pembelajaran -->
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div id="modulCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+
+                        <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                            <img src="  " class="d-block w-100 rounded" alt="">
+                        </div>
+
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#modulCarousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#modulCarousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
                 </div>
             </div>
-            @endforeach
+            <div class="col-md-6">
+                <h2 class="fw-bold text-muted position-relative d-inline-block pb-2"
+                    style="font-size: 2.2rem; letter-spacing: 1px; transition: color 0.3s ease;">
+                    Modul Pembelajaran
+                    <span class="underline-animation"></span>
+                </h2>
+                <div id="moduleDescription">
+
+                    <div class="module-description {{ $index == 0 ? '' : 'd-none' }}">
+                        <h4 class="fw-bold">yaaaaa</h4>
+                        <p class="text-muted" style="font-size: 1.1rem; line-height: 1.6;">ajshjksjiydsfhkufhsdjufhksdjufsh
+                        </p>
+                    </div>
+
+                </div>
+                <a href="#" class="btn btn-dark mt-3 px-4 py-2 fw-bold shadow-lg btn-hover-effect"
+                    data-aos="fade-right">
+                    📚 Lihat Semua Modul
+                </a>
+            </div>
         </div>
     </div>
 
@@ -201,4 +245,19 @@
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const moduleCarousel = document.getElementById('modulCarousel');
+            const moduleDescriptions = document.querySelectorAll('.module-description');
+            moduleCarousel.addEventListener('slide.bs.carousel', function(event) {
+                moduleDescriptions.forEach((desc, index) => {
+                    if (index === event.to) {
+                        desc.classList.remove('d-none');
+                    } else {
+                        desc.classList.add('d-none');
+                    }
+                });
+            });
+        });
+    </script>
 @endsection
