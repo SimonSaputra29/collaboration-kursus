@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
         DatabaseHeroSeeder::class,
         DatabaseSuperioritySeeder::class,
         DatabaseSuperiorityImageSeeder::class,
+        DatabaseWhySeeder::class,
+        DatabaseWhyUsSeeder::class,
         ]);
     }
 }

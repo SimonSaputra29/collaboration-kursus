@@ -14,8 +14,8 @@ class DatabaseConfigurationSeeder extends Seeder
     public function run(): void
     {
         Configuration::create([
-            'logo' => 'uploads/configuraion/logoyasmin-removebg-preview.png',
-            'title_logo' => 'logoyasmin.jpg',
+            'logo' => 'uploads/configuration/logoyasmin-removebg-preview.png',
+            'title_logo' => 'uploads/configuration/logoyasmin.jpg',
             'website_name' => 'Kursus Yasmin',
             'title' => 'Kursus Yasmin',
             'phone_number' => '6283835572912',

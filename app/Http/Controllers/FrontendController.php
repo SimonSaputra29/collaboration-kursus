@@ -6,6 +6,8 @@ use App\Models\Backend\Configuration;
 use App\Models\Backend\Hero;
 use App\Models\Backend\Superiority;
 use App\Models\Backend\SuperiorityImage;
+use App\Models\Backend\Why;
+use App\Models\Backend\WhyUs;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -16,7 +18,8 @@ class FrontendController extends Controller
         $hero = Hero::first();
         $superiority = Superiority::first();
         $superiorityImage = SuperiorityImage::all();
-
+        $why = Why::first();
+        $whyUs = WhyUs::all();
 
         return view('frontend.pages.home', [
             'title' => 'Kursus Yasmin',
@@ -24,6 +27,8 @@ class FrontendController extends Controller
             'hero' => $hero,
             'superiorityImage' => $superiorityImage,
             'superiority' => $superiority,
+            'why' => $why,
+            'whyUs' => $whyUs,
         ]);
     }
 
@@ -143,4 +148,20 @@ class FrontendController extends Controller
             'configuration' => $configuration,
         ]);
     }
+
+    public function machinelearning() {
+        $configuration = Configuration::first();
+        return view('frontend.learning-path.machinelearning', [
+            'title' => 'Learning Machine Learning',
+            'configuration' => $configuration,
+        ]);
+    }
+
+    public function datascience() {
+        $configuration = Configuration::first();
+        return view('frontend.learning-path.datascience', [
+            'title' => 'Learning Data Science',
+            'configuration' => $configuration,
+        ]);
+    }   
 }

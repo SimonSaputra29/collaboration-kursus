@@ -2,27 +2,27 @@
 
 @section('content')
     <div class="container mt-5">
-        <h1 class="fw-bold text-center text-dark animate__animated animate__fadeInDown">UI/UX DESIGN</h1>
-        <p class="text-center text-secondary animate__animated animate__fadeInUp">Pelajari dasar-dasar desain UI/UX dan tingkatkan keterampilan Anda dengan kursus komprehensif kami.</p>
+        <h1 class="fw-bold text-center text-dark animate__animated animate__fadeInDown">Data Science</h1>
+        <p class="text-center text-secondary animate__animated animate__fadeInUp">Pelajari dasar-dasar Data Science dan tingkatkan keterampilan Anda dengan kursus komprehensif kami.</p>
 
         <!-- Course Overview Section -->
         <div class="section mt-5" id="overview-section">
             <div class="row">
                 <div class="col-md-6 animate__animated animate__fadeInLeft">
                     <h2 class="fw-bold text-dark">Deskripsi Kursus</h2>
-                    <p>Kursus ini mencakup segala sesuatu dari dasar-dasar desain UI/UX hingga teknik dan alat canggih. Baik Anda seorang pemula atau desainer berpengalaman, kursus ini akan membantu Anda meningkatkan keterampilan dan menciptakan antarmuka pengguna serta pengalaman yang menakjubkan.</p>
+                    <p>Kursus ini mencakup segala sesuatu dari dasar-dasar Data Science hingga teknik dan alat canggih. Baik Anda seorang pemula atau praktisi berpengalaman, kursus ini akan membantu Anda meningkatkan keterampilan dan menciptakan model Data Science yang handal.</p>
                     <ul class="list-group">
-                        <li class="list-group-item">Pengenalan Desain UI/UX</li>
-                        <li class="list-group-item">Prinsip dan Elemen Desain</li>
-                        <li class="list-group-item">Wireframing dan Prototyping</li>
-                        <li class="list-group-item">Penelitian dan Pengujian Pengguna</li>
+                        <li class="list-group-item">Pengenalan Data Science</li>
+                        <li class="list-group-item">Pengolahan Data</li>
+                        <li class="list-group-item">Analisis Data</li>
+                        <li class="list-group-item">Visualisasi Data</li>
                         <li class="list-group-item">Alat dan Perangkat Lunak</li>
                         <li class="list-group-item">Studi Kasus dan Proyek</li>
                     </ul>
                 </div>
                 <div class="col-md-6 animate__animated animate__fadeInRight">
                     <div class="video-container mt-4 bg-dark rounded">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/qk3R3mYiuPA?si=BBwY9zoPF4Hmu5FT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/ua-CiDNNj30" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -37,48 +37,48 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="moduleOneHeading">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#moduleOne" aria-expanded="true" aria-controls="moduleOne">
-                                    Modul 1: Pengenalan Desain UI/UX
+                                    Modul 1: Pengenalan Data Science
                                 </button>
                             </h2>
                             <div id="moduleOne" class="accordion-collapse collapse show" aria-labelledby="moduleOneHeading" data-bs-parent="#courseModules">
                                 <div class="accordion-body">
-                                    <p>Dalam modul ini, Anda akan belajar tentang dasar-dasar desain UI/UX, perbedaan antara UI dan UX, dan pentingnya desain yang baik dalam menciptakan produk yang ramah pengguna.</p>
+                                    <p>Dalam modul ini, Anda akan belajar tentang dasar-dasar Data Science, jenis-jenis Data Science, dan pentingnya Data Science dalam berbagai industri.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="moduleTwoHeading">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#moduleTwo" aria-expanded="false" aria-controls="moduleTwo">
-                                    Modul 2: Prinsip dan Elemen Desain
+                                    Modul 2: Pengolahan Data
                                 </button>
                             </h2>
                             <div id="moduleTwo" class="accordion-collapse collapse" aria-labelledby="moduleTwoHeading" data-bs-parent="#courseModules">
                                 <div class="accordion-body">
-                                    <p>Modul ini mencakup prinsip-prinsip utama desain, termasuk teori warna, tipografi, dan tata letak. Anda akan belajar bagaimana menerapkan prinsip-prinsip ini untuk menciptakan desain yang menarik dan fungsional.</p>
+                                    <p>Modul ini mencakup teknik-teknik pengolahan data seperti pembersihan data, transformasi data, dan penggabungan data.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="moduleThreeHeading">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#moduleThree" aria-expanded="false" aria-controls="moduleThree">
-                                    Modul 3: Wireframing dan Prototyping
+                                    Modul 3: Analisis Data
                                 </button>
                             </h2>
                             <div id="moduleThree" class="accordion-collapse collapse" aria-labelledby="moduleThreeHeading" data-bs-parent="#courseModules">
                                 <div class="accordion-body">
-                                    <p>Pelajari cara membuat wireframe dan prototipe untuk memvisualisasikan desain Anda dan mengujinya dengan pengguna. Modul ini mencakup berbagai alat dan teknik untuk membuat wireframe dan prototipe yang efektif.</p>
+                                    <p>Pelajari cara menganalisis data menggunakan teknik-teknik statistik dan Machine Learning. Modul ini mencakup berbagai teknik analisis data seperti regresi, klasifikasi, dan clustering.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="moduleFourHeading">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#moduleFour" aria-expanded="false" aria-controls="moduleFour">
-                                    Modul 4: Penelitian dan Pengujian Pengguna
+                                    Modul 4: Visualisasi Data
                                 </button>
                             </h2>
                             <div id="moduleFour" class="accordion-collapse collapse" aria-labelledby="moduleFourHeading" data-bs-parent="#courseModules">
                                 <div class="accordion-body">
-                                    <p>Modul ini berfokus pada metode penelitian pengguna dan teknik pengujian. Anda akan belajar cara mengumpulkan umpan balik pengguna, melakukan uji kegunaan, dan menggunakan wawasan tersebut untuk meningkatkan desain Anda.</p>
+                                    <p>Modul ini berfokus pada teknik-teknik visualisasi data. Anda akan belajar cara membuat visualisasi data yang efektif menggunakan alat-alat seperti Matplotlib, Seaborn, dan Tableau.</p>
                                 </div>
                             </div>
                         </div>
@@ -90,7 +90,7 @@
                             </h2>
                             <div id="moduleFive" class="accordion-collapse collapse" aria-labelledby="moduleFiveHeading" data-bs-parent="#courseModules">
                                 <div class="accordion-body">
-                                    <p>Dapatkan pengalaman langsung dengan alat dan perangkat lunak desain populer, termasuk Adobe XD, Sketch, Figma, dan banyak lagi. Anda akan belajar cara menggunakan alat-alat ini untuk membuat dan berkolaborasi dalam proyek desain.</p>
+                                    <p>Dapatkan pengalaman langsung dengan alat dan perangkat lunak Data Science populer, termasuk Python, R, SQL, dan banyak lagi. Anda akan belajar cara menggunakan alat-alat ini untuk mengolah dan menganalisis data.</p>
                                 </div>
                             </div>
                         </div>
@@ -122,20 +122,20 @@
                     <div class="collapse" id="videoPlaylist">
                         <div class="video-playlist mt-4">
                             <div class="video-item mb-3">
-                                <iframe width="100%" height="315" src="https://www.youtube.com/embed/71a2zeC71gk?si=QOzWhGE1VP9SBxaz" frameborder="0" allowfullscreen></iframe>
-                                <h5 class="mt-2 text-dark">Video 1: Pengenalan UI/UX</h5>
+                                <iframe width="100%" height="315" src="https://www.youtube.com/embed/ua-CiDNNj30" frameborder="0" allowfullscreen></iframe>
+                                <h5 class="mt-2 text-dark">Video 1: Pengenalan Data Science</h5>
                             </div>
                             <div class="video-item mb-3">
                                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/video2" frameborder="0" allowfullscreen></iframe>
-                                <h5 class="mt-2 text-dark">Video 2: Prinsip Desain</h5>
+                                <h5 class="mt-2 text-dark">Video 2: Pengolahan Data</h5>
                             </div>
                             <div class="video-item mb-3">
                                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/video3" frameborder="0" allowfullscreen></iframe>
-                                <h5 class="mt-2 text-dark">Video 3: Wireframing</h5>
+                                <h5 class="mt-2 text-dark">Video 3: Analisis Data</h5>
                             </div>
                             <div class="video-item mb-3">
                                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/video4" frameborder="0" allowfullscreen></iframe>
-                                <h5 class="mt-2 text-dark">Video 4: Prototyping</h5>
+                                <h5 class="mt-2 text-dark">Video 4: Visualisasi Data</h5>
                             </div>
                         </div>
                     </div>
@@ -152,7 +152,7 @@
                             <h4 class="card-title mb-0 text-uppercase fw-bold">Daftar Sekarang</h4>
                         </div>
                         <div class="card-body p-5 position-relative z-1">
-                            <p>Siap memulai perjalanan Anda dalam desain UI/UX? Daftar sekarang dan dapatkan akses ke semua materi kursus, kuliah video, tugas, dan proyek. Bergabunglah dengan komunitas desainer kami dan mulailah menciptakan pengalaman pengguna yang luar biasa hari ini!</p>
+                            <p>Siap memulai perjalanan Anda dalam Data Science? Daftar sekarang dan dapatkan akses ke semua materi kursus, kuliah video, tugas, dan proyek. Bergabunglah dengan komunitas praktisi kami dan mulailah menganalisis data dengan percaya diri!</p>
                             <div class="d-grid">
                                 <button class="btn btn-gradient btn-lg">Daftar Sekarang</button>
                             </div>
