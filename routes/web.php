@@ -39,6 +39,8 @@ Route::get('/kontak', [FrontendController::class, 'kontak'])->name('kontak');
 Route::get('/webdevelopment', [FrontendController::class, 'webdevelopment'])->name('webdevelopment');
 Route::get('/soalhtml', [FrontendController::class, 'soalhtml'])->name('soalhtml');
 Route::get('/soalcss', [FrontendController::class, 'soalcss'])->name('soalcss');
+Route::get('/loginUser', [FrontendController::class, 'loginUser'])->name('loginUser');  
+Route::get('/registerUser', [FrontendController::class, 'registerUser'])->name('registerUser');  
 
 
 
