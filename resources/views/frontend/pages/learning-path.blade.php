@@ -12,95 +12,23 @@
 
     <div class="container mt-5 mb-4">
         <div class="row justify-content-center">
+            @foreach ($categoryService as $item)
             <div class="col-md-4 mb-4">
-                <a href="{{ route('webdevelopment') }}" class="text-decoration-none">
+                <a href="#" class="text-decoration-none">
                     <div class="card custom-card fade-in">
                         <div class="card-body text-center d-flex flex-column justify-content-between">
                             <div>
                                 <i class="bi bi-code-slash display-4 text-light"></i>
-                                <h4 class="mt-3">Web Development</h4>
-                                <p class="text-light">Belajar membuat website dengan HTML, CSS, dan JavaScript.</p>
+                                <h4 class="mt-3">{{ $item->title }}</h4>
+                                <p class="text-light">{{ $item->overview }}</p>
                             </div>
-                            <a href="{{ route('webdevelopment') }}" class="btn btn-glow mt-3">Mulai Belajar</a>
+                            <a href="#" class="btn btn-glow mt-3">Mulai Belajar</a>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col-md-4 mb-4">
-                <a href="{{ route('uiux') }}" class="text-decoration-none">
-                    <div class="card custom-card fade-in">
-                        <div class="card-body text-center d-flex flex-column justify-content-between">
-                            <div>
-                                <i class="bi bi-brush display-4 text-light"></i>
-                                <h4 class="mt-3">UI/UX Design</h4>
-                                <p class="text-light">Pelajari dasar-dasar desain UI/UX untuk membangun tampilan website yang menarik.</p>
-                            </div>
-                            <a href="{{ route('uiux') }}" class="btn btn-glow mt-3">Mulai Belajar</a>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 mb-4">
-                <a href="{{route('machinelearning')}}" class="text-decoration-none">
-                    <div class="card custom-card fade-in">
-                        <div class="card-body text-center d-flex flex-column justify-content-between">
-                            <div>
-                                <i class="bi bi-robot display-4 text-light"></i>
-                                <h4 class="mt-3">Machine Learning</h4>
-                                <p class="text-light">Pelajari algoritma machine learning untuk membuat aplikasi AI yang handal.</p>
-                            </div>
-                            <a href="{{ route('machinelearning') }}" class="btn btn-glow mt-3">Mulai Belajar</a>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="container mt-5 mb-4">
-        <div class="row justify-content-center">
-            <div class="col-md-4 mb-4">
-                <a href="{{route('datascience')}}" class="text-decoration-none">
-                    <div class="card custom-card fade-in">
-                        <div class="card-body text-center d-flex flex-column justify-content-between">
-                            <div>
-                                <i class="bi bi-bar-chart display-4 text-light"></i>
-                                <h4 class="mt-3">Data Science</h4>
-                                <p class="text-light">Pelajari cara menganalisis data dan membuat prediksi dengan Python dan R.</p>
-                            </div>
-                            <a href="{{ route('datascience') }}" class="btn btn-glow mt-3">Mulai Belajar</a>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 mb-4">
-                <a href="" class="text-decoration-none">
-                    <div class="card custom-card fade-in">
-                        <div class="card-body text-center d-flex flex-column justify-content-between">
-                            <div>
-                                <i class="bi bi-shield-lock display-4 text-light"></i>
-                                <h4 class="mt-3">Cyber Security</h4>
-                                <p class="text-light">Pelajari teknik untuk melindungi sistem dan jaringan dari serangan cyber.</p>
-                            </div>
-                            <a href="" class="btn btn-glow mt-3">Mulai Belajar</a>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 mb-4">
-                <a href="" class="text-decoration-none">
-                    <div class="card custom-card fade-in">
-                        <div class="card-body text-center d-flex flex-column justify-content-between">
-                            <div>
-                                <i class="bi bi-phone display-4 text-light"></i>
-                                <h4 class="mt-3">Mobile Development</h4>
-                                <p class="text-light">Pelajari cara membuat aplikasi mobile untuk Android dan iOS.</p>
-                            </div>
-                            <a href="" class="btn btn-glow mt-3">Mulai Belajar</a>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            @endforeach
+            
         </div>
     </div>
 

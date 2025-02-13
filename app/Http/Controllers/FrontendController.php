@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Backend\CategoryService;
 use App\Models\Backend\Configuration;
 use App\Models\Backend\Hero;
+use App\Models\Backend\OurProgram;
 use App\Models\Backend\Superiority;
 use App\Models\Backend\SuperiorityImage;
 use App\Models\Backend\Why;
@@ -48,11 +50,13 @@ class FrontendController extends Controller
     {
         $configuration = Configuration::first();
         $hero = Hero::first();
+        $ourPrograms = OurProgram::all();
 
         return view('frontend.pages.program', [
             'title' => 'Program',
             'configuration' => $configuration,
             'hero' => $hero,
+            'ourPrograms' => $ourPrograms,
         ]);
     }
 
@@ -60,11 +64,13 @@ class FrontendController extends Controller
     {
         $configuration = Configuration::first();
         $hero = Hero::first();
+        $categoryService = CategoryService::all();
 
         return view('frontend.pages.learning-path', [
             'title' => 'Learning Path',
             'configuration' => $configuration,
             'hero' => $hero,
+            'categoryService' => $categoryService,
         ]);
     }
 
@@ -163,5 +169,5 @@ class FrontendController extends Controller
             'title' => 'Learning Data Science',
             'configuration' => $configuration,
         ]);
-    }   
+    }
 }
