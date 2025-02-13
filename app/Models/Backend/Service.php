@@ -18,6 +18,7 @@ class Service extends Model
         'title',
         'overview',
         'description',
+        'link',
     ];
 
     public function category()

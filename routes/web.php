@@ -36,14 +36,13 @@ Route::get('/program', [FrontendController::class, 'program'])->name('program');
 Route::get('/learning-path', [FrontendController::class, 'learning'])->name('learning-path');
 Route::get('/tentang', [FrontendController::class, 'tentang'])->name('tentang');
 Route::get('/kontak', [FrontendController::class, 'kontak'])->name('kontak');
-Route::get('/webdevelopment', [FrontendController::class, 'webdevelopment'])->name('webdevelopment');
 Route::get('/soalhtml', [FrontendController::class, 'soalhtml'])->name('soalhtml');
 Route::get('/soalcss', [FrontendController::class, 'soalcss'])->name('soalcss');
 Route::get('/loginUser', [FrontendController::class, 'loginUser'])->name('loginUser');
 Route::get('/registerUser', [FrontendController::class, 'registerUser'])->name('registerUser');
-Route::get('/uiux', [FrontendController::class, 'uiux'])->name('uiux');
-Route::get('/machinelearning', [FrontendController::class, 'machinelearning'])->name('machinelearning');
-Route::get('/datascience', [FrontendController::class, 'datascience'])->name('datascience');
+
+Route::get('/learning-path/{categoryId}', [FrontendController::class, 'webdevelopment'])->name('learning-path');
+
 
 Route::middleware(['auth:admin'])->group(function () {
     // Configuration routes

@@ -117,15 +117,16 @@ class FrontendController extends Controller
         ]);
     }
 
-    public function webdevelopment()
+    public function webdevelopment($categoryId)
     {
         $configuration = Configuration::first();
         $hero = Hero::first();
-
+        $category = CategoryService::with('services')->findOrFail($categoryId);
         return view('frontend.learning-path.web-development', [
             'title' => 'Learning',
             'configuration' => $configuration,
             'hero' => $hero,
+            'category' => $category,
         ]);
     }
 
