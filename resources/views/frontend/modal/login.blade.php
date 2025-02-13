@@ -28,7 +28,7 @@
                         </form>
                     </div>
                     <div class="card-footer text-center position-relative z-1">
-                        <a href="{{route('registerUser')}}" class="text-light">Register?</a>
+                        <a href="{{route('registerUser')}}" class="text-light text-decoration-none">Register?</a>
                     </div>
                     <div class="card-overlay position-absolute w-100 h-100 bg-gradient-opacity"></div>
                 </div>
