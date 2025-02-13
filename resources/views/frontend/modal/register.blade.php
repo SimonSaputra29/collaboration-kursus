@@ -36,7 +36,7 @@
                         </form>
                     </div>
                     <div class="card-footer text-center position-relative z-1 mt-4">
-                        <a href="{{ route('loginUser') }}" class="text-light">Login?</a>
+                        <a href="{{ route('loginUser') }}" class="text-light text-decoration-none">Login?</a>
                     </div>
                     <div class="card-overlay position-absolute w-100 h-100 bg-gradient-opacity"></div>
                 </div>
