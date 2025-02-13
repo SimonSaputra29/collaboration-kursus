@@ -12,6 +12,7 @@
 
     <div class="container mt-5 mb-4">
         <div class="row justify-content-center">
+<<<<<<< HEAD
             @foreach ($categoryService as $index => $item)
                 <div class="col-md-4 mb-4">
                     <a href="{{ route('learning-path', $item->id) }}" class="text-decoration-none">
@@ -24,6 +25,19 @@
                                 </div>
                                 <a href="{{ route('learning-path', $item->id) }}" class="btn btn-glow mt-3">Mulai Belajar</a>
                             </div>
+=======
+            @foreach ($categoryService as $item)
+            <div class="col-md-4 mb-4">
+                <a href="{{ route('learning-path.id', $item->id) }}" class="text-decoration-none">
+                    <div class="card custom-card fade-in">
+                        <div class="card-body text-center d-flex flex-column justify-content-between">
+                            <div>
+                                <i class="bi bi-code-slash display-4 text-light"></i>
+                                <h4 class="mt-3">{{ $item->title }}</h4>
+                                <p class="text-light">{{ $item->overview }}</p>
+                            </div>
+                            <a href="{{ route('learning-path.id', $item->id) }}" class="btn btn-glow mt-3">Mulai Belajar</a>
+>>>>>>> 25ba26b28c233358ad58a44a8dc21de534be1d05
                         </div>
                     </a>
                 </div>
