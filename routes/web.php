@@ -41,7 +41,7 @@ Route::get('/soalcss', [FrontendController::class, 'soalcss'])->name('soalcss');
 Route::get('/loginUser', [FrontendController::class, 'loginUser'])->name('loginUser');
 Route::get('/registerUser', [FrontendController::class, 'registerUser'])->name('registerUser');
 
-Route::get('/learning-path/{categoryId}', [FrontendController::class, 'webdevelopment'])->name('learning-path');
+Route::get('/learning-path/{categoryId}', [FrontendController::class, 'webdevelopment'])->name('learning-path.id');
 
 
 Route::middleware(['auth:admin'])->group(function () {

@@ -103,7 +103,7 @@
         }
 
         .btn-glow {
-            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            background: linear-gradient(135deg, #4d4d4d, #999999);
             color: white;
             font-weight: bold;
             border-radius: 25px;
@@ -115,7 +115,7 @@
 
         .btn-glow:hover {
             transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(255, 126, 95, 0.8);
+            box-shadow: 0 0 15px rgba(77, 77, 77, 0.8);
             color: white;
         }
 
