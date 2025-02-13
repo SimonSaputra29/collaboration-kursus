@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         DatabaseWhyUsSeeder::class,
         DatabaseOurProgramSeeder::class,
         DatabaseCategoryServiceSeeeder::class,
+        DatabaseServiceSeeder::class,
         ]);
     }
 }
