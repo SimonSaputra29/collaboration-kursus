@@ -80,30 +80,6 @@
             transform: scale(1.05);
         }
 
-        @media (max-width: 768px) {
-            #heroImage {
-                max-width: 100%;
-                margin-top: 30px;
-            }
-
-            .d-flex {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .carousel-inner {
-                max-height: 400px;
-            }
-
-            .carousel-item {
-                height: 300px;
-            }
-
-            .carousel-item img {
-                height: 250px;
-                object-fit: cover;
-            }
-        }
     </style>
 
     <div class="d-flex align-items-center justify-content-center ms-5 pt-5 position-relative" style="min-height: 80vh;">
