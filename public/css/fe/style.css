@@ -20,7 +20,7 @@
 /* RESPONSIVE STYLES */
 /* ===================== */
 
-/* Responsif untuk tombol */
+/* Responsive for buttons */
 @media (max-width: 767px) {
     .btn {
         font-size: 0.9rem;
@@ -39,28 +39,28 @@ body {
 /* FOOTER STYLES */
 /* ===================== */
 
-/* Hover effect pada link footer */
+/* Hover effect on footer links */
 .footer-link {
     transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .footer-link:hover {
-    color: #f8b400; /* Warna emas untuk efek mahal */
+    color: #f8b400; /* Gold color for premium effect */
     transform: scale(1.05);
     text-decoration: underline;
 }
 
-/* Ikon sosial media */
+/* Social media icons */
 .social-icon {
     transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .social-icon:hover {
-    color: #f8b400; /* Warna emas saat hover */
+    color: #f8b400; /* Gold color on hover */
     transform: scale(1.1);
 }
 
-/* Mengubah gaya tombol subscribe */
+/* Customize subscribe button */
 footer .btn-warning {
     background-color: #f8b400;
     border: none;
@@ -72,7 +72,7 @@ footer .btn-warning:hover {
     background-color: #e0a800;
 }
 
-/* Desain input subscribe */
+/* Style subscribe input */
 footer .form-control {
     border: none;
     border-radius: 25px;
@@ -85,7 +85,7 @@ footer .form-control {
 /* RESPONSIVE STYLES */
 /* ===================== */
 
-/* Responsif untuk footer */
+/* Responsive for footer */
 @media (max-width: 767px) {
     footer .form-control,
     footer .btn-warning {
