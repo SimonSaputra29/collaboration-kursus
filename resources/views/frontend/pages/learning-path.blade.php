@@ -14,7 +14,7 @@
         <div class="row justify-content-center">
             @foreach ($categoryService as $item)
             <div class="col-md-4 mb-4">
-                <a href="{{ route('learning-path', $item->id) }}" class="text-decoration-none">
+                <a href="{{ route('learning-path.id', $item->id) }}" class="text-decoration-none">
                     <div class="card custom-card fade-in">
                         <div class="card-body text-center d-flex flex-column justify-content-between">
                             <div>
@@ -22,7 +22,7 @@
                                 <h4 class="mt-3">{{ $item->title }}</h4>
                                 <p class="text-light">{{ $item->overview }}</p>
                             </div>
-                            <a href="{{ route('learning-path', $item->id) }}" class="btn btn-glow mt-3">Mulai Belajar</a>
+                            <a href="{{ route('learning-path.id', $item->id) }}" class="btn btn-glow mt-3">Mulai Belajar</a>
                         </div>
                     </div>
                 </a>
