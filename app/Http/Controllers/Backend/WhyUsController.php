@@ -70,7 +70,7 @@ class WhyUsController extends Controller
             }
 
             $imageName = time() . '.' . $request->image->extension();
-            $imageDirectory = 'uploads/superiority/';
+            $imageDirectory = 'uploads/why/';
             $request->image->move(($imageDirectory), $imageName);
             $whyUs->image = $imageDirectory . $imageName;
         }

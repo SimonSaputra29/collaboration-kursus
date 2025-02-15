@@ -1,7 +1,7 @@
 @extends('backend.layouts')
 
 @section('content')
-    <div class="col-md-12">
+    <div class="col">
         <div class="card">
             <div class="card-header">
                 <div class="d-flex align-items-center">

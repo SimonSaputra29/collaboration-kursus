@@ -10,8 +10,10 @@ use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\WhyController;
 use App\Http\Controllers\Backend\WhyUsController;
 use App\Http\Controllers\FrontendController;
-use App\Models\Backend\Superiority;
-use App\Models\Backend\SuperiorityImage;
+use App\Http\Controllers\Backend\Superiority;
+use App\Http\Controllers\Backend\SuperiorityController;
+use App\Http\Controllers\Backend\SuperiorityImage;
+use App\Http\Controllers\Backend\SuperiorityImageController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
@@ -58,13 +60,13 @@ Route::middleware(['auth:admin'])->group(function () {
     });
 
     // Superiority routes
-    Route::controller(Superiority::class)->group(function () {
+    Route::controller(SuperiorityController::class)->group(function () {
         Route::get('/dashboard-admin/superiority', 'index')->name('superiority.index');
         Route::post('/dashboard-admin/superiority', 'createOrUpdate')->name('superiority.store');
     });
 
     // SuperiorityImage routes
-    Route::resource('/dashboard-admin/superiorityImage', SuperiorityImage::class);
+    Route::resource('/dashboard-admin/superiorityImage', SuperiorityImageController::class);
 
     // Why routes
     Route::controller(WhyController::class)->group(function () {
@@ -73,12 +75,7 @@ Route::middleware(['auth:admin'])->group(function () {
     });
 
     // WhyUs routes
-    Route::controller(WhyUsController::class)->group(function () {
-        Route::get('/dashboard-admin/whyUs', 'index')->name('whyUs.index');
-        Route::post('/dashboard-admin/whyUs', 'store')->name('whyUs.store');
-        Route::put('/dashboard-admin/whyUs/{id}', 'update')->name('whyUs.update');
-        Route::delete('/dashboard-admin/whyUs/destroy/{id}', 'destroy')->name('whyUs.destroy');
-    });
+    Route::resource('/dashboard-admin/whyUs', WhyUsController::class);
 
     // CategoryService routes
     Route::resource('/dashboard-admin/categoryService', CategoryServiceController::class);

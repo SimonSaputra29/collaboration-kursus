@@ -1,11 +1,11 @@
 @extends('backend.layouts')
 
 @section('content')
-<div class="container mt-10">
+<div class="container mt-4">
     <div class="row justify-content-center">
-        <div class="col-md-11">
+        <div class="col-md-10">
             <div class="card">
-                <div class="card-header bg-primary text-white">Edit Superiority Image</div>
+                <div class="card-header bg-primary text-white">Edit Category Service</div>
                 <div class="card-body">
                     <form action="{{ route('categoryService.update', $categoryService->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf

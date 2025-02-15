@@ -1,7 +1,7 @@
 @extends('backend.layouts')
 
 @section('content')
-    <div class="col-md-12">
+    <div class="col">
         <div class="card">
             <div class="card-header">
                 <div class="d-flex align-items-center">
@@ -33,16 +33,20 @@
                                     <td>{{ $item->category->title }}</td>
                                     <td>{{ $item->title }}</td>
                                     <td>{{ $item->overview }}</td>
-                                    <td>{{ Str::limit($item->description, 50) }}</td>
-                                    <td><a href="{{ $item->link }}" target="_blank">{{ $item->link }}</a></td>
+                                    <td>{!! Str::limit($item->description, 50) !!}</td>
+                                    <td>
+                                        {!! $item->link ? '<i class="fas fa-check text-success"></i>' : '<i class="fas fa-times text-danger"></i>' !!}
+                                    </td>
                                     <td>
                                         <div class="form-button-action">
                                             <!-- Tombol Edit -->
-                                            <a href="{{ route('service.edit', $item->id) }}" class="btn btn-link btn-primary btn-lg">
+                                            <a href="{{ route('service.edit', $item->id) }}"
+                                                class="btn btn-link btn-primary btn-lg">
                                                 <i class="fa fa-edit"></i>
                                             </a>
                                             <!-- Tombol Hapus -->
-                                            <form action="{{ route('service.destroy', $item->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus?')">
+                                            <form action="{{ route('service.destroy', $item->id) }}" method="POST"
+                                                class="d-inline" onsubmit="return confirm('Yakin ingin menghapus?')">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-link btn-danger">

@@ -1,15 +1,15 @@
 @extends('backend.layouts')
 
 @section('content')
-    <div class="col-md-12">
+    <div class="col">
         <div class="card">
             <div class="card-header">
                 <div class="d-flex align-items-center">
-                    <h4 class="card-title">Category Service</h4>
+                    <h4 class="card-title">Our Program</h4>
                     <a href="{{ route('ourProgram.create') }}" class="ms-auto">
                         <button class="btn btn-primary btn-round">
                             <i class="fa fa-plus"></i>
-                            Add Category Service
+                            Add Our Program
                         </button>
                     </a>
                 </div>

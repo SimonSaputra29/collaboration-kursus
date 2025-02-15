@@ -5,9 +5,9 @@
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="card">
-                    <div class="card-header bg-primary text-white">Pengaturan Category Service</div>
+                    <div class="card-header bg-primary text-white">Add Why Us</div>
                     <div class="card-body">
-                        <form action="{{ route('ourProgram.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('whyUs.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col mb-3">
@@ -27,23 +27,12 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col mb-3">
-                                    <label for="overview" class="form-label">Overview</label>
-                                    <input type="text" name="overview" id="overview"
-                                        class="form-control @error('overview') is-invalid @enderror">
-                                    @error('overview')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                                <div class="col mb-3">
-                                    <label for="link" class="form-label">Link</label>
-                                    <input type="text" name="link" id="link"
-                                        class="form-control @error('link') is-invalid @enderror">
-                                    @error('link')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
+                            <div class="ol mb-3">
+                                <label for="description" class="form-label">Upload Description</label>
+                                <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror" rows="4" required></textarea>
+                                @error('description')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
 
                             <button type="submit" class="btn btn-primary w-100">Simpan</button>

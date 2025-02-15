@@ -34,7 +34,7 @@ class CategoryServiceController extends Controller
             'overview' => $request->overview,
         ]);
 
-        return redirect()->route('categoryService.index')->with('succes', 'Category berhasil ditambahkan');
+        return redirect()->route('categoryService.index')->with('success', 'Category berhasil ditambahkan');
     }
 
     public function edit($id)
