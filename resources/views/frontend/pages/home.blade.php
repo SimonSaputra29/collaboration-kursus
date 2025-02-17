@@ -79,7 +79,6 @@
         .testimonial-item:hover {
             transform: scale(1.05);
         }
-
     </style>
 
     <div class="d-flex align-items-center justify-content-center ms-5 pt-5 position-relative" style="min-height: 80vh;">

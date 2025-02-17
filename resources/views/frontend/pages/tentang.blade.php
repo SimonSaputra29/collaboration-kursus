@@ -71,12 +71,13 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             margin-bottom: 30px;
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             text-align: center;
         }
 
         .team-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         .team-card img {
@@ -179,7 +180,6 @@
         }
 
         @media screen and (max-width: 600px) {
-
             .timeline-item.left,
             .timeline-item.right {
                 left: 0;
@@ -202,6 +202,18 @@
                 left: 31px;
             }
         }
+
+        /* Animasi fade-in */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 
     <div class="parallax">
@@ -211,27 +223,26 @@
     <div class="container content">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h2 class="section-title">Siapa Kami</h2>
-                <p>Kami adalah tim yang berdedikasi untuk menyediakan solusi terbaik bagi kebutuhan teknologi Anda. Dengan
-                    pengalaman bertahun-tahun di industri, kami siap membantu Anda mencapai tujuan Anda.</p>
+                <h2 class="section-title fade-in">Siapa Kami</h2>
+                <p class="fade-in">Kami adalah tim yang berdedikasi untuk menyediakan solusi terbaik bagi kebutuhan teknologi Anda. Dengan pengalaman bertahun-tahun di industri, kami siap membantu Anda mencapai tujuan Anda.</p>
             </div>
         </div>
     </div>
 
     <div class="container team-section">
         <div class="row justify-content-center">
-            <div class="col-md-4">
+            <div class="col-md-4 fade-in">
                 <div class="team-card">
-                    <img src="{{ asset('images/simon.jpg') }}" alt="Team Member">
+                    <img src="{{ asset('images/simon.jpg') }}" alt="Simon Saputra">
                     <div class="team-card-body">
                         <h5>Simon Saputra</h5>
                         <p>Frontend Developer</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 fade-in">
                 <div class="team-card">
-                    <img src="{{ asset('images/team2.jpg') }}" alt="Team Member">
+                    <img src="{{ asset('images/team2.jpg') }}" alt="Akmal Rahmatullah">
                     <div class="team-card-body">
                         <h5>Akmal Rahmatullah</h5>
                         <p>Backend Developer</p>
@@ -242,25 +253,25 @@
     </div>
 
     <div class="container timeline">
-        <div class="timeline-item left">
+        <div class="timeline-item left fade-in">
             <div class="timeline-content">
                 <h3>2015</h3>
                 <p>Perusahaan ini didirikan dengan tujuan untuk menyediakan solusi teknologi yang inovatif.</p>
             </div>
         </div>
-        <div class="timeline-item right">
+        <div class="timeline-item right fade-in">
             <div class="timeline-content">
                 <h3>2017</h3>
                 <p>Kami meluncurkan produk pertama kami dan mendapatkan tanggapan positif dari pasar.</p>
             </div>
         </div>
-        <div class="timeline-item left">
+        <div class="timeline-item left fade-in">
             <div class="timeline-content">
                 <h3>2019</h3>
                 <p>Perusahaan kami berkembang pesat dan membuka kantor cabang di beberapa kota besar.</p>
             </div>
         </div>
-        <div class="timeline-item right">
+        <div class="timeline-item right fade-in">
             <div class="timeline-content">
                 <h3>2021</h3>
                 <p>Kami terus berinovasi dan memperluas jangkauan produk dan layanan kami.</p>
@@ -273,8 +284,7 @@
             const fadeElements = document.querySelectorAll(".fade-in");
             fadeElements.forEach((el, index) => {
                 setTimeout(() => {
-                    el.style.opacity = 1;
-                    el.style.transform = "translateY(0)";
+                    el.classList.add('appear');
                 }, index * 200);
             });
         });
