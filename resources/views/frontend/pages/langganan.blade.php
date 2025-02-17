@@ -14,7 +14,7 @@
                             <h5 class="card-title">Kursus Laravel Dasar</h5>
                             <p class="card-text">Belajar Laravel dari nol, mulai dari instalasi hingga membuat aplikasi sederhana.</p>
                         </div>
-                        <a href="#" class="btn btn-glow mt-3">Daftar Sekarang</a>
+                        <a href="/registerUser" class="btn btn-glow mt-3">Daftar Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                             <h5 class="card-title">Kursus Frontend Developer</h5>
                             <p class="card-text">Pelajari HTML, CSS, dan JavaScript untuk membangun tampilan website yang menarik.</p>
                         </div>
-                        <a href="#" class="btn btn-glow mt-3">Daftar Sekarang</a>
+                        <a href="/registerUser" class="btn btn-glow mt-3">Daftar Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                             <h5 class="card-title">Kursus Fullstack Developer</h5>
                             <p class="card-text">Gabungkan frontend dan backend untuk menjadi fullstack developer yang handal.</p>
                         </div>
-                        <a href="#" class="btn btn-glow mt-3">Daftar Sekarang</a>
+                        <a href="/registerUser" class="btn btn-glow mt-3">Daftar Sekarang</a>
                     </div>
                 </div>
             </div>

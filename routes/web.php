@@ -40,6 +40,7 @@ Route::get('/soalhtml', [FrontendController::class, 'soalhtml'])->name('soalhtml
 Route::get('/soalcss', [FrontendController::class, 'soalcss'])->name('soalcss');
 Route::get('/loginUser', [FrontendController::class, 'loginUser'])->name('loginUser');
 Route::get('/registerUser', [FrontendController::class, 'registerUser'])->name('registerUser');
+Route::get('/faq', [FrontendController::class, 'faq'])->name('faq');
 
 Route::get('/learning-path/{categoryId}', [FrontendController::class, 'webdevelopment'])->name('learning-path.id');
 

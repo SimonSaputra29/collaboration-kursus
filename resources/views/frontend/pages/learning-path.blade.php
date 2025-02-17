@@ -12,36 +12,24 @@
 
     <div class="container mt-5 mb-4">
         <div class="row justify-content-center">
-<<<<<<< HEAD
-            @foreach ($categoryService as $index => $item)
+            @foreach ($categoryService as $item)
                 <div class="col-md-4 mb-4">
-                    <a href="{{ route('learning-path', $item->id) }}" class="text-decoration-none">
-                        <div class="card custom-card fade-in" style="animation-delay: {{ $index * 0.2 }}s;">
+                    <a href="{{ route('learning-path.id', $item->id) }}" class="text-decoration-none">
+                        <div class="card custom-card fade-in">
                             <div class="card-body text-center d-flex flex-column justify-content-between">
                                 <div>
                                     <i class="bi bi-code-slash display-4 text-light"></i>
                                     <h4 class="mt-3">{{ $item->title }}</h4>
                                     <p class="text-light">{{ $item->overview }}</p>
                                 </div>
-                                <a href="{{ route('learning-path', $item->id) }}" class="btn btn-glow mt-3">Mulai Belajar</a>
+                                <a href="{{ route('learning-path.id', $item->id) }}" class="btn btn-glow mt-3">Mulai
+                                    Belajar</a>
                             </div>
-=======
-            @foreach ($categoryService as $item)
-            <div class="col-md-4 mb-4">
-                <a href="{{ route('learning-path.id', $item->id) }}" class="text-decoration-none">
-                    <div class="card custom-card fade-in">
-                        <div class="card-body text-center d-flex flex-column justify-content-between">
-                            <div>
-                                <i class="bi bi-code-slash display-4 text-light"></i>
-                                <h4 class="mt-3">{{ $item->title }}</h4>
-                                <p class="text-light">{{ $item->overview }}</p>
-                            </div>
-                            <a href="{{ route('learning-path.id', $item->id) }}" class="btn btn-glow mt-3">Mulai Belajar</a>
->>>>>>> 25ba26b28c233358ad58a44a8dc21de534be1d05
                         </div>
                     </a>
                 </div>
             @endforeach
+
         </div>
     </div>
 
@@ -59,17 +47,14 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 30px;
             transition: all 0.3s ease-in-out;
-            height: 100%; /* Ensure cards take full height */
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 0.8s ease-out forwards;
+            height: 100%;
+            /* Ensure cards take full height */
         }
 
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .custom-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .card-title {
@@ -119,5 +104,27 @@
             color: #333;
             margin-top: 10px;
         }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const fadeElements = document.querySelectorAll(".fade-in");
+            fadeElements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add('appear');
+                }, index * 200);
+            });
+        });
+    </script>
 @endsection
