@@ -88,106 +88,108 @@
             <a href="{{ route('learning-path') }}" class="btn btn-dark px-5 py-3 rounded-pill shadow-lg">Belajar Sekarang</a>
         </div>
         <img id="heroImage" src="{{ asset($hero->image) }}" alt="Belajar Coding"
-        @if (!empty($hero->image))
-                class="img-fluid animate__animated animate__fadeInRight"
+            @if (!empty($hero->image)) class="img-fluid animate__animated animate__fadeInRight"
                 style="max-width: 40%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);"
-                data-aos="fade-up">
-        @endif
-    </div>
-
-    <div class="container py-5" data-aos="fade-up">
-        <div class="row align-items-center">
-            <div class="col-md-6 text-center">
-                <div id="carouselKeunggulan" class="carousel slide shadow-lg rounded" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        @foreach ($superiorityImage as $index => $img)
-                            <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-                                <img src="{{ asset($img->image) }}" class="d-block w-100 rounded"
-                                    alt="Keunggulan {{ $index + 1 }}">
-                            </div>
-                        @endforeach
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselKeunggulan"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselKeunggulan"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    </button>
-                </div>
+                data-aos="fade-up"> 
+            @endif
             </div>
-            <div class="col-md-6">
-                <h2 class="fw-bold text-muted position-relative d-inline-block pb-2"
-                    style="font-size: 2.2rem; letter-spacing: 1px; transition: color 0.3s ease;">
-                    {{ $superiority->title ?? '' }}
-                    <span class="underline-animation"></span>
-                </h2>
-                <p class="text-muted" style="font-size: 1.1rem; line-height: 1.6;">{{ $superiority->description ?? '' }}</p>
-                <a href="#" class="btn btn-dark mt-3 px-4 py-2 fw-bold shadow-lg btn-hover-effect"
-                    data-aos="fade-right">🚀 Mulai Belajar Sekarang</a>
-            </div>
-        </div>
-    </div>
 
-    <div class="whyus text-center py-5" data-aos="fade-right">
-        <h2 class="fw-bold text-dark">{{ $why->title ?? 'Kosong' }}</h2>
-        <div id="whyUsCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <p class="fw-medium text-center">{{ $why->description ?? 'Kosong' }}</p>
-            </div>
-        </div>
-        <div class="row align-items-center">
-            <div id="dicoding-features" class="dicoding-feature__header"></div>
-        </div>
-    </div>
-
-    <div class="container py-5">
-        <div class="row text-center">
-            @foreach ($whyUs as $item)
-                <div class="col-md-4" data-aos="zoom-in">
-                    <div class="p-4 border rounded shadow-lg">
-                        <img src="{{ asset($item->image) }}" alt="{{ $item->title }}" class="mb-3" width="60">
-                        <h4 class="fw-bold">{{ $item->title }}</h4>
-                        <p class="text-muted">{{ $item->description }}</p>
+        <div class="container py-5" data-aos="fade-up">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center">
+                    <div id="carouselKeunggulan" class="carousel slide shadow-lg rounded" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            @foreach ($superiorityImage as $index => $img)
+                                <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                                    <img src="{{ asset($img->image) }}" class="d-block w-100 rounded"
+                                        alt="Keunggulan {{ $index + 1 }}">
+                                </div>
+                            @endforeach
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselKeunggulan"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselKeunggulan"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </button>
                     </div>
                 </div>
-            @endforeach
-        </div>
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelector('.module-title').classList.add('animate__animated', 'animate__fadeInDown');
-        });
-    </script>
-
-    <div class="text-center py-5 bg-dark text-white" data-aos="fade-up">
-        <h2 class="fw-bold">Siap untuk Belajar?</h2>
-        <p class="lead">Gabung sekarang dan raih masa depan yang lebih cerah!</p>
-        <a href="/registerUser" class="btn btn-light fw-bold px-4 py-2 mt-3">Daftar Sekarang</a>
-    </div>
-
-    <div class="testimonials text-center py-5" data-aos="fade-up">
-        <h2 class="fw-bold text-muted mb-4">Testimoni <span class="text-dark">Pelanggan</span></h2>
-        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="testimonial-item mx-auto" style="max-width: 600px;">
-                        <p class="fst-italic text-muted">"Kursus ini sangat membantu saya dalam memahami dasar-dasar
-                            pemrograman. Mentornya sangat berpengalaman dan kurikulumnya sangat relevan dengan industri saat
-                            ini."</p>
-                        <h5 class="fw-bold text-dark">- Saii</h5>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="testimonial-item mx-auto" style="max-width: 600px;">
-                        <p class="fst-italic text-muted">"Saya berhasil mendapatkan pekerjaan impian saya sebagai developer
-                            berkat kursus ini. Materinya sangat lengkap dan mudah dipahami."</p>
-                        <h5 class="fw-bold text-dark">- Amay</h5>
-                    </div>
+                <div class="col-md-6">
+                    <h2 class="fw-bold text-muted position-relative d-inline-block pb-2"
+                        style="font-size: 2.2rem; letter-spacing: 1px; transition: color 0.3s ease;">
+                        {{ $superiority->title ?? '' }}
+                        <span class="underline-animation"></span>
+                    </h2>
+                    <p class="text-muted" style="font-size: 1.1rem; line-height: 1.6;">{{ $superiority->description ?? '' }}
+                    </p>
+                    <a href="#" class="btn btn-dark mt-3 px-4 py-2 fw-bold shadow-lg btn-hover-effect"
+                        data-aos="fade-right">🚀 Mulai Belajar Sekarang</a>
                 </div>
             </div>
         </div>
-    </div>
-@endsection
+
+        <div class="whyus text-center py-5" data-aos="fade-right">
+            <h2 class="fw-bold text-dark">{{ $why->title ?? 'Kosong' }}</h2>
+            <div id="whyUsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <p class="fw-medium text-center">{{ $why->description ?? 'Kosong' }}</p>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div id="dicoding-features" class="dicoding-feature__header"></div>
+            </div>
+        </div>
+
+        <div class="container py-5">
+            <div class="row text-center">
+                @foreach ($whyUs as $item)
+                    <div class="col-md-4" data-aos="zoom-in">
+                        <div class="p-4 border rounded shadow-lg">
+                            <img src="{{ asset($item->image) }}" alt="{{ $item->title }}" class="mb-3" width="60">
+                            <h4 class="fw-bold">{{ $item->title }}</h4>
+                            <p class="text-muted">{{ $item->description }}</p>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                document.querySelector('.module-title').classList.add('animate__animated', 'animate__fadeInDown');
+            });
+        </script>
+
+        <div class="text-center py-5 bg-dark text-white" data-aos="fade-up">
+            <h2 class="fw-bold">Siap untuk Belajar?</h2>
+            <p class="lead">Gabung sekarang dan raih masa depan yang lebih cerah!</p>
+            <a href="/registerUser" class="btn btn-light fw-bold px-4 py-2 mt-3">Daftar Sekarang</a>
+        </div>
+
+        <div class="testimonials text-center py-5" data-aos="fade-up">
+            <h2 class="fw-bold text-muted mb-4">Testimoni <span class="text-dark">Pelanggan</span></h2>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="testimonial-item mx-auto" style="max-width: 600px;">
+                            <p class="fst-italic text-muted">"Kursus ini sangat membantu saya dalam memahami dasar-dasar
+                                pemrograman. Mentornya sangat berpengalaman dan kurikulumnya sangat relevan dengan industri
+                                saat
+                                ini."</p>
+                            <h5 class="fw-bold text-dark">- Saii</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="testimonial-item mx-auto" style="max-width: 600px;">
+                            <p class="fst-italic text-muted">"Saya berhasil mendapatkan pekerjaan impian saya sebagai
+                                developer
+                                berkat kursus ini. Materinya sangat lengkap dan mudah dipahami."</p>
+                            <h5 class="fw-bold text-dark">- Amay</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endsection
