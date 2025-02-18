@@ -8,7 +8,7 @@
                 <div class="card shadow-lg border-0 bg-dark text-white overflow-hidden position-relative hover-effect">
                     <div class="card-header bg-gradient text-center py-4 position-relative z-1">
                         <h4 class="card-title mb-0 text-uppercase fw-bold">Login</h4>
-                    </div>
+                    </div>  
                     <div class="card-body p-5 position-relative z-1">
                         <form action="" method="post">
                             @csrf
@@ -28,7 +28,7 @@
                         </form>
                     </div>
                     <div class="card-footer text-center position-relative z-1">
-                        <a href="{{route('registerUser')}}" class="text-light text-decoration-none">Register?</a>
+                        <a href="{{ route('registerUser') }}" class="text-light text-decoration-none">Register?</a>
                     </div>
                     <div class="card-overlay position-absolute w-100 h-100 bg-gradient-opacity"></div>
                 </div>
