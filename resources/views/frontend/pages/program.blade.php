@@ -51,7 +51,7 @@
         <div class="cta-section text-center fade-in">
             <h3>Siap Meningkatkan Keterampilan Anda?</h3>
             <p>Bergabunglah dengan ribuan siswa lainnya dan mulailah perjalanan belajar Anda sekarang!</p>
-            <a href="#" class="btn btn-glow">Gabung Sekarang</a>
+            <a href="/registerUser" class="btn btn-glow">Gabung Sekarang</a>
         </div>
     </div>
 

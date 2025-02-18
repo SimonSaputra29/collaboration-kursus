@@ -148,7 +148,8 @@ class FrontendController extends Controller
         ]);
     }
 
-    public function uiux() {
+    public function uiux()
+    {
         $configuration = Configuration::first();
         return view('frontend.learning-path.uiux', [
             'title' => 'Learning UI UX',
@@ -156,7 +157,8 @@ class FrontendController extends Controller
         ]);
     }
 
-    public function machinelearning() {
+    public function machinelearning()
+    {
         $configuration = Configuration::first();
         return view('frontend.learning-path.machinelearning', [
             'title' => 'Learning Machine Learning',
@@ -164,11 +166,25 @@ class FrontendController extends Controller
         ]);
     }
 
-    public function datascience() {
+    public function datascience()
+    {
         $configuration = Configuration::first();
         return view('frontend.learning-path.datascience', [
             'title' => 'Learning Data Science',
             'configuration' => $configuration,
         ]);
+    }
+
+    public function faq()
+    {
+        $configuration = Configuration::first();
+
+        return view(
+            'frontend.pages.faq',
+            [
+                'title' => 'FAQ',
+                'configuration' => $configuration,
+            ]
+        );
     }
 }
