@@ -14,6 +14,7 @@ use App\Http\Controllers\Backend\Superiority;
 use App\Http\Controllers\Backend\SuperiorityController;
 use App\Http\Controllers\Backend\SuperiorityImage;
 use App\Http\Controllers\Backend\SuperiorityImageController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
@@ -40,12 +41,20 @@ Route::get('/tentang', [FrontendController::class, 'tentang'])->name('tentang');
 Route::get('/kontak', [FrontendController::class, 'kontak'])->name('kontak');
 Route::get('/soalhtml', [FrontendController::class, 'soalhtml'])->name('soalhtml');
 Route::get('/soalcss', [FrontendController::class, 'soalcss'])->name('soalcss');
-Route::get('/loginUser', [FrontendController::class, 'loginUser'])->name('loginUser');
-Route::get('/registerUser', [FrontendController::class, 'registerUser'])->name('registerUser');
 Route::get('/faq', [FrontendController::class, 'faq'])->name('faq');
 
-Route::get('/learning-path/{categoryId}', [FrontendController::class, 'webdevelopment'])->name('learning-path.id');
+Route::controller(UserController::class)->group(function () {
+    Route::get('/registerUser', 'pageRegisterUser')->name('pageRegisterUser'); 
+    Route::post('/registerUser', 'registerUser')->name('registerUser');
+    Route::get('/loginUser', 'pageLoginUser')->name('pageLoginUser'); 
+    Route::post('/loginUser', 'loginUser')->name('loginUser'); 
+});
 
+Route::middleware(['checkUser'])->group(function () {
+    Route::get('/learning-path/{categoryId}', [FrontendController::class, 'webdevelopment'])->name('learning-path.id');
+
+
+});
 
 Route::middleware(['auth:admin'])->group(function () {
     // Configuration routes

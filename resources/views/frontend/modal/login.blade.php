@@ -10,7 +10,7 @@
                         <h4 class="card-title mb-0 text-uppercase fw-bold">Login</h4>
                     </div>  
                     <div class="card-body p-5 position-relative z-1">
-                        <form action="" method="post">
+                        <form action="{{ route('loginUser') }}" method="POST">
                             @csrf
                             <div class="form-group mb-3">
                                 <label for="email" class="form-label">Email:</label>

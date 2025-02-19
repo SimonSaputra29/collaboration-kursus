@@ -10,7 +10,7 @@
                         <h4 class="card-title mb-0 text-uppercase fw-bold">Register</h4>
                     </div>
                     <div class="card-body p-5 position-relative z-1">
-                        <form action="" method="post" id="registerForm">
+                        <form action="{{ route('registerUser') }}" method="POST" id="registerForm" autocomplete="off">
                             @csrf
                             <div class="form-group mb-3">
                                 <label for="name" class="form-label">Name:</label>
@@ -18,11 +18,11 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label for="email" class="form-label">Email:</label>
-                                <input type="email" name="email" id="email" class="form-control glow-input" required>
+                                <input type="email" name="email" id="email" class="form-control glow-input" autocomplete="new-email" required>
                             </div>
                             <div class="form-group mb-4 position-relative">
                                 <label for="password" class="form-label">Password:</label>
-                                <input type="password" name="password" id="password" class="form-control glow-input" required>
+                                <input type="password" name="password" id="password" class="form-control glow-input" autocomplete="new-password" required>
                                 <span class="toggle-password" onclick="togglePassword('password')">👁️</span>
                             </div>
                             <div class="form-group mb-4 position-relative">
@@ -97,7 +97,7 @@
         .toggle-password {
             position: absolute;
             right: 15px;
-            top: 50%;
+            top: 50px;
             transform: translateY(-50%);
             cursor: pointer;
             font-size: 1.2rem;
@@ -131,15 +131,5 @@
             }
         }
     </style>
-
-    <script>
-        function togglePassword(id) {
-            const passwordField = document.getElementById(id);
-            if (passwordField.type === "password") {
-                passwordField.type = "text";
-            } else {
-                passwordField.type = "password";
-            }
-        }
-    </script>
+ 
 @endsection
