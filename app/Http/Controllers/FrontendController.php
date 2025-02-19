@@ -12,6 +12,8 @@ use App\Models\Backend\Team;
 use App\Models\Backend\Why;
 use App\Models\Backend\WhyUs;
 use Illuminate\Http\Request;
+use App\Mail\ContactMail;
+use Illuminate\Support\Facades\Mail;
 
 class FrontendController extends Controller
 {
@@ -99,6 +101,25 @@ class FrontendController extends Controller
             'configuration' => $configuration,
             'hero' => $hero,
         ]);
+    }
+
+    public function sendEmail(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'message' => 'required|string'
+        ]);
+
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'message' => $request->message
+        ];
+
+        Mail::to('legendsmystic60@gmail.com')->send(new ContactMail($data));
+
+        return back()->with('success', 'Pesan berhasil dikirim!');
     }
 
     public function webdevelopment($categoryId)

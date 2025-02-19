@@ -43,6 +43,7 @@ Route::get('/kontak', [FrontendController::class, 'kontak'])->name('kontak');
 Route::get('/soalhtml', [FrontendController::class, 'soalhtml'])->name('soalhtml');
 Route::get('/soalcss', [FrontendController::class, 'soalcss'])->name('soalcss');
 Route::get('/faq', [FrontendController::class, 'faq'])->name('faq');
+Route::post('/', [FrontendController::class, 'sendEmail'])->name('contact.send');
 
 Route::controller(UserController::class)->group(function () {
     Route::get('/registerUser', 'pageRegisterUser')->name('pageRegisterUser'); 

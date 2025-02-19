@@ -8,7 +8,7 @@
         <div class="row justify-content-center mt-5">
             <div class="col-md-8">
                 <div class="contact-form shadow-lg p-4 rounded">
-                    <form action="" method="POST">
+                    <form action="{{ route('contact.send') }}" method="POST">
                         @csrf
                         <div class="mb-3">
                             <label for="name" class="form-label">Nama</label>
@@ -24,6 +24,7 @@
                         </div>
                         <button type="submit" class="btn btn-gradient w-100">Kirim Pesan</button>
                     </form>
+                    
                 </div>
             </div>
         </div>
