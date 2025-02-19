@@ -161,7 +161,7 @@
             });
         </script>
 
-        <div class="container mt-5 mb-5 content d-flex align-items-start">
+        <div class="container mt-5 mb-5 content d-flex align-items-start" data-aos="fade-left">
             <div class="w-50 me-4">
                 <div class="accordion h-100" id="faqAccordion">
                     <div class="accordion-item">
