@@ -16,10 +16,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('role');
             $table->string('image');
-            $table->text('github');
-            $table->text('instagram');
-            $table->text('linkedin');
-            $table->bigInteger('phone_number');
+            $table->text('github')->nullable();
+            $table->text('instagram')->nullable();
+            $table->text('linkedin')->nullable();
+            $table->bigInteger('phone_number')->nullable();
             $table->timestamps();
         });
     }

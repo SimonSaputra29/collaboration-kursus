@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         DatabaseOurProgramSeeder::class,
         DatabaseCategoryServiceSeeeder::class,
         DatabaseServiceSeeder::class,
+        DatabaseTeamSeeder::class,
         ]);
     }
 }

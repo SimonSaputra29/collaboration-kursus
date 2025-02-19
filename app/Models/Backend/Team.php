@@ -11,7 +11,7 @@ class Team extends Model
 
     protected $table = 'team';
 
-    protected $fillablee = [
+    protected $fillable  = [
         'name',
         'role',
         'image',

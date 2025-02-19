@@ -8,6 +8,7 @@ use App\Models\Backend\Hero;
 use App\Models\Backend\OurProgram;
 use App\Models\Backend\Superiority;
 use App\Models\Backend\SuperiorityImage;
+use App\Models\Backend\Team;
 use App\Models\Backend\Why;
 use App\Models\Backend\WhyUs;
 use Illuminate\Http\Request;
@@ -78,11 +79,13 @@ class FrontendController extends Controller
     {
         $configuration = Configuration::first();
         $hero = Hero::first();
+        $teams = Team::all();
 
         return view('frontend.pages.tentang', [
             'title' => 'Tentang',
             'configuration' => $configuration,
             'hero' => $hero,
+            'teams' => $teams,
         ]);
     }
 
@@ -125,33 +128,6 @@ class FrontendController extends Controller
         $configuration = Configuration::first();
         return view('frontend.soal.soal-css', [
             'title' => 'Soal CSS',
-            'configuration' => $configuration,
-        ]);
-    }
-
-    public function uiux()
-    {
-        $configuration = Configuration::first();
-        return view('frontend.learning-path.uiux', [
-            'title' => 'Learning UI UX',
-            'configuration' => $configuration,
-        ]);
-    }
-
-    public function machinelearning()
-    {
-        $configuration = Configuration::first();
-        return view('frontend.learning-path.machinelearning', [
-            'title' => 'Learning Machine Learning',
-            'configuration' => $configuration,
-        ]);
-    }
-
-    public function datascience()
-    {
-        $configuration = Configuration::first();
-        return view('frontend.learning-path.datascience', [
-            'title' => 'Learning Data Science',
             'configuration' => $configuration,
         ]);
     }

@@ -47,8 +47,9 @@ class ServiceController extends Controller
 
     public function edit(Service $service)
     {
-        $categories = CategoryService::all();
-        return view('services.edit', compact('service', 'categories'));
+        $configuration = Configuration::first();
+        $categoryService = CategoryService::all();
+        return view('backend.database.service.edit', compact('configuration', 'service', 'categoryService'));
     }
 
     public function update(Request $request, Service $service)

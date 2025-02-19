@@ -117,7 +117,8 @@
                                 <ul class="nav nav-collapse">
                                     <li><a href="{{ route('superiority.index') }}"><span
                                                 class="sub-item">Superiority</span></a></li>
-                                    <li><a href="{{ route('superiorityImage.index') }}"><span class="sub-item">Superiority Image</span></a></li>
+                                    <li><a href="{{ route('superiorityImage.index') }}"><span
+                                                class="sub-item">Superiority Image</span></a></li>
                                 </ul>
                             </div>
                         </li>
@@ -130,10 +131,11 @@
                                 <span class="caret"></span>
                             </a>
                             <div class="collapse" id="why">
-                                <ul class="nav nav-collapse">
+<i class="fas fa-user-friends"></i>                                <ul class="nav nav-collapse">
                                     <li><a href="{{ route('why.index') }}"><span class="sub-item">Why</span></a>
                                     </li>
-                                    <li><a href="{{ route('whyUs.index') }}"><span class="sub-item">Why Us</span></a></li>
+                                    <li><a href="{{ route('whyUs.index') }}"><span class="sub-item">Why Us</span></a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -147,18 +149,29 @@
                             </a>
                             <div class="collapse" id="service">
                                 <ul class="nav nav-collapse">
-                                    <li><a href="{{ route('categoryService.index') }}"><span class="sub-item">Category Services</span></a>
+                                    <li><a href="{{ route('categoryService.index') }}"><span class="sub-item">Category
+                                                Services</span></a>
                                     </li>
-                                    <li><a href="{{ route('service.index') }}"><span class="sub-item">Services</span></a>
+                                    <li><a href="{{ route('service.index') }}"><span
+                                                class="sub-item">Services</span></a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
 
-                        <li class="nav-item {{ Request::is('dashboard-admin/ourProgram', 'dashboard-admin/ourProgram', 'dashboard-admin/ourProgram/*') ? 'active' : '' }}">
+                        <li
+                            class="nav-item {{ Request::is('dashboard-admin/ourProgram', 'dashboard-admin/ourProgram', 'dashboard-admin/ourProgram/*') ? 'active' : '' }}">
                             <a href="{{ route('ourProgram.index') }}">
                                 <i class="fas fa-tasks"></i>
                                 <p>Our Program</p>
+                            </a>
+                        </li>
+
+                        <li
+                            class="nav-item {{ Request::is('dashboard-admin/team', 'dashboard-admin/team', 'dashboard-admin/team/*') ? 'active' : '' }}">
+                            <a href="{{ route('team.index') }}">
+                                <i class="fas fa-user-friends"></i>
+                                <p>Team</p>
                             </a>
                         </li>
 

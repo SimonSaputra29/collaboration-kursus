@@ -14,6 +14,7 @@ use App\Http\Controllers\Backend\Superiority;
 use App\Http\Controllers\Backend\SuperiorityController;
 use App\Http\Controllers\Backend\SuperiorityImage;
 use App\Http\Controllers\Backend\SuperiorityImageController;
+use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
@@ -95,6 +96,9 @@ Route::middleware(['auth:admin'])->group(function () {
 
     //program
     Route::resource('/dashboard-admin/ourProgram', OurProgramController::class);
+
+    //team
+    Route::resource('/dashboard-admin/team', TeamController::class);
 
     // Admin dashboard routes
     Route::controller(AdminController::class)->group(function () {

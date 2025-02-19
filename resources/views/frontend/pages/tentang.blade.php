@@ -180,6 +180,7 @@
         }
 
         @media screen and (max-width: 600px) {
+
             .timeline-item.left,
             .timeline-item.right {
                 left: 0;
@@ -224,31 +225,26 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <h2 class="section-title fade-in">Siapa Kami</h2>
-                <p class="fade-in">Kami adalah tim yang berdedikasi untuk menyediakan solusi terbaik bagi kebutuhan teknologi Anda. Dengan pengalaman bertahun-tahun di industri, kami siap membantu Anda mencapai tujuan Anda.</p>
+                <p class="fade-in">Kami adalah tim yang berdedikasi untuk menyediakan solusi terbaik bagi kebutuhan teknologi
+                    Anda. Dengan pengalaman bertahun-tahun di industri, kami siap membantu Anda mencapai tujuan Anda.</p>
             </div>
         </div>
     </div>
 
     <div class="container team-section">
         <div class="row justify-content-center">
-            <div class="col-md-4 fade-in">
-                <div class="team-card">
-                    <img src="{{ asset('images/simon.jpg') }}" alt="Simon Saputra">
-                    <div class="team-card-body">
-                        <h5>Simon Saputra</h5>
-                        <p>Frontend Developer</p>
+            @foreach ($teams as $team)
+                <div class="col-md-4 fade-in">
+                    <div class="team-card">
+                        <img src="{{ asset($team->image) }}" alt="{{ $team->name }}"
+                            style="max-width: 300px; max-height:300px; width:300px ; height:300px ;">
+                        <div class="team-card-body">
+                            <h5>{{ $team->name }}</h5>
+                            <p>{{ $team->role }}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 fade-in">
-                <div class="team-card">
-                    <img src="{{ asset('images/team2.jpg') }}" alt="Akmal Rahmatullah">
-                    <div class="team-card-body">
-                        <h5>Akmal Rahmatullah</h5>
-                        <p>Backend Developer</p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 
