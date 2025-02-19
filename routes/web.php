@@ -48,11 +48,12 @@ Route::controller(UserController::class)->group(function () {
     Route::post('/registerUser', 'registerUser')->name('registerUser');
     Route::get('/loginUser', 'pageLoginUser')->name('pageLoginUser'); 
     Route::post('/loginUser', 'loginUser')->name('loginUser'); 
+
+    Route::post('/logoutUser', 'logoutUser')->name('logoutUser'); 
 });
 
 Route::middleware(['checkUser'])->group(function () {
     Route::get('/learning-path/{categoryId}', [FrontendController::class, 'webdevelopment'])->name('learning-path.id');
-
 
 });
 

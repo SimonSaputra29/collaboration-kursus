@@ -27,7 +27,7 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'password' => 'required|string|min:6',
             'password_2' => 'required|string|min:6',
         ]);
 
@@ -40,7 +40,7 @@ class UserController extends Controller
 
         Auth::login($user);
 
-        return redirect()->route('dashboard')->with('success', 'Pendaftaran berhasil!');
+        return redirect()->route('home')->with('success', 'Pendaftaran berhasil!');
     }
 
     public function loginUser(Request $request)
@@ -51,9 +51,18 @@ class UserController extends Controller
         ]);
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect()->route('dashboard')->with('success', 'Login berhasil!');
+            return redirect()->route('home')->with('success', 'Login berhasil!');
         }
 
         return back()->with('error', 'Email atau password salah.');
+    }
+
+    public function logoutUser(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('home')->with('success', 'Logout berhasil!');
     }
 }

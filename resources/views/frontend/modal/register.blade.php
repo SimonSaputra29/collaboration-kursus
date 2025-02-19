@@ -18,22 +18,46 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label for="email" class="form-label">Email:</label>
-                                <input type="email" name="email" id="email" class="form-control glow-input" autocomplete="new-email" required>
+                                <input type="email" name="email" id="email" class="form-control glow-input" autocomplete="off" required>
                             </div>
                             <div class="form-group mb-4 position-relative">
                                 <label for="password" class="form-label">Password:</label>
-                                <input type="password" name="password" id="password" class="form-control glow-input" autocomplete="new-password" required>
+                                <input type="password" name="password" id="password" class="form-control glow-input" required>
                                 <span class="toggle-password" onclick="togglePassword('password')">👁️</span>
                             </div>
                             <div class="form-group mb-4 position-relative">
                                 <label for="password_2" class="form-label">Confirm Password:</label>
                                 <input type="password" name="password_2" id="password_2" class="form-control glow-input" required>
                                 <span class="toggle-password" onclick="togglePassword('password_2')">👁️</span>
+                                <small id="passwordError" class="text-danger" style="display: none;">Passwords do not match</small>
                             </div>
                             <div class="d-grid">
-                                <button type="submit" class="btn btn-gradient btn-lg">Register</button>
+                                <button type="submit" class="btn btn-gradient btn-lg" id="registerBtn" disabled>Register</button>
                             </div>
                         </form>
+                        
+                        <script>
+                            function togglePassword(id) {
+                                let input = document.getElementById(id);
+                                input.type = input.type === "password" ? "text" : "password";
+                            }
+                        
+                            document.getElementById('password_2').addEventListener('input', function() {
+                                let password = document.getElementById('password').value;
+                                let confirmPassword = this.value;
+                                let errorText = document.getElementById('passwordError');
+                                let registerBtn = document.getElementById('registerBtn');
+                        
+                                if (password !== confirmPassword) {
+                                    errorText.style.display = "block";
+                                    registerBtn.disabled = true;
+                                } else {
+                                    errorText.style.display = "none";
+                                    registerBtn.disabled = false;
+                                }
+                            });
+                        </script>
+                        
                     </div>
                     <div class="card-footer text-center position-relative z-1 mt-4">
                         <a href="{{ route('loginUser') }}" class="text-light text-decoration-none">Login?</a>

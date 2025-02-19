@@ -51,17 +51,36 @@
             </div>
         </div>
         <div class="d-flex align-items-center">
-            <div class="d-flex align-items-center">
-                <a href="/loginUser" class="btn btn-outline-dark me-2 px-4 py-2 fw-bold shadow-sm"
-                    style="border-radius: 8px; transition: all 0.3s ease;">
-                    Login
-                </a>
-                <a href="/registerUser" class="btn btn-dark px-4 py-2 fw-bold shadow-sm"
-                    style="border-radius: 8px; transition: all 0.3s ease;">
-                    Register
-                </a>
-            </div>
+            @auth
+                <div class="dropdown">
+                    <button class="btn btn-dark px-4 py-2 fw-bold shadow-sm dropdown-toggle"
+                        style="border-radius: 8px; transition: all 0.3s ease;" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ Auth::user()->name }}
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                        <li><a class="dropdown-item" href="/profile">Profile</a></li>
+                        <li>
+                            <form action="{{ route('logoutUser') }}" method="POST">
+                                @csrf
+                                <button type="submit" class="dropdown-item text-danger">Logout</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            @else
+                <div class="d-flex align-items-center">
+                    <a href="/loginUser" class="btn btn-outline-dark me-2 px-4 py-2 fw-bold shadow-sm"
+                        style="border-radius: 8px; transition: all 0.3s ease;">
+                        Login
+                    </a>
+                    <a href="/registerUser" class="btn btn-dark px-4 py-2 fw-bold shadow-sm"
+                        style="border-radius: 8px; transition: all 0.3s ease;">
+                        Register
+                    </a>
+                </div>
+            @endauth
         </div>
+        
     </div>
 </nav>
 
