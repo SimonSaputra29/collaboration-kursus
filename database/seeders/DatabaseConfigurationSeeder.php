@@ -27,6 +27,7 @@ class DatabaseConfigurationSeeder extends Seeder
             'footer' => 'Copyright © 2025 | Kursus Yasmin',
             'meta_keywords' => 'Kursus coding terbaik, Kursus pemrograman online, Kursus coding untuk pemula, Kursus programming Python, Kursus web development, Belajar coding dari nol, Kursus full stack developer, Kursus JavaScript intensif, Kursus backend developer, Kursus mobile app development, Kursus coding bersertifikat, Kursus data science dan AI, Bootcamp coding profesional, Kursus coding anak dan remaja, Pelatihan coding cepat kerja',
             'meta_descriptions' => 'Belajar coding dari nol hingga mahir dengan kursus pemrograman terbaik! Kuasai web development, mobile app, dan data science dengan instruktur berpengalaman. Dapatkan sertifikat resmi!',
+            'faq_image' => '',
         ]);
     }
 }

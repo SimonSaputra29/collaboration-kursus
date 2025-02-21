@@ -5,9 +5,9 @@
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="card">
-                    <div class="card-header bg-primary text-white">Add Why Us</div>
+                    <div class="card-header bg-primary text-white">Add Faq</div>
                     <div class="card-body">
-                        <form action="{{ route('whyUs.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('faq.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col mb-3">

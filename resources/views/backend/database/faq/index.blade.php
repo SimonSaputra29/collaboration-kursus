@@ -5,11 +5,11 @@
         <div class="card">
             <div class="card-header">
                 <div class="d-flex align-items-center">
-                    <h4 class="card-title ms-4">Why Us</h4>
-                    <a href="{{ route('whyUs.create') }}" class="ms-auto">
+                    <h4 class="card-title ms-4">Faq</h4>
+                    <a href="{{ route('faq.create') }}" class="ms-auto">
                         <button class="btn btn-primary btn-round">
                             <i class="fa fa-plus"></i>
-                            Add Why Us
+                            Add Faq
                         </button>
                     </a>
                 </div>
@@ -35,7 +35,7 @@
                             </tr>
                         </tfoot>
                         <tbody>
-                            @foreach ($whyUs as $item)
+                            @foreach ($faq as $item)
                                 <tr>
                                     <td><img src="{{ asset($item->image) }}" alt="Image" style="width: 100px;"></td>
                                     <td>{{ $item->title }}</td>
@@ -43,14 +43,14 @@
                                     <td>
                                         <div class="form-button-action">
                                             <!-- Tombol Edit untuk Modal -->
-                                            <a href="{{ route('whyUs.edit', $item->id) }}">
+                                            <a href="{{ route('faq.edit', $item->id) }}">
                                                 <button type="button" class="btn btn-link btn-primary btn-lg">
                                                     <i class="fa fa-edit"></i>
                                                 </button>
                                             </a>
                                             <!-- Tombol Hapus -->
                                             <form id="delete-form-{{ $item->id }}"
-                                                action="{{ route('whyUs.destroy', $item->id) }}" method="POST"
+                                                action="{{ route('faq.destroy', $item->id) }}" method="POST"
                                                 style="display: none;">
                                                 @csrf
                                                 @method('DELETE')

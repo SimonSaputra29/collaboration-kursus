@@ -30,6 +30,7 @@ class ConfigurationController extends Controller
             'footer' => 'nullable|string',
             'meta_keywords' => 'nullable|string',
             'meta_descriptions' => 'nullable|string',
+            'faq_image' => 'nullable|image|mimes:jpg,png,jpeg',
         ]);
 
         if ($request->hasFile('logo')) {

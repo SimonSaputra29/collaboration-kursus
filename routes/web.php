@@ -4,6 +4,7 @@ use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\CategoryServiceController;
 use App\Http\Controllers\Backend\ConfigurationController;
+use App\Http\Controllers\Backend\FaqController;
 use App\Http\Controllers\Backend\HeroController;
 use App\Http\Controllers\Backend\OurProgramController;
 use App\Http\Controllers\Backend\ServiceController;
@@ -46,12 +47,12 @@ Route::get('/faq', [FrontendController::class, 'faq'])->name('faq');
 Route::post('/', [FrontendController::class, 'sendEmail'])->name('contact.send');
 
 Route::controller(UserController::class)->group(function () {
-    Route::get('/registerUser', 'pageRegisterUser')->name('pageRegisterUser'); 
+    Route::get('/registerUser', 'pageRegisterUser')->name('pageRegisterUser');
     Route::post('/registerUser', 'registerUser')->name('registerUser');
-    Route::get('/loginUser', 'pageLoginUser')->name('pageLoginUser'); 
-    Route::post('/loginUser', 'loginUser')->name('loginUser'); 
+    Route::get('/loginUser', 'pageLoginUser')->name('pageLoginUser');
+    Route::post('/loginUser', 'loginUser')->name('loginUser');
 
-    Route::post('/logoutUser', 'logoutUser')->name('logoutUser'); 
+    Route::post('/logoutUser', 'logoutUser')->name('logoutUser');
 });
 
 Route::middleware(['checkUser'])->group(function () {
@@ -89,6 +90,9 @@ Route::middleware(['auth:admin'])->group(function () {
 
     // WhyUs routes
     Route::resource('/dashboard-admin/whyUs', WhyUsController::class);
+
+    // Faq
+    Route::resource('/dashboard-admin/faq', FaqController::class);
 
     // CategoryService routes
     Route::resource('/dashboard-admin/categoryService', CategoryServiceController::class);

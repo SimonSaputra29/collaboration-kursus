@@ -124,17 +124,14 @@
                         </li>
 
                         <li
-                            class="nav-item {{ Request::is('dashboard-admin/why', 'dashboard-admin/whyUs', 'dashboard-admin/whyUs/create', 'dashboard-admin/whyUs/*') ? 'active' : '' }}">
+                            class="nav-item {{ Request::is('dashboard-admin/why') ? 'active' : '' }}">
                             <a data-bs-toggle="collapse" href="#why">
                                 <i class="fas fa-rocket"></i>
                                 <p>Why</p>
                                 <span class="caret"></span>
                             </a>
-                            <div class="collapse" id="why">
-<i class="fas fa-user-friends"></i>                                <ul class="nav nav-collapse">
+                            <div class="collapse" id="why">                        <ul class="nav nav-collapse">
                                     <li><a href="{{ route('why.index') }}"><span class="sub-item">Why</span></a>
-                                    </li>
-                                    <li><a href="{{ route('whyUs.index') }}"><span class="sub-item">Why Us</span></a>
                                     </li>
                                 </ul>
                             </div>
@@ -166,6 +163,14 @@
                                 <p>Our Program</p>
                             </a>
                         </li>
+
+                        <li
+                        class="nav-item {{ Request::is('dashboard-admin/faq', 'dashboard-admin/faq', 'dashboard-admin/faq/*') ? 'active' : '' }}">
+                        <a href="{{ route('faq.index') }}">
+                            <i class="fas fa-question-circle"></i>
+                            <p>Faq</p>
+                        </a>
+                    </li>
 
                         <li
                             class="nav-item {{ Request::is('dashboard-admin/team', 'dashboard-admin/team', 'dashboard-admin/team/*') ? 'active' : '' }}">
