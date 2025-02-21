@@ -82,7 +82,8 @@
 
         .team-card img {
             width: 100%;
-            height: auto;
+            height: 300px;
+            object-fit: cover;
         }
 
         .team-card-body {
@@ -98,6 +99,23 @@
             color: #777;
             font-size: 0.9rem;
             margin-bottom: 0;
+        }
+
+        .social-media {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .social-media a {
+            color: #3498db;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .social-media a:hover {
+            color: #2980b9;
         }
 
         .timeline {
@@ -204,7 +222,6 @@
             }
         }
 
-        /* Animasi fade-in */
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -236,11 +253,16 @@
             @foreach ($teams as $team)
                 <div class="col-md-4 fade-in">
                     <div class="team-card">
-                        <img src="{{ asset($team->image) }}" alt="{{ $team->name }}"
-                            style="max-width: 300px; max-height:300px; width:300px ; height:300px ;">
+                        <img src="{{ asset($team->image) }}" alt="{{ $team->name }}">
                         <div class="team-card-body">
                             <h5>{{ $team->name }}</h5>
                             <p>{{ $team->role }}</p>
+                            <div class="social-media gap-6">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -259,18 +281,6 @@
             <div class="timeline-content">
                 <h3>2017</h3>
                 <p>Kami meluncurkan produk pertama kami dan mendapatkan tanggapan positif dari pasar.</p>
-            </div>
-        </div>
-        <div class="timeline-item left fade-in">
-            <div class="timeline-content">
-                <h3>2019</h3>
-                <p>Perusahaan kami berkembang pesat dan membuka kantor cabang di beberapa kota besar.</p>
-            </div>
-        </div>
-        <div class="timeline-item right fade-in">
-            <div class="timeline-content">
-                <h3>2021</h3>
-                <p>Kami terus berinovasi dan memperluas jangkauan produk dan layanan kami.</p>
             </div>
         </div>
     </div>

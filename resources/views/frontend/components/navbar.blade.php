@@ -54,7 +54,8 @@
             @auth
                 <div class="dropdown">
                     <button class="btn btn-dark px-4 py-2 fw-bold shadow-sm dropdown-toggle"
-                        style="border-radius: 8px; transition: all 0.3s ease;" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        style="border-radius: 8px; transition: all 0.3s ease;" type="button" id="userDropdown"
+                        data-bs-toggle="dropdown" aria-expanded="false">
                         {{ Auth::user()->name }}
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="userDropdown">
@@ -80,7 +81,7 @@
                 </div>
             @endauth
         </div>
-        
+
     </div>
 </nav>
 
