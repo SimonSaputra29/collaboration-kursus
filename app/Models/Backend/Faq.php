@@ -15,5 +15,6 @@ class Faq extends Model
         'title',
         'description',
         'image',
+        'number',
     ];
 }

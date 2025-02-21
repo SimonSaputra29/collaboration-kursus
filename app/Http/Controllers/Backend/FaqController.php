@@ -30,18 +30,21 @@ class FaqController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
+        $nextNumber = Faq::max('number') + 1;
+
         $imageName = time() . '.' . $request->image->extension();
         $imagePath = 'uploads/faq/' . $imageName;
-        $request->image->move(('uploads/faq'), $imageName);
+        $request->image->move(public_path('uploads/faq'), $imageName);
 
         Faq::create([
             'image' => $imagePath,
             'title' => $request->title,
             'description' => $request->description,
+            'number' => $nextNumber,
         ]);
 
         return redirect()->route('faq.index')
-            ->with('success', 'Image uploaded successfully.');
+            ->with('success', 'FAQ berhasil ditambahkan.');
     }
 
     public function edit($id)

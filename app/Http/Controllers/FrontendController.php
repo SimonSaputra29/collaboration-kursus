@@ -13,6 +13,7 @@ use App\Models\Backend\Why;
 use App\Models\Backend\WhyUs;
 use Illuminate\Http\Request;
 use App\Mail\ContactMail;
+use App\Models\Backend\Faq;
 use Illuminate\Support\Facades\Mail;
 
 class FrontendController extends Controller
@@ -25,6 +26,7 @@ class FrontendController extends Controller
         $superiorityImage = SuperiorityImage::all();
         $why = Why::first();
         $whyUs = WhyUs::all();
+        $faq = Faq::all();
 
         return view('frontend.pages.home', [
             'title' => 'Kursus Yasmin',
@@ -34,6 +36,7 @@ class FrontendController extends Controller
             'superiority' => $superiority,
             'why' => $why,
             'whyUs' => $whyUs,
+            'faq' => $faq,
         ]);
     }
 
