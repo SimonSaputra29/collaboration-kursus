@@ -63,7 +63,7 @@
                         <li>
                             <form action="{{ route('logoutUser') }}" method="POST">
                                 @csrf
-                                <button type="submit" class="dropdown-item text-danger">Logout</button>
+                                <button type="submit" class="dropdown-item text-danger">Keluar</button>
                             </form>
                         </li>
                     </ul>
@@ -72,11 +72,11 @@
                 <div class="d-flex align-items-center">
                     <a href="/loginUser" class="btn btn-outline-dark me-2 px-4 py-2 fw-bold shadow-sm"
                         style="border-radius: 8px; transition: all 0.3s ease;">
-                        Login
+                        Masuk
                     </a>
                     <a href="/registerUser" class="btn btn-dark px-4 py-2 fw-bold shadow-sm"
                         style="border-radius: 8px; transition: all 0.3s ease;">
-                        Register
+                        Daftar
                     </a>
                 </div>
             @endauth

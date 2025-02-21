@@ -13,41 +13,46 @@
                         <form action="{{ route('registerUser') }}" method="POST" id="registerForm" autocomplete="off">
                             @csrf
                             <div class="form-group mb-3">
-                                <label for="name" class="form-label">Name:</label>
-                                <input type="text" name="name" id="name" class="form-control glow-input" required>
+                                <label for="name" class="form-label">Nama:</label>
+                                <input type="text" name="name" id="name" class="form-control glow-input"
+                                    required>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="email" class="form-label">Email:</label>
-                                <input type="email" name="email" id="email" class="form-control glow-input" autocomplete="off" required>
+                                <input type="email" name="email" id="email" class="form-control glow-input"
+                                    autocomplete="off" required>
                             </div>
                             <div class="form-group mb-4 position-relative">
                                 <label for="password" class="form-label">Password:</label>
-                                <input type="password" name="password" id="password" class="form-control glow-input" required>
+                                <input type="password" name="password" id="password" class="form-control glow-input"
+                                    required>
                                 <span class="toggle-password" onclick="togglePassword('password')">👁️</span>
                             </div>
                             <div class="form-group mb-4 position-relative">
-                                <label for="password_2" class="form-label">Confirm Password:</label>
-                                <input type="password" name="password_2" id="password_2" class="form-control glow-input" required>
+                                <label for="password_2" class="form-label">Konfirmasi Password:</label>
+                                <input type="password" name="password_2" id="password_2" class="form-control glow-input"
+                                    required>
                                 <span class="toggle-password" onclick="togglePassword('password_2')">👁️</span>
-                                <small id="passwordError" class="text-danger" style="display: none;">Passwords do not match</small>
+                                <small id="passwordError" class="text-danger" style="display: none;">Kata Sandi Tidak Sesuai</small>
                             </div>
                             <div class="d-grid">
-                                <button type="submit" class="btn btn-gradient btn-lg" id="registerBtn" disabled>Register</button>
+                                <button type="submit" class="btn btn-gradient btn-lg" id="registerBtn"
+                                    disabled>Daftar</button>
                             </div>
                         </form>
-                        
+
                         <script>
                             function togglePassword(id) {
                                 let input = document.getElementById(id);
                                 input.type = input.type === "password" ? "text" : "password";
                             }
-                        
+
                             document.getElementById('password_2').addEventListener('input', function() {
                                 let password = document.getElementById('password').value;
                                 let confirmPassword = this.value;
                                 let errorText = document.getElementById('passwordError');
                                 let registerBtn = document.getElementById('registerBtn');
-                        
+
                                 if (password !== confirmPassword) {
                                     errorText.style.display = "block";
                                     registerBtn.disabled = true;
@@ -57,7 +62,7 @@
                                 }
                             });
                         </script>
-                        
+
                     </div>
                     <div class="card-footer text-center position-relative z-1 mt-4">
                         <a href="{{ route('loginUser') }}" class="text-light text-decoration-none">Login?</a>
@@ -155,5 +160,4 @@
             }
         }
     </style>
- 
 @endsection
